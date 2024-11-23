@@ -23,11 +23,6 @@ const { title } = Astro.props;
 					<a href="/" class="logo">
 						<span class="logo-text">Shrimp2Sink</span>
 					</a>
-					<button class="mobile-menu" aria-label="Menu">
-						<span></span>
-						<span></span>
-						<span></span>
-					</button>
 					<div class="nav-links">
 						<a href="/">Início</a>
 						<a href="/team">Equipa</a>
@@ -330,33 +325,18 @@ const { title } = Astro.props;
 	}
 
 	@media (max-width: 768px) {
-		.mobile-menu {
-			display: block;
-		}
-
 		.nav-links {
-			display: none;
-			position: absolute;
-			top: 100%;
-			left: 0;
-			right: 0;
-			background: rgb(var(--primary));
-			flex-direction: column;
-			padding: 1rem;
-			box-shadow: 0 2px 15px rgba(var(--primary), 0.2);
-		}
-
-		.nav-links.active {
 			display: flex;
-		}
-
-		.nav-links a {
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
 			padding: 1rem;
-			text-align: center;
 		}
 
-		.footer-content {
-			grid-template-columns: 1fr;
+		.nav-content {
+			flex-direction: column;
+			gap: 1rem;
+			padding: 1rem 0;
 		}
 
 		main {

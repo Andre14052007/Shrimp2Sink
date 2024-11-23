@@ -3,85 +3,254 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Nossa Equipa">
-	<h1>Equipa de Investigação</h1>
-	
-	<div class="team-grid">
-		<div class="team-member">
-			<img src="/Andre.jpeg" alt="André Matos" class="member-image">
-			<h3>André Matos</h3>
-			<p class="role">Estudante</p>
-			<p>Portfolio individual</p>
-			<a href="https://scandalous-radium-acd.notion.site/1450268377e280839845e22d51f7f2fd?v=1450268377e28048ba9c000c818057bd" target="_blank" class="portfolio-link">Ver Portfolio</a>
+	<div class="hero">
+		<div class="hero-content">
+			<h1>Equipa de Investigação</h1>
+			<p class="subtitle">Conheça os pesquisadores por trás do projeto Shrimp2Sink</p>
 		</div>
-		<div class="team-member">
-			<div class="member-image"></div>
-			<h3>Barbara Almeida</h3>
-			<p class="role">Estudante</p>
-			<p>Portfolio individual</p>
-			<a href="#" target="_blank" class="portfolio-link">Ver Portfolio</a>
-		</div>
-		<div class="team-member">
-			<div class="member-image"></div>
-			<h3>Afonso Moreira</h3>
-			<p class="role">Estudante</p>
-			<p>Portfolio individual</p>
-			<a href="#" target="_blank" class="portfolio-link">Ver Portfolio</a>
-		</div>
+	</div>
+
+	<div class="main-content">
+		<section class="team-section">
+			<div class="section-header">
+				<h2>Nossos Investigadores</h2>
+				<div class="section-line"></div>
+			</div>
+			
+			<div class="team-grid">
+				<div class="team-member">
+					<img src="/Andre.jpeg" alt="André Matos" class="member-image">
+					<div class="member-info">
+						<h3>André Matos</h3>
+						<p class="role">Estudante</p>
+						<p class="bio">Portfolio individual</p>
+						<div class="member-links">
+							<a href="https://scandalous-radium-acd.notion.site/1450268377e280839845e22d51f7f2fd?v=1450268377e28048ba9c000c818057bd" target="_blank" class="button primary">Ver Portfolio</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="team-member">
+					<div class="member-image"></div>
+					<div class="member-info">
+						<h3>Barbara Almeida</h3>
+						<p class="role">Estudante</p>
+						<p class="bio">Portfolio individual</p>
+						<div class="member-links">
+							<a href="#" target="_blank" class="button primary">Ver Portfolio</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="team-member">
+					<div class="member-image"></div>
+					<div class="member-info">
+						<h3>Afonso Moreira</h3>
+						<p class="role">Estudante</p>
+						<p class="bio">Portfolio individual</p>
+						<div class="member-links">
+							<a href="#" target="_blank" class="button primary">Ver Portfolio</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="cta-section">
+			<div class="cta-content">
+				<h2>Interessado em Colaborar?</h2>
+				<p>Estamos sempre abertos a novas parcerias e colaborações.</p>
+				<a href="/about#contact" class="button primary">Entre em Contato</a>
+			</div>
+		</section>
 	</div>
 </Layout>
 
 <style>
+	.hero {
+		text-align: center;
+		padding: 6rem 2rem;
+		background: var(--gradient);
+		margin: -2rem -2rem 2rem -2rem;
+		border-radius: 16px 16px 0 0;
+		color: rgb(var(--text-light));
+		position: relative;
+		overflow: hidden;
+	}
+
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.hero h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin-bottom: 1.5rem;
+		line-height: 1.2;
+		color: rgb(var(--text-light));
+	}
+
+	.subtitle {
+		font-size: 1.25rem;
+		color: rgba(255,255,255,0.9);
+		margin-bottom: 2rem;
+		line-height: 1.6;
+	}
+
+	.main-content {
+		padding: 2rem 0;
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.section-line {
+		width: 60px;
+		height: 4px;
+		background: var(--gradient);
+		margin: 1rem auto;
+		border-radius: 2px;
+	}
+
 	.team-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2.5rem;
 		margin-top: 2rem;
 	}
+
 	.team-member {
 		background: white;
-		padding: 2rem;
-		border-radius: 8px;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-		text-align: center;
-		transition: transform 0.2s ease-in-out;
+		border-radius: 16px;
+		overflow: hidden;
+		box-shadow: var(--card-shadow);
+		transition: var(--transition);
 	}
+
 	.team-member:hover {
 		transform: translateY(-5px);
+		box-shadow: 0 8px 24px rgba(var(--primary), 0.15);
 	}
+
 	.member-image {
-		width: 200px;
-		height: 200px;
-		margin: 0 auto 1rem;
-		border-radius: 50%;
+		width: 100%;
+		height: 300px;
+		object-fit: cover;
+		border-radius: 16px 16px 0 0;
 		background: rgb(var(--shrimp));
-		opacity: 0.8;
+		opacity: 0.9;
 	}
+
+	.member-info {
+		padding: 2rem;
+		text-align: center;
+	}
+
+	.member-info h3 {
+		margin: 0;
+		font-size: 1.5rem;
+		color: rgb(var(--primary));
+		margin-bottom: 0.5rem;
+	}
+
 	.role {
 		color: rgb(var(--primary));
-		font-weight: 500;
+		font-weight: 600;
 		margin: 0.5rem 0;
+		opacity: 0.8;
 	}
-	h3 {
-		margin: 0;
+
+	.bio {
+		margin: 1rem 0;
+		font-size: 0.95rem;
+		line-height: 1.6;
 		color: rgb(var(--text));
 	}
-	p {
-		margin: 0.5rem 0;
-		font-size: 0.95rem;
-		line-height: 1.4;
+
+	.member-links {
+		margin-top: 1.5rem;
 	}
-	.portfolio-link {
+
+	.button {
 		display: inline-block;
-		margin-top: 1rem;
-		padding: 0.5rem 1rem;
-		background: rgb(var(--shrimp));
-		color: white;
+		padding: 0.8rem 1.5rem;
+		border-radius: 8px;
+		font-weight: 500;
 		text-decoration: none;
-		border-radius: 4px;
-		transition: opacity 0.2s ease;
+		transition: var(--transition);
 	}
-	.portfolio-link:hover {
+
+	.button.primary {
+		background: var(--gradient);
+		color: rgb(var(--text-light));
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+	}
+
+	.cta-section {
+		text-align: center;
+		padding: 4rem 2rem;
+		background: var(--gradient);
+		margin: 4rem -2rem -2rem -2rem;
+		border-radius: 0 0 16px 16px;
+		color: rgb(var(--text-light));
+	}
+
+	.cta-content {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.cta-content h2 {
+		color: rgb(var(--text-light));
+		margin-bottom: 1rem;
+		font-size: 2rem;
+	}
+
+	.cta-content p {
+		margin-bottom: 2rem;
+		font-size: 1.1rem;
 		opacity: 0.9;
-		color: white;
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			padding: 4rem 1rem;
+		}
+
+		.hero h1 {
+			font-size: 2.25rem;
+		}
+
+		.subtitle {
+			font-size: 1.1rem;
+		}
+
+		.team-grid {
+			grid-template-columns: 1fr;
+			padding: 0 1rem;
+		}
+
+		.member-image {
+			height: 250px;
+		}
 	}
 </style>
