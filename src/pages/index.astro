@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Início">
+	<div class="hero">
+		<h1>Filtração Sustentável de Água usando Quitosana</h1>
+		<p class="subtitle">Transformando resíduos de camarão em soluções inovadoras de filtração de água</p>
+	</div>
+
+	<div class="card">
+		<h2>Sobre o Projeto</h2>
+		<p>O Shrimp2Sink é um projeto de investigação inovador que explora o uso da quitosana, derivada de cascas de camarão, 
+		   como uma solução sustentável e eficaz para a filtração de água. A nossa investigação concentra-se na conversão de 
+		   resíduos da indústria do marisco em tecnologia valiosa de purificação de água.</p>
+	</div>
+
+	<div class="features">
+		<div class="feature-card">
+			<h3>Sustentável</h3>
+			<p>Utilização de materiais residuais da indústria do marisco para criar soluções ecológicas</p>
+		</div>
+		<div class="feature-card">
+			<h3>Eficaz</h3>
+			<p>Capacidades comprovadas de filtração para vários contaminantes da água</p>
+		</div>
+		<div class="feature-card">
+			<h3>Inovador</h3>
+			<p>Combinando biotecnologia com conservação ambiental</p>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.hero {
+		text-align: center;
+		padding: 4rem 0;
+	}
+	.subtitle {
+		font-size: 1.25rem;
+		color: rgb(var(--primary));
+		margin-bottom: 2rem;
+	}
+	.features {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin-top: 3rem;
+	}
+	.feature-card {
+		background: white;
+		padding: 1.5rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+	.feature-card h3 {
+		color: rgb(var(--primary));
+		margin-top: 0;
+	}
+</style>

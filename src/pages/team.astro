@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Nossa Equipa">
+	<h1>Equipa de Investigação</h1>
+	
+	<div class="team-grid">
+		<div class="team-member">
+			<div class="member-image"></div>
+			<h3>André Matos</h3>
+			<p class="role">Estudante</p>
+			<p>Portfolio individual</p>
+			<a href="https://scandalous-radium-acd.notion.site/1450268377e280839845e22d51f7f2fd?v=1450268377e28048ba9c000c818057bd" target="_blank" class="portfolio-link">Ver Portfolio</a>
+		</div>
+		<div class="team-member">
+			<div class="member-image"></div>
+			<h3>Barbara Almeida</h3>
+			<p class="role">Estudante</p>
+			<p>Portfolio individual</p>
+			<a href="#" target="_blank" class="portfolio-link">Ver Portfolio</a>
+		</div>
+		<div class="team-member">
+			<div class="member-image"></div>
+			<h3>Afonso Moreira</h3>
+			<p class="role">Estudante</p>
+			<p>Portfolio individual</p>
+			<a href="#" target="_blank" class="portfolio-link">Ver Portfolio</a>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.team-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+	.team-member {
+		background: white;
+		padding: 2rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		text-align: center;
+		transition: transform 0.2s ease-in-out;
+	}
+	.team-member:hover {
+		transform: translateY(-5px);
+	}
+	.member-image {
+		width: 200px;
+		height: 200px;
+		margin: 0 auto 1rem;
+		border-radius: 50%;
+		background: rgb(var(--shrimp));
+		opacity: 0.8;
+	}
+	.role {
+		color: rgb(var(--primary));
+		font-weight: 500;
+		margin: 0.5rem 0;
+	}
+	h3 {
+		margin: 0;
+		color: rgb(var(--text));
+	}
+	p {
+		margin: 0.5rem 0;
+		font-size: 0.95rem;
+		line-height: 1.4;
+	}
+	.portfolio-link {
+		display: inline-block;
+		margin-top: 1rem;
+		padding: 0.5rem 1rem;
+		background: rgb(var(--shrimp));
+		color: white;
+		text-decoration: none;
+		border-radius: 4px;
+		transition: opacity 0.2s ease;
+	}
+	.portfolio-link:hover {
+		opacity: 0.9;
+		color: white;
+	}
+</style>

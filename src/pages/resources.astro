@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Recursos">
+	<h1>Recursos e Informação</h1>
+
+	<div class="card">
+		<h2>Artigos Científicos e Parâmetros de qualidade de água</h2>
+		<ul class="resource-list">
+			<li>
+				<h3>Qualidade da água destinada a consumo Humano</h3>
+				<p>Decreto-lei n.º 69/2023 de 21 de Agosto</p>
+				<a href="https://files.diariodarepublica.pt/1s/2023/08/16100/0001000073.pdf" target="_blank" class="button">Descarregar PDF</a>
+			</li>
+			<li>
+				<h3>Estudos de Eficiência de Filtração de Água</h3>
+				<p>Spinelli (2001). Quitosana, polieletrólito natural para o tratamento de água potável [Master's Thesis, Universidade Federal de Santa Catarina]. Repositório Institucional da Universidade Federal de Santa Catarina:</p>
+				<a href="https://repositorio.ufsc.br/xmlui/bitstream/handle/123456789/82191/201719.pdf?sequence=1&isAllowed=y" target="_blank" class="button">Ler Artigo</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="card">
+		<h2>Materiais Educativos</h2>
+		<div class="resource-grid">
+			<div class="resource-item">
+				<h3>Processo de Produção de Quitosana</h3>
+				<p>Aprenda sobre o processo passo a passo de extração de quitosana de cascas de camarão</p>
+				<a href="https://docs.google.com/document/d/1SBR-5z-mGzgqQ91nEBKHFumlxh-q_qGUQJbhrqItUSw/edit?tab=t.0" target="_blank" class="button">Descarregar Docs</a>
+			</div>
+			<div class="resource-item">
+				<h3>Guia de Montagem de Filtros</h3>
+				<p>Instruções detalhadas para montagem e manutenção de filtros à base de quitosana</p>
+				<a href="#" class="button">Ver Guia</a>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.resource-list {
+		list-style: none;
+		padding: 0;
+	}
+	.resource-list li {
+		margin-bottom: 2rem;
+	}
+	.resource-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		margin-top: 1rem;
+	}
+	.resource-item {
+		background: #f5f5f5;
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.button {
+		display: inline-block;
+		background: rgb(var(--primary));
+		color: white;
+		padding: 0.5rem 1rem;
+		border-radius: 4px;
+		text-decoration: none;
+		margin-top: 1rem;
+	}
+	.button:hover {
+		opacity: 0.9;
+	}
+</style>

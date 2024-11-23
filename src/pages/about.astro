@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Sobre">
+	<h1>Sobre o Shrimp2Sink</h1>
+
+	<div class="card">
+		<h2>A Nossa Missão</h2>
+		<p>O Shrimp2Sink pretende revolucionar a filtração de água desenvolvendo soluções 
+		   sustentáveis e económicas usando quitosana extraída de resíduos de camarão. O nosso 
+		   projeto estabelece a ponte entre a gestão de resíduos e a acessibilidade à água limpa.</p>
+	</div>
+
+	<div class="info-grid">
+		<div class="card">
+			<h2>Objetivos do Projeto</h2>
+			<ul>
+				<li>Desenvolver filtros de água eficientes à base de quitosana</li>
+				<li>Reduzir o impacto ambiental dos resíduos de camarão</li>
+				<li>Fornecer soluções de filtração de água acessíveis</li>
+				<li>Promover práticas sustentáveis no tratamento de água</li>
+				<li>Reduzir o uso de sulfato de alumínio que pode causar problemas na saúde</li>
+				<li>Desenvolver uma forma de tratamento de água mais eficaz que as tradicionais</li>
+			</ul>
+		</div>
+
+		<div class="card">
+			<h2>Contacte-nos</h2>
+			<p>Interessado na nossa investigação ou em potenciais colaborações? Entre em contacto connosco:</p>
+			<div class="contact-info">
+				<p>Email: shrimp2sink@gmail.com</p>
+				<p>Telefone: 912806094</p>
+				<p>Localização: Escola Secundária da Maia</p>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.info-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+	ul {
+		padding-left: 1.5rem;
+	}
+	li {
+		margin-bottom: 0.5rem;
+	}
+	.contact-info {
+		margin-top: 1rem;
+	}
+	.contact-info p {
+		margin: 0.5rem 0;
+	}
+</style>
