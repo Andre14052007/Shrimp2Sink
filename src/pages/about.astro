@@ -295,6 +295,7 @@ import Layout from '../layouts/Layout.astro';
 	@media (max-width: 768px) {
 		.hero {
 			padding: 4rem 1rem;
+			margin: -1rem -1rem 1rem -1rem;
 		}
 
 		.hero h1 {
@@ -303,12 +304,40 @@ import Layout from '../layouts/Layout.astro';
 
 		.subtitle {
 			font-size: 1.1rem;
+			margin-bottom: 1.5rem;
 		}
 
-		.objectives-grid,
+		.main-content {
+			padding: 1rem;
+		}
+
+		.objectives-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+			padding: 0 1rem;
+		}
+
 		.contact-info {
 			grid-template-columns: 1fr;
 			padding: 0 1rem;
+		}
+
+		.button {
+			padding: 0.7rem 1.2rem;
+			font-size: 0.95rem;
+		}
+
+		.cta-section {
+			margin: -1rem -1rem -1rem -1rem;
+			padding: 3rem 1rem;
+		}
+
+		.cta-content h2 {
+			font-size: 1.75rem;
+		}
+
+		.cta-content p {
+			font-size: 1rem;
 		}
 	}
 </style>
