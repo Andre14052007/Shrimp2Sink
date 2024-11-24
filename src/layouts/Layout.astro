@@ -130,6 +130,7 @@ const { title } = Astro.props;
 		height: var(--header-height);
 		display: flex;
 		align-items: center;
+		width: 100%;
 	}
 
 	nav {
@@ -145,6 +146,7 @@ const { title } = Astro.props;
 		align-items: center;
 		height: 100%;
 		position: relative;
+		width: 100%;
 	}
 
 	.logo {
@@ -321,8 +323,17 @@ const { title } = Astro.props;
 			border-radius: 12px;
 		}
 
+		header {
+			padding: 0;
+		}
+
 		nav {
 			padding: 0 1rem;
+			width: 100%;
+		}
+
+		.nav-content {
+			width: 100%;
 		}
 
 		.mobile-menu {
