@@ -21,6 +21,7 @@ const { title } = Astro.props;
 			<nav>
 				<div class="nav-content">
 					<a href="/" class="logo">
+						<span class="logo-circle"></span>
 						<span class="logo-text">Shrimp2Sink</span>
 					</a>
 					<button class="mobile-menu" aria-label="Menu">
@@ -239,6 +240,20 @@ const { title } = Astro.props;
 
 	.logo:hover {
 		transform: translateY(-2px);
+	}
+
+	.logo-circle {
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		background: rgba(var(--text-light), 0.1);
+		border: 2px solid rgba(var(--text-light), 0.2);
+		transition: var(--transition);
+	}
+
+	.logo:hover .logo-circle {
+		border-color: rgba(var(--text-light), 0.4);
+		background: rgba(var(--text-light), 0.15);
 	}
 
 	.logo-text {
