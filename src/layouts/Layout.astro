@@ -130,7 +130,9 @@ const { title } = Astro.props;
 		height: var(--header-height);
 		display: flex;
 		align-items: center;
-		width: 100%;
+		width: 100vw;
+		left: 0;
+		right: 0;
 	}
 
 	nav {
@@ -194,6 +196,9 @@ const { title } = Astro.props;
 		color: rgb(var(--text-light));
 		padding: 4rem 2rem 2rem;
 		margin-top: auto;
+		width: 100vw;
+		margin-left: calc(-50vw + 50%);
+		margin-right: calc(-50vw + 50%);
 	}
 
 	.footer-content {
@@ -325,6 +330,8 @@ const { title } = Astro.props;
 
 		header {
 			padding: 0;
+			margin-left: calc(-50vw + 50%);
+			margin-right: calc(-50vw + 50%);
 		}
 
 		nav {
@@ -359,6 +366,7 @@ const { title } = Astro.props;
 			top: var(--header-height);
 			left: 0;
 			right: 0;
+			width: 100vw;
 			background: var(--gradient);
 			padding: 1rem;
 			flex-direction: column;
@@ -392,6 +400,10 @@ const { title } = Astro.props;
 
 		.footer-section a:hover {
 			transform: translateY(-2px);
+		}
+
+		footer {
+			padding: 3rem 1rem 1.5rem;
 		}
 	}
 
