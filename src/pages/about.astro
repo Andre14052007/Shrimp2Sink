@@ -73,9 +73,13 @@ import Layout from '../layouts/Layout.astro';
 						<a href="https://mail.google.com/mail/?view=cm&fs=1&to=shrimp2sink@gmail.com" target="_blank" class="button primary">shrimp2sink@gmail.com</a>
 					</div>
 					<div class="contact-card">
+						<div class="contact-icon">📱</div>
+						<h3>Telefone</h3>
+						<a href="tel:+351912806094" class="button primary">+351 912 806 094</a>
+					</div>
+					<div class="contact-card">
 						<div class="contact-icon">📍</div>
 						<h3>Localização</h3>
-						
 						<a href="https://www.google.pt/maps/place/Escola+Secund%C3%A1ria+da+Maia/@41.2326507,-8.6201751,17z/data=!3m1!4b1!4m6!3m5!1s0xd24665606eefb45:0xc5dd8b06cc341a7b!8m2!3d41.2326467!4d-8.6176002!16s%2Fg%2F1vgqfc9z?hl=pt-PT&entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoASAFQAw%3D%3D" target="_blank" class="button primary">Escola Secundária da Maia</a>
 					</div>
 				</div>
@@ -214,14 +218,14 @@ import Layout from '../layouts/Layout.astro';
 
 	.contact-info {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 2rem;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
 		margin-top: 2rem;
 	}
 
 	.contact-card {
 		background: white;
-		padding: 2rem;
+		padding: 1.75rem;
 		border-radius: 16px;
 		box-shadow: var(--card-shadow);
 		text-align: center;
@@ -234,11 +238,12 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.contact-icon {
-		font-size: 2.5rem;
+		font-size: 2.25rem;
 		margin-bottom: 1rem;
 	}
 
 	.contact-card h3 {
+		font-weight: 600;
 		color: rgb(var(--primary));
 		margin-bottom: 0.5rem;
 		font-size: 1.25rem;
@@ -246,6 +251,13 @@ import Layout from '../layouts/Layout.astro';
 
 	.contact-card p {
 		color: rgb(var(--text));
+	}
+
+	@media (max-width: 768px) {
+		.contact-info {
+			grid-template-columns: 1fr;
+			padding: 0 1rem;
+		}
 	}
 
 	.cta-section {
@@ -317,11 +329,6 @@ import Layout from '../layouts/Layout.astro';
 		.objectives-grid {
 			grid-template-columns: 1fr;
 			gap: 1.5rem;
-			padding: 0 1rem;
-		}
-
-		.contact-info {
-			grid-template-columns: 1fr;
 			padding: 0 1rem;
 		}
 
