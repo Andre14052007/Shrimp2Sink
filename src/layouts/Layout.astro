@@ -243,12 +243,13 @@ const { title } = Astro.props;
 	}
 
 	.logo-circle {
-		width: 32px;
-		height: 32px;
+		width: 50px;
+		height: 50px;
 		border-radius: 50%;
 		background: rgba(var(--text-light), 0.1);
 		border: 2px solid rgba(var(--text-light), 0.2);
 		transition: var(--transition);
+		object-fit: cover;
 	}
 
 	.logo:hover .logo-circle {
