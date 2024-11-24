@@ -235,12 +235,12 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.cta-section {
-		text-align: center;
-		padding: 4rem 2rem;
 		background: var(--gradient);
+		padding: 4rem 2rem;
+		text-align: center;
+		color: rgb(var(--text-light));
 		margin: 4rem -2rem -2rem -2rem;
 		border-radius: 0 0 16px 16px;
-		color: rgb(var(--text-light));
 	}
 
 	.cta-content {
@@ -262,6 +262,8 @@ import Layout from '../layouts/Layout.astro';
 
 	@media (max-width: 768px) {
 		.hero {
+			margin: 0;
+			border-radius: 0;
 			padding: 4rem 1rem;
 		}
 
@@ -280,6 +282,11 @@ import Layout from '../layouts/Layout.astro';
 
 		.stats-grid {
 			grid-template-columns: 1fr;
+		}
+
+		.cta-section {
+			margin: 4rem 0 0 0;
+			border-radius: 0;
 		}
 	}
 </style>
