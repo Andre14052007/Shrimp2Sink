@@ -111,7 +111,15 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.main-content {
-		padding: 2rem 0;
+		max-width: var(--container-width);
+		margin: 0 auto;
+		padding: 2rem;
+		background: white;
+		border-radius: 16px;
+	}
+
+	.team-section {
+		margin-bottom: 4rem;
 	}
 
 	.section-header {
@@ -206,12 +214,12 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.cta-section {
-		text-align: center;
-		padding: 4rem 2rem;
 		background: var(--gradient);
+		padding: 4rem 2rem;
+		text-align: center;
+		color: rgb(var(--text-light));
 		margin: 4rem -2rem -2rem -2rem;
 		border-radius: 0 0 16px 16px;
-		color: rgb(var(--text-light));
 	}
 
 	.cta-content {
@@ -248,6 +256,8 @@ import Layout from '../layouts/Layout.astro';
 
 		.main-content {
 			padding: 1rem;
+			margin: 1rem auto;
+			border-radius: 12px;
 		}
 
 		.team-grid {
@@ -271,6 +281,11 @@ import Layout from '../layouts/Layout.astro';
 		.button {
 			padding: 0.7rem 1.2rem;
 			font-size: 0.95rem;
+		}
+
+		.cta-section {
+			margin: -1rem -1rem -1rem -1rem;
+			padding: 3rem 1rem;
 		}
 	}
 </style>
