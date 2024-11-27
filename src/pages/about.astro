@@ -30,42 +30,56 @@ import Layout from '../layouts/Layout.astro';
 				<div class="section-line"></div>
 			</div>
 
-			<div class="sdg-container">
-				<div class="sdg-image-container">
-					<img src="/ODS 6.png" alt="ODS 6 - Água Potável e Saneamento" class="sdg-icon">
-					<h3>ODS 6</h3>
-					<p class="sdg-title">Água Potável e Saneamento</p>
-				</div>
-				<div class="sdg-content">
-					<p class="sdg-intro">O Shrimp2Sink está alinhado com os Objetivos de Desenvolvimento Sustentável (ODS) 
-					das Nações Unidas, especificamente com o ODS 6 - Água Potável e Saneamento. Este objetivo visa assegurar 
-					a disponibilidade e gestão sustentável da água potável e saneamento para todos.</p>
-				</div>
-			</div>
-
-			<div class="objectives-grid">
-				<div class="objective-card">
-					<div class="objective-icon">🎯</div>
-					<h3>Filtração Eficiente</h3>
-					<p>Desenvolver filtros de água eficientes à base de quitosana, contribuindo diretamente para o acesso à água potável</p>
+			<div class="objectives-container">
+				<div class="sdg-banner">
+					<div class="sdg-content">
+						<div class="sdg-icon-wrapper">
+							<img src="/ODS 6.png" alt="ODS 6 - Água Potável e Saneamento" class="sdg-icon">
+						</div>
+						<div class="sdg-text">
+							<div class="sdg-title">
+								<span class="highlight">ODS 6</span>
+								<h3>Água Potável e Saneamento</h3>
+							</div>
+							<p>O Shrimp2Sink está alinhado com os Objetivos de Desenvolvimento Sustentável (ODS) 
+							das Nações Unidas, especificamente com o ODS 6. Este objetivo visa assegurar 
+							a disponibilidade e gestão sustentável da água potável e saneamento para todos.</p>
+						</div>
+					</div>
 				</div>
 
-				<div class="objective-card">
-					<div class="objective-icon">♻️</div>
-					<h3>Sustentabilidade</h3>
-					<p>Reduzir o impacto ambiental transformando resíduos de camarão em soluções sustentáveis</p>
-				</div>
+				<div class="objectives-grid">
+					<div class="objective-card">
+						<div class="card-header">
+							<div class="objective-icon">🎯</div>
+							<h3>Filtração Eficiente</h3>
+						</div>
+						<p>Desenvolver filtros de água eficientes à base de quitosana, contribuindo diretamente para o acesso à água potável</p>
+					</div>
 
-				<div class="objective-card">
-					<div class="objective-icon">💧</div>
-					<h3>Acessibilidade</h3>
-					<p>Fornecer soluções de filtração de água acessíveis para comunidades em necessidade</p>
-				</div>
+					<div class="objective-card">
+						<div class="card-header">
+							<div class="objective-icon">♻️</div>
+							<h3>Sustentabilidade</h3>
+						</div>
+						<p>Reduzir o impacto ambiental transformando resíduos de camarão em soluções sustentáveis</p>
+					</div>
 
-				<div class="objective-card">
-					<div class="objective-icon">🌱</div>
-					<h3>Inovação</h3>
-					<p>Desenvolver tecnologias inovadoras que promovam a economia circular no tratamento de água</p>
+					<div class="objective-card">
+						<div class="card-header">
+							<div class="objective-icon">💧</div>
+							<h3>Acessibilidade</h3>
+						</div>
+						<p>Fornecer soluções de filtração de água acessíveis para comunidades em necessidade</p>
+					</div>
+
+					<div class="objective-card">
+						<div class="card-header">
+							<div class="objective-icon">🌱</div>
+							<h3>Inovação</h3>
+						</div>
+						<p>Desenvolver tecnologias inovadoras que promovam a economia circular no tratamento de água</p>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -183,98 +197,165 @@ import Layout from '../layouts/Layout.astro';
 
 	.objectives-section {
 		padding: 4rem 2rem;
-		background-color: var(--color-bg);
+		background: linear-gradient(180deg, var(--color-bg), rgba(var(--accent-light), 0.05));
 	}
 
-	.sdg-container {
+	.objectives-container {
+		max-width: 1200px;
+		margin: 2rem auto;
+		padding: 0;
+	}
+
+	.sdg-banner {
+		background: white;
+		padding: 3rem;
+		border-radius: 2rem;
+		box-shadow: 0 20px 40px rgba(var(--accent-light), 0.15);
+		margin-bottom: 3rem;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.sdg-banner::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 6px;
+		background: linear-gradient(90deg, rgb(var(--accent)), rgba(var(--accent-light), 0.5));
+	}
+
+	.sdg-content {
 		display: flex;
-		flex-direction: row;
+		align-items: center;
+		gap: 4rem;
+		position: relative;
+	}
+
+	.sdg-icon-wrapper {
+		flex: 0 0 auto;
+		width: 220px;
+		height: 220px;
+		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: 2rem;
-		margin: 2rem 0 4rem;
+		background: linear-gradient(145deg, rgba(var(--accent-light), 0.1), rgba(var(--accent-light), 0.05));
+		border-radius: 2rem;
 		padding: 2rem;
-		background-color: rgba(var(--accent-light), 0.1);
-		border-radius: 1rem;
+		transition: all 0.4s ease;
+	}
+
+	.sdg-icon-wrapper:hover {
+		transform: translateY(-5px) rotate(5deg);
+		box-shadow: 0 15px 30px rgba(var(--accent-light), 0.2);
+	}
+
+	.sdg-icon {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		filter: drop-shadow(0 4px 8px rgba(var(--accent-light), 0.2));
+	}
+
+	.sdg-text {
+		flex: 1;
+	}
+
+	.sdg-title {
+		margin-bottom: 1.5rem;
+	}
+
+	.sdg-title .highlight {
+		display: inline-block;
+		color: rgb(var(--primary));
+		font-size: 2.5em;
+		font-weight: 800;
+		margin-right: 1rem;
+		letter-spacing: -0.02em;
+	}
+
+	.sdg-title h3 {
+		display: inline-block;
+		margin: 0;
+		font-size: 1.8em;
+		color: rgb(var(--primary));
+		font-weight: 600;
+	}
+
+	.sdg-text p {
+		font-size: 1.2em;
+		line-height: 1.7;
+		color: var(--color-text);
+		margin: 0;
+		opacity: 0.9;
 	}
 
 	.objectives-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 2rem;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.5rem;
 		margin-top: 2rem;
 	}
 
 	.objective-card {
-		background: rgba(var(--accent-light), 0.05);
-		padding: 2rem;
-		border-radius: 1rem;
+		background: white;
+		padding: 1.75rem;
+		border-radius: 16px;
+		box-shadow: var(--card-shadow);
 		text-align: center;
-		transition: transform 0.3s ease;
+		transition: var(--transition);
 	}
 
 	.objective-card:hover {
 		transform: translateY(-5px);
+		box-shadow: 0 8px 24px rgba(var(--primary), 0.15);
 	}
 
-	.objective-card .objective-icon {
-		font-size: 2.5em;
+	.objective-icon {
+		font-size: 2.25rem;
 		margin-bottom: 1rem;
+		color: rgb(var(--primary));
 	}
 
 	.objective-card h3 {
-		color: rgb(var(--accent));
-		margin-bottom: 1rem;
-		font-size: 1.3em;
+		font-weight: 600;
+		color: rgb(var(--primary));
+		margin-bottom: 0.5rem;
+		font-size: 1.25rem;
 	}
 
 	.objective-card p {
-		color: var(--color-text);
-		line-height: 1.6;
-	}
-
-	.sdg-image-container {
-		flex: 1;
-		text-align: center;
-		padding: 2rem;
-		background: rgba(var(--accent-light), 0.05);
-		border-radius: 1rem;
-		transition: transform 0.3s ease;
-	}
-
-	.sdg-image-container:hover {
-		transform: translateY(-5px);
-	}
-
-	.sdg-image-container h3 {
-		color: rgb(var(--accent));
-		font-size: 1.5em;
-		margin: 1rem 0 0.5rem;
-	}
-
-	.sdg-image-container .sdg-title {
-		color: var(--color-text);
-		font-size: 1.1em;
+		color: rgb(var(--text));
+		font-size: 1rem;
+		line-height: 1.5;
 		margin: 0;
 	}
 
-	.sdg-icon {
-		width: 150px;
-		height: 150px;
-		object-fit: contain;
-		margin: 0 auto;
-		display: block;
+	@media (max-width: 1200px) {
+		.objectives-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 
-	.sdg-content {
-		flex: 2;
-		padding: 0 1rem;
-	}
+	@media (max-width: 768px) {
+		.objectives-grid {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
 
-	.sdg-intro {
-		font-size: 1.1em;
-		line-height: 1.6;
-		color: var(--color-text);
+		.objective-card {
+			padding: 1.5rem;
+		}
+
+		.objective-icon {
+			font-size: 2rem;
+			margin-bottom: 0.75rem;
+		}
+
+		.objective-card h3 {
+			font-size: 1.2rem;
+		}
 	}
 
 	.contact-section {
@@ -374,73 +455,83 @@ import Layout from '../layouts/Layout.astro';
 		box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 	}
 
-	@media (max-width: 768px) {
-		.hero {
-			padding: 4rem 1rem;
-			margin: -1rem -1rem 1rem -1rem;
+	@media (max-width: 1024px) {
+		.objectives-container {
+			margin: 1rem auto;
 		}
 
-		.hero h1 {
-			font-size: 2.25rem;
-		}
-
-		.subtitle {
-			font-size: 1.1rem;
-			margin-bottom: 1.5rem;
-		}
-
-		.main-content {
-			padding: 1rem;
-			margin: 1rem auto 3rem;
-			border-radius: 12px;
-		}
-
-		.objectives-grid {
-			grid-template-columns: 1fr;
-			gap: 1.5rem;
-			padding: 0 1rem;
-		}
-
-		.button {
-			padding: 0.7rem 1.2rem;
-			font-size: 0.95rem;
-		}
-
-		.cta-section {
-			margin: 0 -1rem -1rem -1rem;
-			padding: 3rem 1rem;
-		}
-
-		.cta-content h2 {
-			font-size: 1.75rem;
-		}
-
-		.cta-content p {
-			font-size: 1rem;
-		}
-
-		.sdg-container {
-			flex-direction: column;
-			gap: 2rem;
-			padding: 1.5rem;
-		}
-
-		.sdg-image-container {
-			padding: 1.5rem;
-		}
-
-		.sdg-icon {
-			width: 120px;
-			height: 120px;
+		.sdg-banner {
+			padding: 2rem;
 		}
 
 		.sdg-content {
-			padding: 0;
+			gap: 2rem;
+		}
+
+		.sdg-icon-wrapper {
+			width: 180px;
+			height: 180px;
+		}
+
+		.objectives-grid {
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		}
+	}
+
+	@media (max-width: 768px) {
+		.objectives-section {
+			padding: 3rem 1rem;
+		}
+
+		.sdg-banner {
+			padding: 2rem 1.5rem;
+			border-radius: 1.5rem;
+		}
+
+		.sdg-content {
+			flex-direction: column;
 			text-align: center;
+			gap: 2rem;
+		}
+
+		.sdg-icon-wrapper {
+			width: 160px;
+			height: 160px;
+			margin: 0 auto;
+		}
+
+		.sdg-title .highlight {
+			font-size: 2em;
+			display: block;
+			margin-bottom: 0.5rem;
+		}
+
+		.sdg-title h3 {
+			font-size: 1.5em;
+			display: block;
+		}
+
+		.sdg-text p {
+			font-size: 1.1em;
+		}
+
+		.objectives-grid {
+			gap: 1.5rem;
+			padding: 0;
 		}
 
 		.objective-card {
-			padding: 1.5rem;
+			padding: 2rem;
+		}
+
+		.card-header {
+			flex-direction: column;
+			text-align: center;
+			gap: 1rem;
+		}
+
+		.objective-icon {
+			margin: 0 auto;
 		}
 	}
 </style>
