@@ -24,7 +24,29 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</section>
 
-	</div>
+		<section class="sdg-section">
+			<div class="section-header">
+				<h2>Objetivos de Desenvolvimento Sustentável</h2>
+				<div class="section-line"></div>
+			</div>
+			<div class="text-content">
+				<p>O Shrimp2Sink está alinhado com os Objetivos de Desenvolvimento Sustentável (ODS) das Nações Unidas, 
+				especificamente com o ODS 6 - Água Potável e Saneamento. Este objetivo visa assegurar a disponibilidade 
+				e gestão sustentável da água potável e saneamento para todos.</p>
+				
+				<div class="sdg-highlight">
+					<img src="/images/SDG6.png" alt="ODS 6 - Água Potável e Saneamento" class="sdg-icon">
+					<div class="sdg-content">
+						<h3>ODS 6 - Água Potável e Saneamento</h3>
+						<p>Nosso projeto contribui diretamente para este objetivo através do desenvolvimento de tecnologias 
+						inovadoras e sustentáveis para o tratamento de água. Ao utilizar resíduos de camarão para criar 
+						filtros de água eficientes, estamos não só melhorando o acesso à água potável, mas também promovendo 
+						a economia circular e a gestão sustentável dos recursos.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<section class="objectives-section">
 			<div class="section-header">
 				<h2>Objetivos do Projeto</h2>
@@ -253,10 +275,52 @@ import Layout from '../layouts/Layout.astro';
 		color: rgb(var(--text));
 	}
 
+	.contact-card .contact-icon {
+		font-size: 2em;
+		margin-bottom: 0.5em;
+	}
+
+	/* SDG Section Styles */
+	.sdg-section {
+		padding: 4rem 2rem;
+		background-color: var(--color-bg);
+	}
+
+	.sdg-highlight {
+		display: flex;
+		align-items: start;
+		gap: 2rem;
+		margin-top: 2rem;
+		padding: 2rem;
+		background-color: rgba(var(--accent-light), 0.1);
+		border-radius: 1rem;
+	}
+
+	.sdg-icon {
+		width: 120px;
+		height: 120px;
+		object-fit: contain;
+	}
+
+	.sdg-content {
+		flex: 1;
+	}
+
+	.sdg-content h3 {
+		color: var(--color-text);
+		margin-bottom: 1rem;
+	}
+
 	@media (max-width: 768px) {
-		.contact-info {
-			grid-template-columns: 1fr;
-			padding: 0 1rem;
+		.sdg-highlight {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+
+		.sdg-icon {
+			width: 100px;
+			height: 100px;
 		}
 	}
 
