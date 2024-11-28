@@ -1,0 +1,281 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Parcerias">
+	<div class="hero">
+		<div class="hero-content">
+			<h1>Parcerias</h1>
+			<p class="subtitle">Junte-se a nós na missão de transformar a filtração de água</p>
+		</div>
+	</div>
+
+	<div class="main-content">
+		<section class="partners-section">
+			<div class="section-header">
+				<h2 style="color: rgb(var(--primary))">Nossos Parceiros</h2>
+				<div class="section-line"></div>
+			</div>
+			<div class="text-content">
+				<p>O Shrimp2Sink acredita no poder da colaboração para alcançar os seus objetivos. 
+				Trabalhamos em conjunto com universidades e empresas que compartilham 
+				a nossa visão de um futuro mais sustentável e acessível para todos.</p>
+			</div>
+
+			
+				</div>
+			</div>
+		</section>
+
+		<section class="collaboration-section">
+			<div class="section-header">
+				<h2 style="color: rgb(var(--primary))">Como Colaborar</h2>
+				<div class="section-line"></div>
+			</div>
+			<div class="text-content">
+				<p>Estamos sempre abertos a novas parcerias que possam contribuir para o avanço 
+				do projeto e ampliar nosso impacto social e ambiental.</p>
+			</div>
+
+			<div class="collaboration-grid">
+				<div class="collab-card">
+					<div class="collab-icon">🔬</div>
+					<h3>Pesquisa e Desenvolvimento</h3>
+					<p>Participe do desenvolvimento de novas tecnologias e aplicações para nossa solução.</p>
+				</div>
+
+				<div class="collab-card">
+					<div class="collab-icon">📊</div>
+					<h3>Implementação</h3>
+					<p>Colabore na implementação e teste de nossas soluções em diferentes contextos e escalas.</p>
+				</div>
+
+				<div class="collab-card">
+					<div class="collab-icon">🌍</div>
+					<h3>Impacto Social</h3>
+					<p>Junte-se a nós para levar água limpa e saneamento a comunidades necessitadas.</p>
+				</div>
+
+				<div class="collab-card">
+					<div class="collab-icon">💡</div>
+					<h3>Inovação</h3>
+					<p>Contribua com ideias e soluções para expandir o alcance e eficiência do projeto.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="cta-section">
+			<div class="cta-content">
+				<h2>Vamos Colaborar?</h2>
+				<p>Entre em contato conosco para discutir possibilidades de parceria e fazer parte desta iniciativa.</p>
+				<a href="/contact" class="button">Fale Conosco</a>
+			</div>
+		</section>
+	</div>
+</Layout>
+
+<style>
+	.hero {
+		text-align: center;
+		padding: 6rem 2rem;
+		background: var(--gradient);
+		margin: -2rem -2rem 2rem -2rem;
+		border-radius: 16px 16px 0 0;
+		color: rgb(var(--text-light));
+		position: relative;
+		overflow: hidden;
+	}
+
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.hero h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin-bottom: 1.5rem;
+		line-height: 1.2;
+		color: rgb(var(--text-light));
+	}
+
+	.subtitle {
+		font-size: 1.25rem;
+		color: rgba(255,255,255,0.9);
+		margin-bottom: 2rem;
+		line-height: 1.6;
+	}
+
+	.main-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.section-header h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.section-line {
+		width: 80px;
+		height: 4px;
+		background: var(--gradient);
+		margin: 1rem auto;
+		border-radius: 2px;
+	}
+
+	.text-content {
+		max-width: 800px;
+		margin: 0 auto 3rem;
+		text-align: center;
+		font-size: 1.2rem;
+		line-height: 1.6;
+		color: rgb(var(--text));
+	}
+
+	.partners-grid, .collaboration-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.collaboration-grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.partner-card, .collab-card {
+		background: white;
+		padding: 2rem;
+		border-radius: 16px;
+		box-shadow: var(--card-shadow);
+		text-align: center;
+		transition: var(--transition);
+	}
+
+	.partner-card:hover, .collab-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 24px rgba(var(--primary), 0.15);
+	}
+
+	.partner-icon, .collab-icon {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--primary));
+	}
+
+	.partner-card h3, .collab-card h3 {
+		color: rgb(var(--primary));
+		font-size: 1.25rem;
+		margin-bottom: 1rem;
+		font-weight: 600;
+	}
+
+	.partner-card p, .collab-card p {
+		color: rgb(var(--text));
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+
+	.cta-section {
+		text-align: center;
+		padding: 4rem 2rem;
+		background: var(--gradient);
+		margin: 4rem -2rem -2rem -2rem;
+		border-radius: 0 0 2rem 2rem;
+		color: white;
+	}
+
+	.cta-content h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: white;
+	}
+
+	.cta-content p {
+		font-size: 1.2rem;
+		margin-bottom: 2rem;
+		opacity: 0.9;
+		color: white;
+	}
+
+	.button {
+		display: inline-block;
+		padding: 1rem 2rem;
+		background: white;
+		color: rgb(var(--primary));
+		text-decoration: none;
+		border-radius: 8px;
+		font-weight: 600;
+		transition: var(--transition);
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+	}
+
+	@media (max-width: 1024px) {
+		.partners-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.collaboration-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			padding: 4rem 1rem;
+		}
+
+		h1 {
+			font-size: 2.5rem;
+		}
+
+		.subtitle {
+			font-size: 1.2rem;
+		}
+
+		.section-header h2 {
+			font-size: 2rem;
+		}
+
+		.partners-grid, .collaboration-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+
+		.partner-card, .collab-card {
+			padding: 1.5rem;
+		}
+
+		.partner-icon, .collab-icon {
+			font-size: 2rem;
+		}
+
+		.text-content {
+			font-size: 1.1rem;
+			margin-bottom: 2rem;
+		}
+	}
+</style>
