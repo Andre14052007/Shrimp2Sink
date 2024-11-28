@@ -92,12 +92,30 @@ import Layout from '../layouts/Layout.astro';
 		text-align: center;
 		padding: 6rem 2rem;
 		background: var(--gradient);
-		margin: -1rem -1rem 2rem -1rem;
+		margin: -2rem -2rem 2rem -2rem;
 		border-radius: 16px 16px 0 0;
 		color: rgb(var(--text-light));
 		position: relative;
 		overflow: hidden;
-		width: calc(100% + 2rem);
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			margin: -1rem -1rem 2rem -1rem;
+			padding: 4rem 1rem;
+			width: calc(100% + 2rem);
+		}
+
+		.hero-content {
+			padding: 0 1rem;
+		}
 	}
 
 	.hero::before {
@@ -108,14 +126,6 @@ import Layout from '../layouts/Layout.astro';
 		right: 0;
 		bottom: 0;
 		background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
-	}
-
-	.hero-content {
-		position: relative;
-		z-index: 1;
-		max-width: 800px;
-		margin: 0 auto;
-		padding: 0 1rem;
 	}
 
 	.hero h1 {
@@ -343,6 +353,7 @@ import Layout from '../layouts/Layout.astro';
 		.hero {
 			margin: -1rem -1rem 2rem -1rem;
 			padding: 4rem 1rem;
+			width: calc(100% + 2rem);
 		}
 
 		h1 {

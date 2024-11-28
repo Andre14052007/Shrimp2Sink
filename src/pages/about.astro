@@ -117,9 +117,7 @@ import Layout from '../layouts/Layout.astro';
 				<h2>Quer Saber Mais?</h2>
 				<p>Explore os nossos recursos e documentação para aprender mais sobre o projeto.</p>
 				<a href="/resources" class="button">Ver Recursos</a>
-			</div>
-		</section>
-	</div>
+		
 </Layout>
 
 <style>
@@ -127,12 +125,11 @@ import Layout from '../layouts/Layout.astro';
 		text-align: center;
 		padding: 6rem 2rem;
 		background: var(--gradient);
-		margin: -1rem -1rem 2rem -1rem;
+		margin: -2rem -2rem 2rem -2rem;
 		border-radius: 16px 16px 0 0;
 		color: rgb(var(--text-light));
 		position: relative;
 		overflow: hidden;
-		width: calc(100% + 2rem);
 	}
 
 	.hero-content {
@@ -140,7 +137,6 @@ import Layout from '../layouts/Layout.astro';
 		z-index: 1;
 		max-width: 800px;
 		margin: 0 auto;
-		padding: 0 1rem;
 	}
 
 	.hero h1 {
@@ -324,6 +320,22 @@ import Layout from '../layouts/Layout.astro';
 		margin: 0;
 	}
 
+	.contact-card .button {
+		display: inline-block;
+		padding: 0.8rem 1.5rem;
+		border-radius: 8px;
+		font-weight: 500;
+		text-decoration: none;
+		transition: var(--transition);
+		background: white;
+		color: rgb(var(--primary));
+	}
+
+	.contact-card .button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+	}
+
 	@media (max-width: 1200px) {
 		.objectives-grid {
 			grid-template-columns: repeat(2, 1fr);
@@ -347,13 +359,6 @@ import Layout from '../layouts/Layout.astro';
 
 		.objective-card h3 {
 			font-size: 1.2rem;
-		}
-	}
-
-	@media (max-width: 768px) {
-		.hero {
-			margin: -1rem -1rem 2rem -1rem;
-			padding: 4rem 1rem;
 		}
 	}
 
@@ -404,11 +409,6 @@ import Layout from '../layouts/Layout.astro';
 		color: rgb(var(--text));
 	}
 
-	.contact-card .contact-icon {
-		font-size: 2em;
-		margin-bottom: 0.5em;
-	}
-
 	.cta-section {
 		text-align: center;
 		padding: 4rem 2rem;
@@ -435,102 +435,34 @@ import Layout from '../layouts/Layout.astro';
 		opacity: 0.9;
 	}
 
-	.button {
-		display: inline-block;
-		padding: 0.8rem 1.5rem;
-		border-radius: 8px;
-		font-weight: 500;
-		text-decoration: none;
-		transition: var(--transition);
-	}
-
-	.button.primary {
-		background: white;
-		color: rgb(var(--primary));
-	}
-
-	.button:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-	}
-
-	@media (max-width: 1024px) {
-		.objectives-container {
-			margin: 1rem auto;
-		}
-
-		.sdg-banner {
-			padding: 2rem;
-		}
-
-		.sdg-content {
-			gap: 2rem;
-		}
-
-		.sdg-icon-wrapper {
-			width: 180px;
-			height: 180px;
-		}
-
-		.objectives-grid {
-			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		}
-	}
-
 	@media (max-width: 768px) {
-		.objectives-section {
+		.hero {
+			margin: -1rem -1rem 2rem -1rem;
+			padding: 4rem 1rem;
+			width: calc(100% + 2rem);
+		}
+
+		.hero-content {
+			padding: 0 1rem;
+		}
+
+		.cta-section {
+			margin: 4rem -1rem -1rem -1rem;
 			padding: 3rem 1rem;
+			width: calc(100% + 2rem);
 		}
 
-		.sdg-banner {
-			padding: 2rem 1.5rem;
-			border-radius: 1.5rem;
-		}
-
-		.sdg-content {
-			flex-direction: column;
-			text-align: center;
-			gap: 2rem;
-		}
-
-		.sdg-icon-wrapper {
-			width: 160px;
-			height: 160px;
-			margin: 0 auto;
-		}
-
-		.sdg-title .highlight {
-			font-size: 2em;
-			display: block;
-			margin-bottom: 0.5rem;
-		}
-
-		.sdg-title h3 {
-			font-size: 1.5em;
-			display: block;
-		}
-
-		.sdg-text p {
-			font-size: 1.1em;
-		}
-
-		.objectives-grid {
+		.contact-info {
+			grid-template-columns: 1fr;
 			gap: 1.5rem;
-			padding: 0;
 		}
 
-		.objective-card {
-			padding: 2rem;
+		.contact-content {
+			padding: 0 1rem;
 		}
 
-		.card-header {
-			flex-direction: column;
-			text-align: center;
-			gap: 1rem;
-		}
-
-		.objective-icon {
-			margin: 0 auto;
+		.contact-card {
+			padding: 1.5rem;
 		}
 	}
 </style>
