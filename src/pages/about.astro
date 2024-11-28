@@ -345,22 +345,32 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	@media (max-width: 768px) {
-		.objectives-grid {
+		.hero {
+			margin: -1rem -1rem 2rem -1rem;
+			padding: 4rem 1rem;
+			width: calc(100% + 2rem);
+		}
+
+		.hero-content {
+			padding: 0 1rem;
+		}
+
+		.cta-section {
+			margin: 4rem 0 -2rem 0;
+			padding: 3rem 1rem;
+		}
+
+		.contact-info {
 			grid-template-columns: 1fr;
-			gap: 1rem;
+			gap: 1.5rem;
 		}
 
-		.objective-card {
+		.contact-content {
+			padding: 0 1rem;
+		}
+
+		.contact-card {
 			padding: 1.5rem;
-		}
-
-		.objective-icon {
-			font-size: 2rem;
-			margin-bottom: 0.75rem;
-		}
-
-		.objective-card h3 {
-			font-size: 1.2rem;
 		}
 	}
 
@@ -435,35 +445,5 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 2rem;
 		font-size: 1.1rem;
 		opacity: 0.9;
-	}
-
-	@media (max-width: 768px) {
-		.hero {
-			margin: -1rem -1rem 2rem -1rem;
-			padding: 4rem 1rem;
-			width: calc(100% + 2rem);
-		}
-
-		.hero-content {
-			padding: 0 1rem;
-		}
-
-		.cta-section {
-			margin: -1rem -1rem -1rem -1rem;
-			padding: 3rem 1rem;
-		}
-
-		.contact-info {
-			grid-template-columns: 1fr;
-			gap: 1.5rem;
-		}
-
-		.contact-content {
-			padding: 0 1rem;
-		}
-
-		.contact-card {
-			padding: 1.5rem;
-		}
 	}
 </style>
