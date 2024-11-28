@@ -127,21 +127,12 @@ import Layout from '../layouts/Layout.astro';
 		text-align: center;
 		padding: 6rem 2rem;
 		background: var(--gradient);
-		margin: -2rem -2rem 2rem -2rem;
+		margin: -1rem -1rem 2rem -1rem;
 		border-radius: 16px 16px 0 0;
 		color: rgb(var(--text-light));
 		position: relative;
 		overflow: hidden;
-	}
-
-	.hero::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
+		width: calc(100% + 2rem);
 	}
 
 	.hero-content {
@@ -149,6 +140,7 @@ import Layout from '../layouts/Layout.astro';
 		z-index: 1;
 		max-width: 800px;
 		margin: 0 auto;
+		padding: 0 1rem;
 	}
 
 	.hero h1 {
@@ -355,6 +347,13 @@ import Layout from '../layouts/Layout.astro';
 
 		.objective-card h3 {
 			font-size: 1.2rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			margin: -1rem -1rem 2rem -1rem;
+			padding: 4rem 1rem;
 		}
 	}
 

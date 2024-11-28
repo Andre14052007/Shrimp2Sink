@@ -92,11 +92,12 @@ import Layout from '../layouts/Layout.astro';
 		text-align: center;
 		padding: 6rem 2rem;
 		background: var(--gradient);
-		margin: -2rem -2rem 2rem -2rem;
+		margin: -1rem -1rem 2rem -1rem;
 		border-radius: 16px 16px 0 0;
 		color: rgb(var(--text-light));
 		position: relative;
 		overflow: hidden;
+		width: calc(100% + 2rem);
 	}
 
 	.hero::before {
@@ -114,7 +115,7 @@ import Layout from '../layouts/Layout.astro';
 		z-index: 1;
 		max-width: 800px;
 		margin: 0 auto;
-		max-width: 90vw;
+		padding: 0 1rem;
 	}
 
 	.hero h1 {
@@ -340,6 +341,7 @@ import Layout from '../layouts/Layout.astro';
 
 	@media (max-width: 768px) {
 		.hero {
+			margin: -1rem -1rem 2rem -1rem;
 			padding: 4rem 1rem;
 		}
 
