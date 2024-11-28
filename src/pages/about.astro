@@ -338,69 +338,9 @@ import Layout from '../layouts/Layout.astro';
 		box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 	}
 
-	@media (max-width: 1200px) {
-		.objectives-grid {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-
-	@media (max-width: 768px) {
-		.hero {
-			margin: -1rem -1rem 2rem -1rem;
-			padding: 4rem 1rem;
-			width: calc(100% + 2rem);
-		}
-
-		.hero-content {
-			padding: 0 1rem;
-		}
-
-		.contact-section {
-			margin: 4rem -1rem 0 -1rem;
-			width: calc(100% + 2rem);
-		}
-
-		.contact-info {
-			grid-template-columns: 1fr;
-			gap: 1.5rem;
-			padding: 0 1rem;
-		}
-
-		.contact-content {
-			padding: 0 1rem;
-		}
-
-		.contact-card {
-			padding: 1.5rem;
-		}
-
-		.cta-section {
-			margin: 4rem -1rem -2rem -1rem;
-			padding: 3rem 1rem;
-			width: calc(100% + 2rem);
-		}
-
-		.objectives-grid {
-			grid-template-columns: 1fr;
-			gap: 1rem;
-		}
-
-		.objective-card {
-			padding: 1.5rem;
-		}
-
-		.objective-icon {
-			font-size: 2rem;
-			margin-bottom: 0.75rem;
-		}
-
-		.objective-card h3 {
-			font-size: 1.2rem;
-		}
-	}
-
 	.contact-section {
 		margin-top: 4rem;
+		width: 100%;
 	}
 
 	.contact-content {
@@ -414,6 +354,7 @@ import Layout from '../layouts/Layout.astro';
 		grid-template-columns: repeat(3, 1fr);
 		gap: 1.5rem;
 		margin-top: 2rem;
+		width: 100%;
 	}
 
 	.contact-card {
@@ -470,5 +411,60 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 2rem;
 		font-size: 1.1rem;
 		opacity: 0.9;
+	}
+
+	@media (max-width: 1200px) {
+		.objectives-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			margin: -1rem -1rem 2rem -1rem;
+			padding: 4rem 1rem;
+			width: calc(100% + 2rem);
+		}
+
+		.hero-content {
+			padding: 0 1rem;
+		}
+
+		.contact-info {
+			display: flex;
+			flex-direction: column;
+			gap: 1.5rem;
+			padding: 0 1rem;
+			width: 100%;
+		}
+
+		.contact-card {
+			width: 100%;
+			padding: 1.5rem;
+		}
+
+		.cta-section {
+			margin: 4rem -1rem -2rem -1rem;
+			padding: 3rem 1rem;
+			width: calc(100% + 2rem);
+		}
+
+		.objectives-grid {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+
+		.objective-card {
+			padding: 1.5rem;
+		}
+
+		.objective-icon {
+			font-size: 2rem;
+			margin-bottom: 0.75rem;
+		}
+
+		.objective-card h3 {
+			font-size: 1.2rem;
+		}
 	}
 </style>
