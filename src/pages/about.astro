@@ -356,8 +356,9 @@ import Layout from '../layouts/Layout.astro';
 		}
 
 		.cta-section {
-			margin: 4rem 0 -2rem 0;
+			margin: 4rem -1rem -2rem -1rem;
 			padding: 3rem 1rem;
+			width: calc(100% + 2rem);
 		}
 
 		.contact-info {
@@ -371,6 +372,24 @@ import Layout from '../layouts/Layout.astro';
 
 		.contact-card {
 			padding: 1.5rem;
+		}
+
+		.objectives-grid {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+
+		.objective-card {
+			padding: 1.5rem;
+		}
+
+		.objective-icon {
+			font-size: 2rem;
+			margin-bottom: 0.75rem;
+		}
+
+		.objective-card h3 {
+			font-size: 1.2rem;
 		}
 	}
 
