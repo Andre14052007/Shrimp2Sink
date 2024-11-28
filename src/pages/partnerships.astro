@@ -22,12 +22,24 @@ import Layout from '../layouts/Layout.astro';
 				a nossa visão de um futuro mais sustentável e acessível para todos.</p>
 			</div>
 
-			
+			<div class="partners-grid">
+				<div class="partner-card">
+					<div class="partner-icon">🎓</div>
+					<h3>Professora Andreia Peixoto</h3>
+					<p class="partner-affiliation">Faculdade de Ciências da Universidade do Porto (FCUP)</p>
+					<p>Colaboração académica fundamental na extração de quitosana, dos camarões, substância essencial para o nosso projeto</p>
+				</div>
+				<div class="partner-card">
+					<div class="partner-icon">🦐</div>
+					<h3>Mariscar</h3>
+					<p class="partner-affiliation">Restaurante de Marisco</p>
+					<p>Parceiro essencial no fornecimento de cascas de camarão para o desenvolvimento do nosso projeto</p>
+					<a href="https://www.mariscar.pt" target="_blank" class="button primary">Visitar Website</a>
 				</div>
 			</div>
 		</section>
 
-		<section class="collaboration-section">
+		<section class="collaboration-section">	
 			<div class="section-header">
 				<h2 style="color: rgb(var(--primary))">Como Colaborar</h2>
 				<div class="section-line"></div>
@@ -151,18 +163,81 @@ import Layout from '../layouts/Layout.astro';
 		color: rgb(var(--text));
 	}
 
-	.partners-grid, .collaboration-grid {
+	.partners-grid {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin: 3rem auto;
+		max-width: 1200px;
+		padding: 0 1rem;
+	}
+
+	.partner-card {
+		background: white;
+		border-radius: 1rem;
+		padding: 2rem;
+		text-align: center;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		transition: transform 0.2s ease-in-out;
+	}
+
+	.partner-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.partner-icon {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.partner-card h3 {
+		color: rgb(var(--primary));
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.partner-affiliation {
+		color: rgb(var(--text));
+		font-style: italic;
+		margin-bottom: 1rem;
+		opacity: 0.8;
+	}
+
+	.partner-card p {
+		color: rgb(var(--text));
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+
+	.partner-card .button {
+		display: inline-block;
+		margin-top: 1rem;
+		padding: 0.75rem 1.5rem;
+		background: rgb(var(--primary));
+		color: white;
+		text-decoration: none;
+		border-radius: 0.5rem;
+		transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	}
+
+	.partner-card .button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(var(--primary), 0.2);
+	}
+
+	.partner-card .button.primary {
+		background: rgb(var(--primary));
+		color: white;
+	}
+
+	.collaboration-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
 		gap: 2rem;
 		margin-top: 2rem;
 	}
 
-	.collaboration-grid {
-		grid-template-columns: repeat(4, 1fr);
-	}
-
-	.partner-card, .collab-card {
+	.collab-card {
 		background: white;
 		padding: 2rem;
 		border-radius: 16px;
@@ -171,25 +246,25 @@ import Layout from '../layouts/Layout.astro';
 		transition: var(--transition);
 	}
 
-	.partner-card:hover, .collab-card:hover {
+	.collab-card:hover {
 		transform: translateY(-5px);
 		box-shadow: 0 8px 24px rgba(var(--primary), 0.15);
 	}
 
-	.partner-icon, .collab-icon {
+	.collab-icon {
 		font-size: 2.5rem;
 		margin-bottom: 1rem;
 		color: rgb(var(--primary));
 	}
 
-	.partner-card h3, .collab-card h3 {
+	.collab-card h3 {
 		color: rgb(var(--primary));
 		font-size: 1.25rem;
 		margin-bottom: 1rem;
 		font-weight: 600;
 	}
 
-	.partner-card p, .collab-card p {
+	.collab-card p {
 		color: rgb(var(--text));
 		font-size: 1rem;
 		line-height: 1.5;
@@ -234,10 +309,6 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	@media (max-width: 1024px) {
-		.partners-grid {
-			grid-template-columns: repeat(2, 1fr);
-		}
-
 		.collaboration-grid {
 			grid-template-columns: repeat(2, 1fr);
 		}
