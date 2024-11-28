@@ -8,8 +8,8 @@ import Layout from '../layouts/Layout.astro';
 			<h1>Filtração Sustentável de Água usando Quitosana</h1>
 			<p class="subtitle">Transformando resíduos de camarão em soluções inovadoras de filtração de água</p>
 			<div class="hero-buttons">
-				<a href="/about" class="button primary">Saiba Mais</a>
-				<a href="/results" class="button secondary">Ver Resultados</a>
+				<a href="/about" class="button">Saiba Mais</a>
+				<a href="/results" class="button primary">Ver Resultados</a>
 			</div>
 		</div>
 	</div>
@@ -120,17 +120,13 @@ import Layout from '../layouts/Layout.astro';
 		font-weight: 500;
 		text-decoration: none;
 		transition: var(--transition);
-	}
-
-	.button.primary {
-		background: rgb(var(--text-light));
+		background: white;
 		color: rgb(var(--primary));
 	}
 
-	.button.secondary {
-		background: rgba(255,255,255,0.15);
+	.button.primary {
+		background: var(--gradient);
 		color: rgb(var(--text-light));
-		backdrop-filter: blur(10px);
 	}
 
 	.button:hover {

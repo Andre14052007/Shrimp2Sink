@@ -61,7 +61,7 @@ import Layout from '../layouts/Layout.astro';
 			<div class="cta-content">
 				<h2>Precisa de Ajuda?</h2>
 				<p>Entre em contacto connosco para obter suporte ou esclarecer dúvidas sobre os recursos.</p>
-				<a href="/about#contact" class="button primary">Contacte-nos</a>
+				<a href="/about#contact" class="button">Contacte-nos</a>
 			</div>
 		</section>
 	</div>
@@ -221,6 +221,21 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 2rem;
 		font-size: 1.1rem;
 		opacity: 0.9;
+	}
+
+	.cta-content .button {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+		background: white;
+		color: rgb(var(--primary));
+		text-decoration: none;
+		border-radius: 0.5rem;
+		transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	}
+
+	.cta-content .button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 	}
 
 	@media (max-width: 768px) {

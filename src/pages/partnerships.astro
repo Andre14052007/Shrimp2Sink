@@ -28,6 +28,7 @@ import Layout from '../layouts/Layout.astro';
 					<h3>Professora Andreia Peixoto</h3>
 					<p class="partner-affiliation">Faculdade de Ciências da Universidade do Porto (FCUP)</p>
 					<p>Colaboração académica fundamental na extração de quitosana, dos camarões, substância essencial para o nosso projeto</p>
+					<a href="https://sigarra.up.pt/fcup/pt/func_geral.formview?p_codigo=500924" target="_blank" class="button primary">Perfil FCUP</a>
 				</div>
 				<div class="partner-card">
 					<div class="partner-icon">🦐</div>
@@ -78,9 +79,9 @@ import Layout from '../layouts/Layout.astro';
 
 		<section class="cta-section">
 			<div class="cta-content">
-				<h2>Vamos Colaborar?</h2>
-				<p>Entre em contato conosco para discutir possibilidades de parceria e fazer parte desta iniciativa.</p>
-				<a href="/contact" class="button">Fale Conosco</a>
+				<h2>Junte-se a Nós</h2>
+				<p>Interessado em colaborar? Entre em contacto connosco para discutir oportunidades de parceria.</p>
+				<a href="/about#contact" class="button primary">Fale connosco</a>
 			</div>
 		</section>
 	</div>
@@ -213,7 +214,7 @@ import Layout from '../layouts/Layout.astro';
 		display: inline-block;
 		margin-top: 1rem;
 		padding: 0.75rem 1.5rem;
-		background: rgb(var(--primary));
+		background: var(--gradient);
 		color: white;
 		text-decoration: none;
 		border-radius: 0.5rem;
@@ -226,7 +227,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.partner-card .button.primary {
-		background: rgb(var(--primary));
+		background: var(--gradient);
 		color: white;
 	}
 
@@ -289,6 +290,28 @@ import Layout from '../layouts/Layout.astro';
 		font-size: 1.2rem;
 		margin-bottom: 2rem;
 		opacity: 0.9;
+		color: white;
+	}
+
+	.cta-content .button {
+		display: inline-block;
+		padding: 1rem 2rem;
+		background: var(--gradient);
+		color: white;
+		text-decoration: none;
+		border-radius: 0.5rem;
+		font-size: 1.1rem;
+		font-weight: 500;
+		transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	}
+
+	.cta-content .button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	}
+
+	.cta-content .button.primary {
+		background: var(--gradient);
 		color: white;
 	}
 
