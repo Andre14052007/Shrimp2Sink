@@ -173,6 +173,9 @@ const { title } = Astro.props;
 				cursor: pointer;
 				padding: 0.5rem;
 				z-index: 1001;
+				width: 40px;
+				height: 40px;
+				position: relative;
 			}
 
 			.mobile-menu span {
@@ -180,13 +183,17 @@ const { title } = Astro.props;
 				width: 24px;
 				height: 2px;
 				background: white;
-				margin: 5px 0;
-				transition: var(--transition);
+				margin: 5px auto;
+				transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+				border-radius: 2px;
 			}
 
 			@media (max-width: 768px) {
 				.mobile-menu {
-					display: block;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
 				}
 
 				.nav-links {
@@ -194,23 +201,43 @@ const { title } = Astro.props;
 					top: var(--header-height);
 					right: -100%;
 					flex-direction: column;
-					background: var(--gradient);
+					background: rgba(var(--primary), 0.98);
+					backdrop-filter: blur(10px);
+					-webkit-backdrop-filter: blur(10px);
 					width: 100%;
 					height: calc(100vh - var(--header-height));
 					padding: 2rem;
-					transition: 0.3s ease-in-out;
-					gap: 1.5rem;
+					transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+					gap: 2rem;
+					transform: translateX(100%);
 					view-transition-name: none;
 				}
 
 				.nav-links.active {
-					right: 0;
+					transform: translateX(0);
 				}
 
 				.nav-links a {
-					font-size: 1.1rem;
-					padding: 0.75rem 0;
+					font-size: 1.25rem;
+					padding: 1rem 0;
+					opacity: 0;
+					transform: translateY(20px);
+					transition: opacity 0.3s ease, transform 0.3s ease;
+					text-align: center;
+					width: 100%;
+					letter-spacing: 1px;
 				}
+
+				.nav-links.active a {
+					opacity: 1;
+					transform: translateY(0);
+				}
+
+				.nav-links a:nth-child(1) { transition-delay: 0.1s; }
+				.nav-links a:nth-child(2) { transition-delay: 0.2s; }
+				.nav-links a:nth-child(3) { transition-delay: 0.3s; }
+				.nav-links a:nth-child(4) { transition-delay: 0.4s; }
+				.nav-links a:nth-child(5) { transition-delay: 0.5s; }
 
 				.mobile-menu.active span:nth-child(1) {
 					transform: rotate(45deg) translate(5px, 5px);
@@ -218,10 +245,28 @@ const { title } = Astro.props;
 
 				.mobile-menu.active span:nth-child(2) {
 					opacity: 0;
+					transform: translateX(-10px);
 				}
 
 				.mobile-menu.active span:nth-child(3) {
 					transform: rotate(-45deg) translate(7px, -6px);
+				}
+
+				.nav-links a::after {
+					height: 1px;
+					background: rgba(255, 255, 255, 0.5);
+					transition: width 0.3s ease, opacity 0.3s ease;
+				}
+
+				.nav-links a:hover::after {
+					width: 50%;
+					opacity: 1;
+				}
+			}
+
+			@media (min-width: 769px) {
+				.mobile-menu {
+					display: none;
 				}
 			}
 
@@ -358,12 +403,6 @@ const { title } = Astro.props;
 
 				.footer-bottom {
 					padding: 1.5rem 1rem 0;
-				}
-			}
-
-			@media (min-width: 769px) {
-				.mobile-menu {
-					display: none;
 				}
 			}
 
