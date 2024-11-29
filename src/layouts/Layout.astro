@@ -3,6 +3,8 @@ interface Props {
 	title: string;
 }
 
+import { ViewTransitions } from 'astro:transitions';
+
 const { title } = Astro.props;
 ---
 
@@ -15,6 +17,7 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | Shrimp2Sink</title>
+		<ViewTransitions />
 	</head>
 	<body>
 		<header>
@@ -121,6 +124,7 @@ const { title } = Astro.props;
 		flex-direction: column;
 		align-items: stretch;
 		width: 100%;
+		view-transition-name: main;
 	}
 
 	header {
@@ -254,6 +258,7 @@ const { title } = Astro.props;
 			padding: 2rem;
 			transition: 0.3s ease-in-out;
 			gap: 1.5rem;
+			view-transition-name: none;
 		}
 
 		.nav-links.active {
@@ -412,6 +417,43 @@ const { title } = Astro.props;
 	@media (min-width: 769px) {
 		.mobile-menu {
 			display: none;
+		}
+	}
+
+	/* Page Transition Animations */
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation-duration: 0.65s;
+		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	::view-transition-old(root) {
+		animation: slide-fade-out 0.65s forwards;
+	}
+
+	::view-transition-new(root) {
+		animation: slide-fade-in 0.65s forwards;
+	}
+
+	@keyframes slide-fade-in {
+		from {
+			opacity: 0;
+			transform: translateX(2%);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes slide-fade-out {
+		from {
+			opacity: 1;
+			transform: translateX(0);
+		}
+		to {
+			opacity: 0;
+			transform: translateX(-2%);
 		}
 	}
 
