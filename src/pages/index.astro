@@ -169,12 +169,15 @@ import Layout from '../layouts/Layout.astro';
 		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 		gap: 2rem;
 		margin-top: 2rem;
+		max-width: var(--container-width);
+		margin: 0 auto;
+		padding: 0 2rem;
 	}
 
 	.feature-card {
 		background: white;
 		padding: 2rem;
-		border-radius: 12px;
+		border: radius 12px;px;
 		box-shadow: var(--card-shadow);
 		text-align: center;
 		transition: var(--transition);
@@ -200,8 +203,8 @@ import Layout from '../layouts/Layout.astro';
 		margin: 4rem 0;
 		padding: 4rem 0;
 		background: var(--water-gradient);
-		margin-left: -2rem;
-		margin-right: -2rem;
+		margin-left: 0rem;
+		margin-right: 0rem;
 	}
 
 	.stats-grid {
