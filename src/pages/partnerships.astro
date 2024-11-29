@@ -227,7 +227,7 @@ import Layout from '../layouts/Layout.astro';
 		margin-top: 1rem;
 		padding: 0.75rem 1.5rem;
 		background: var(--gradient);
-		color: white;
+		color: rgb(var(--text-light));
 		text-decoration: none;
 		border-radius: 0.5rem;
 		transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -240,7 +240,7 @@ import Layout from '../layouts/Layout.astro';
 
 	.partner-card .button.primary {
 		background: var(--gradient);
-		color: white;
+		color: rgb(var(--text-light));
 	}
 
 	.collaboration-grid {
@@ -307,6 +307,16 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 2rem;
 		font-size: 1.1rem;
 		opacity: 0.9;
+	}
+
+	.cta-section .button.primary {
+		background: white;
+		color: rgb(var(--primary));
+	}
+
+	.button.primary {
+		background: var(--gradient);
+		color: rgb(var(--text-light));
 	}
 
 	@media (max-width: 768px) {

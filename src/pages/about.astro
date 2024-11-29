@@ -116,7 +116,7 @@ import Layout from '../layouts/Layout.astro';
 			<div class="cta-content">
 				<h2>Quer Saber Mais?</h2>
 				<p>Explore os nossos recursos e documentação para aprender mais sobre o projeto.</p>
-				<a href="/resources" class="button">Ver Recursos</a>
+				<a href="/resources" class="button primary">Ver Recursos</a>
 			</div>
 		</section>
 	</div>
@@ -411,6 +411,16 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 2rem;
 		font-size: 1.1rem;
 		opacity: 0.9;
+	}
+
+	.cta-section .button.primary {
+		background: white;
+		color: rgb(var(--primary));
+	}
+
+	.button.primary {
+		background: var(--gradient);
+		color: rgb(var(--text-light));
 	}
 
 	@media (max-width: 1200px) {
