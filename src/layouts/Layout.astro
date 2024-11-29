@@ -476,12 +476,11 @@ const { title } = Astro.props;
 			/* Hide NProgress bar when not navigating */
 			#nprogress {
 				pointer-events: none;
-				opacity: 0;
-				transition: opacity 0.3s ease;
+				visibility: hidden;
 			}
 
 			#nprogress.active {
-				opacity: 1;
+				visibility: visible;
 			}
 
 			#nprogress .bar {
@@ -492,16 +491,22 @@ const { title } = Astro.props;
 				left: 0;
 				width: 100%;
 				height: 2px;
+				transform: translate3d(-100%, 0, 0);
+				transition: transform 0.3s ease;
+			}
+
+			#nprogress.active .bar {
+				transform: translate3d(0, 0, 0);
 			}
 
 			#nprogress .peg {
 				display: block;
 				position: absolute;
-				right: 0px;
+				right: 0;
 				width: 100px;
 				height: 100%;
 				box-shadow: 0 0 10px rgb(var(--accent)), 0 0 5px rgb(var(--accent));
-				opacity: 1.0;
+				opacity: 1;
 				transform: rotate(3deg) translate(0px, -4px);
 			}
 
@@ -652,7 +657,6 @@ const { title } = Astro.props;
 				const mobileMenu = document.querySelector('.mobile-menu');
 				const navLinks = document.querySelector('.nav-links');
 				const navOverlay = document.querySelector('.nav-overlay');
-				const nprogressBar = document.getElementById('nprogress');
 
 				const toggleMenu = () => {
 					navLinks?.classList.toggle('active');
@@ -680,12 +684,23 @@ const { title } = Astro.props;
 				});
 			});
 
-			// Show/hide progress bar during navigation
+			// Progress bar visibility control
+			let progressTimeout;
+
 			document.addEventListener('astro:before-preparation', () => {
+				clearTimeout(progressTimeout);
 				document.getElementById('nprogress')?.classList.add('active');
 			});
 
 			document.addEventListener('astro:after-preparation', () => {
+				clearTimeout(progressTimeout);
+				progressTimeout = setTimeout(() => {
+					document.getElementById('nprogress')?.classList.remove('active');
+				}, 300); // Delay to ensure smooth transition
+			});
+
+			// Ensure progress bar is hidden initially
+			document.addEventListener('astro:page-load', () => {
 				document.getElementById('nprogress')?.classList.remove('active');
 			});
 		</script>
