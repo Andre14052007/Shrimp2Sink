@@ -142,6 +142,142 @@ const { title } = Astro.props;
 		padding: 0 2rem;
 	}
 
+	.nav-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: var(--header-height);
+	}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+		gap: 1rem;
+		transition: var(--transition);
+	}
+
+	.logo:hover {
+		transform: translateY(-2px);
+	}
+
+	.logo-circle {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		object-fit: cover;
+		border: 2px solid rgba(255, 255, 255, 0.8);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		transition: var(--transition);
+	}
+
+	.logo:hover .logo-circle {
+		border-color: white;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	}
+
+	.logo-text {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: rgb(var(--text-light));
+		letter-spacing: 0.5px;
+	}
+
+	.nav-links {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+	}
+
+	.nav-links a {
+		color: rgba(255, 255, 255, 0.9);
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 1rem;
+		padding: 0.5rem 0;
+		position: relative;
+		transition: var(--transition);
+	}
+
+	.nav-links a::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background: white;
+		transition: var(--transition);
+		opacity: 0;
+	}
+
+	.nav-links a:hover {
+		color: white;
+	}
+
+	.nav-links a:hover::after {
+		width: 100%;
+		opacity: 1;
+	}
+
+	.mobile-menu {
+		display: none;
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0.5rem;
+		z-index: 1001;
+	}
+
+	.mobile-menu span {
+		display: block;
+		width: 24px;
+		height: 2px;
+		background: white;
+		margin: 5px 0;
+		transition: var(--transition);
+	}
+
+	@media (max-width: 768px) {
+		.mobile-menu {
+			display: block;
+		}
+
+		.nav-links {
+			position: fixed;
+			top: var(--header-height);
+			right: -100%;
+			flex-direction: column;
+			background: var(--gradient);
+			width: 100%;
+			height: calc(100vh - var(--header-height));
+			padding: 2rem;
+			transition: 0.3s ease-in-out;
+			gap: 1.5rem;
+		}
+
+		.nav-links.active {
+			right: 0;
+		}
+
+		.nav-links a {
+			font-size: 1.1rem;
+			padding: 0.75rem 0;
+		}
+
+		.mobile-menu.active span:nth-child(1) {
+			transform: rotate(45deg) translate(5px, 5px);
+		}
+
+		.mobile-menu.active span:nth-child(2) {
+			opacity: 0;
+		}
+
+		.mobile-menu.active span:nth-child(3) {
+			transform: rotate(-45deg) translate(7px, -6px);
+		}
+	}
+
 	.main-content {
 		width: 100%;
 		max-width: var(--container-width);
@@ -224,70 +360,6 @@ const { title } = Astro.props;
 		margin: 0 auto;
 	}
 
-	.nav-content {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		height: 100%;
-		position: relative;
-		width: 100%;
-	}
-
-	.logo {
-		text-decoration: none;
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-		transition: var(--transition);
-	}
-
-	.logo:hover {
-		transform: translateY(-2px);
-	}
-
-	.logo-circle {
-		width: 50px;
-		height: 50px;
-		border-radius: 50%;
-		background: rgba(var(--text-light), 0.1);
-		border: 2px solid rgba(var(--text-light), 0.2);
-		transition: var(--transition);
-		object-fit: cover;
-	}
-
-	.logo:hover .logo-circle {
-		border-color: rgba(var(--text-light), 0.4);
-		background: rgba(var(--text-light), 0.15);
-	}
-
-	.logo-text {
-		font-size: 1.5rem;
-		font-weight: 700;
-		color: rgb(var(--text-light));
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-		letter-spacing: -0.5px;
-	}
-
-	.nav-links {
-		display: flex;
-		gap: 2.5rem;
-	}
-
-	.nav-links a {
-		color: rgb(var(--text-light));
-		text-decoration: none;
-		font-weight: 500;
-		padding: 0.5rem 1rem;
-		border-radius: 8px;
-		transition: var(--transition);
-		position: relative;
-		font-size: 0.95rem;
-	}
-
-	.mobile-menu {
-		display: none;
-	}
-
 	@media (max-width: 768px) {
 		main {
 			padding: 1rem;
@@ -310,49 +382,6 @@ const { title } = Astro.props;
 
 		.nav-content {
 			width: 100%;
-		}
-
-		.mobile-menu {
-			display: block;
-			background: none;
-			border: none;
-			cursor: pointer;
-			padding: 0.5rem;
-			z-index: 1001;
-		}
-
-		.mobile-menu span {
-			display: block;
-			width: 25px;
-			height: 2px;
-			background-color: rgb(var(--text-light));
-			margin: 5px 0;
-			transition: var(--transition);
-		}
-
-		.nav-links {
-			position: fixed;
-			top: var(--header-height);
-			left: 0;
-			width: 100%;
-			background: var(--gradient);
-			padding: 1rem;
-			flex-direction: column;
-			gap: 1rem;
-			transform: translateY(-150%);
-			transition: transform 0.3s ease-in-out;
-			z-index: 1000;
-			align-items: center;
-		}
-
-		.nav-links.active {
-			transform: translateY(0);
-		}
-
-		.nav-links a {
-			width: 100%;
-			text-align: center;
-			padding: 0.75rem;
 		}
 
 		footer {
@@ -489,5 +518,6 @@ const { title } = Astro.props;
 
 	mobileMenu?.addEventListener('click', () => {
 		navLinks?.classList.toggle('active');
+		mobileMenu?.classList.toggle('active');
 	});
 </script>
