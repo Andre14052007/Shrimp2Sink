@@ -7,7 +7,7 @@ import Layout from '../layouts/Layout.astro';
 		<div class="hero-content">
 			<h1>Filtração Sustentável de Água usando Quitosana</h1>
 			<p class="subtitle">Transformando resíduos de camarão em soluções inovadoras de filtração de água</p>
-			<div class="hero-buttons">
+			<div class="button-group">
 				<a href="/about" class="button">Saiba Mais</a>
 				<a href="/results" class="button primary">Ver Resultados</a>
 			</div>
@@ -20,10 +20,27 @@ import Layout from '../layouts/Layout.astro';
 				<h2>Sobre o Projeto</h2>
 				<div class="section-line"></div>
 			</div>
-			<p class="about-text">O Shrimp2Sink é um projeto de investigação inovador que explora o uso da quitosana, 
-			derivada de cascas de camarão, como uma solução sustentável e eficaz para a filtração de água. 
-			A nossa investigação concentra-se na conversão de resíduos da indústria do marisco em tecnologia 
-			valiosa de purificação de água.</p>
+			<div class="about-text">
+				<p>O projeto Shrimp2Sink é uma iniciativa inovadora que visa transformar resíduos de camarão em soluções sustentáveis para a filtração de água. Através da extração de quitosana das cascas de camarão, desenvolvemos um método eficaz e ecológico para purificar água.</p>
+			</div>
+		</section>
+
+		<section class="video-section">
+			<div class="section-header">
+				<h2>Veja o Nosso Projeto</h2>
+				<div class="section-line"></div>
+			</div>
+			<div class="video-container">
+				<!-- Replace the src with your video URL -->
+				<iframe 
+					src="https://www.youtube.com/embed/BqcqdXGn1dQ"
+					title="Shrimp2Sink Project Video"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen
+					loading="lazy">
+				</iframe>
+			</div>
 		</section>
 
 		<section class="features">
@@ -49,9 +66,6 @@ import Layout from '../layouts/Layout.astro';
 				</div>
 			</div>
 		</section>
-				</div>
-			</div>
-		</section>
 
 		<section class="cta-section">
 			<div class="cta-content">
@@ -68,60 +82,42 @@ import Layout from '../layouts/Layout.astro';
 		text-align: center;
 		padding: 6rem 2rem;
 		background: var(--gradient);
+		color: rgb(var(--text-light));
 		margin: -2rem -2rem 2rem -2rem;
 		border-radius: 16px 16px 0 0;
-		color: rgb(var(--text-light));
-		position: relative;
-		overflow: hidden;
-	}
-
-	.hero::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
-	}
-
-	.hero-content {
-		position: relative;
-		z-index: 1;
-		max-width: 800px;
-		margin: 0 auto;
 	}
 
 	.hero h1 {
 		font-size: 3rem;
-		font-weight: 800;
-		margin-bottom: 1.5rem;
-		line-height: 1.2;
+		font-weight: 700;
+		margin-bottom: 1rem;
 		color: rgb(var(--text-light));
 	}
 
 	.subtitle {
 		font-size: 1.25rem;
-		color: rgba(255,255,255,0.9);
-		margin-bottom: 2rem;
+		max-width: 600px;
+		margin: 0 auto 2rem auto;
+		opacity: 0.9;
 		line-height: 1.6;
 	}
 
-	.hero-buttons {
+	.button-group {
 		display: flex;
 		gap: 1rem;
 		justify-content: center;
+		flex-wrap: wrap;
 	}
 
 	.button {
 		display: inline-block;
-		padding: 1rem 2rem;
+		padding: 0.8rem 1.6rem;
 		border-radius: 8px;
+		background: white;
+		color: rgb(var(--primary));
 		font-weight: 500;
 		text-decoration: none;
 		transition: var(--transition);
-		background: white;
-		color: rgb(var(--primary));
 	}
 
 	.button.primary {
@@ -137,14 +133,23 @@ import Layout from '../layouts/Layout.astro';
 	.main-content {
 		max-width: var(--container-width);
 		margin: 0 auto;
-		padding: 2rem;
 		background: white;
 		border-radius: 16px;
+		box-shadow: var(--card-shadow);
+		overflow: hidden;
+		padding: 2rem;
 	}
 
 	.section-header {
 		text-align: center;
 		margin-bottom: 3rem;
+	}
+
+	.section-header h2 {
+		font-size: 2rem;
+		color: rgb(var(--primary));
+		margin-bottom: 1rem;
+		font-weight: 700;
 	}
 
 	.section-line {
@@ -155,24 +160,41 @@ import Layout from '../layouts/Layout.astro';
 		border-radius: 2px;
 	}
 
-	.about-section {
-		margin-bottom: 4rem;
+	.features {
+		padding: 4rem 0;
+		background: white;
+		margin: 0 -2rem;
 	}
 
-	.about-text {
+	.video-section {
+		padding: 4rem 2rem;
+		background: white;
+	}
+
+	.video-container {
 		max-width: 800px;
 		margin: 0 auto;
-		font-size: 1.1rem;
-		line-height: 1.8;
-		color: rgb(var(--text));
-		text-align: center;
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+		height: 0;
+		overflow: hidden;
+		border-radius: 12px;
+		box-shadow: var(--card-shadow);
+	}
+
+	.video-container iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 12px;
 	}
 
 	.features-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 		gap: 2rem;
-		margin-top: 2rem;
 		max-width: var(--container-width);
 		margin: 0 auto;
 		padding: 0 2rem;
@@ -181,32 +203,34 @@ import Layout from '../layouts/Layout.astro';
 	.feature-card {
 		background: white;
 		padding: 2rem;
-		border: radius 12px;px;
-		box-shadow: var(--card-shadow);
+		border-radius: 12px;
 		text-align: center;
 		transition: var(--transition);
+		box-shadow: var(--card-shadow);
 	}
 
 	.feature-card:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 8px 24px rgba(var(--primary), 0.15);
+		transform: translateY(-4px);
+		box-shadow: var(--card-shadow-hover);
 	}
 
 	.feature-icon {
 		font-size: 2.5rem;
+		color: rgb(var(--primary));
 		margin-bottom: 1rem;
 	}
 
 	.feature-card h3 {
 		color: rgb(var(--primary));
-		margin-bottom: 1em;
+		margin-bottom: 1rem;
 		font-size: 1.25rem;
-
+		font-weight: 600;
 	}
 
-	.cta-section .button.primary {
-		background: white;
-		color: rgb(var(--primary));
+	.feature-card p {
+		color: rgb(var(--text));
+		line-height: 1.6;
+		opacity: 0.9;
 	}
 
 	.cta-section {
@@ -227,12 +251,24 @@ import Layout from '../layouts/Layout.astro';
 		color: rgb(var(--text-light));
 		margin-bottom: 1rem;
 		font-size: 2rem;
+		font-weight: 700;
 	}
 
 	.cta-content p {
 		margin-bottom: 2rem;
 		font-size: 1.1rem;
 		opacity: 0.9;
+		line-height: 1.6;
+	}
+
+	.cta-section .button.primary {
+		background: white;
+		color: rgb(var(--primary));
+	}
+
+	.cta-section .button.primary:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 	}
 
 	@media (max-width: 768px) {
@@ -251,39 +287,35 @@ import Layout from '../layouts/Layout.astro';
 		}
 
 		.main-content {
+			margin: 1rem;
 			padding: 1rem;
 		}
 
+		.features {
+			padding: 3rem 1rem;
+			margin: 0 -1rem;
+		}
+
 		.features-grid {
-			grid-template-columns: 1fr;
-			gap: 1.5rem;
 			padding: 0 1rem;
 		}
 
-		.feature-card {
-			padding: 1.5rem;
-		}
-
-		.feature-card h3 {
-			font-size: 1.25rem;
-		}
-
-		.button {
-			padding: 0.7rem 1.2rem;
-			font-size: 0.95rem;
-		}
-
-		.cta-section {
-			margin: -1rem -1rem -1rem -1rem;
+		.video-section {
 			padding: 3rem 1rem;
 		}
 
-		.cta-content h2 {
-			font-size: 1.75rem;
+		.video-container {
+			margin: 0 -1rem;
+			border-radius: 0;
 		}
 
-		.cta-content p {
-			font-size: 1rem;
+		.video-container iframe {
+			border-radius: 0;
+		}
+
+		.cta-section {
+			margin: 3rem -1rem -1rem -1rem;
+			padding: 3rem 1rem;
 		}
 	}
 </style>
