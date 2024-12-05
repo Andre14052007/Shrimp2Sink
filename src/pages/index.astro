@@ -30,6 +30,9 @@ import Layout from '../layouts/Layout.astro';
 				<h2>Veja o Nosso Projeto</h2>
 				<div class="section-line"></div>
 			</div>
+			<div class="video-description">
+				<p>Assista ao nosso vídeo para saber mais sobre como transformamos resíduos de camarão numa solução sustentável para a filtração de água.</p>
+			</div>
 			<div class="video-container">
 				<!-- Replace the src with your video URL -->
 				<iframe 
@@ -169,6 +172,17 @@ import Layout from '../layouts/Layout.astro';
 	.video-section {
 		padding: 4rem 2rem;
 		background: white;
+	}
+
+	.video-description {
+		max-width: 800px;
+		margin: 0 auto 2rem auto;
+		text-align: center;
+		font-size: 1.2rem;
+		line-height: 1.6;
+		color: rgb(var(--text));
+		opacity: 0.9;
+		padding: 0 1rem;
 	}
 
 	.video-container {
