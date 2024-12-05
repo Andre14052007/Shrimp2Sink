@@ -91,21 +91,22 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 
 			<div class="contact-content">
-				<p>Tem interesse no nosso projeto ou gostaria de colaborar? Entre em contacto connosco!</p>
+			
+				<p class="contact-subtitle">Tem interesse no nosso projeto ou gostaria de colaborar? Entre em contacto connosco!</p>
 				<div class="contact-info">
 					<div class="contact-card">
 						<div class="contact-icon">📧</div>
-						<h3>Email</h3>
+						<h3 class="contact-card-title">Email</h3>
 						<a href="https://mail.google.com/mail/?view=cm&fs=1&to=shrimp2sink@gmail.com" target="_blank" class="button primary">shrimp2sink@gmail.com</a>
 					</div>
 					<div class="contact-card">
 						<div class="contact-icon">📱</div>
-						<h3>Telefone</h3>
+						<h3 class="contact-card-title">Telefone</h3>
 						<a href="tel:+351912806094" class="button primary">+351 912 806 094</a>
 					</div>
 					<div class="contact-card">
 						<div class="contact-icon">📍</div>
-						<h3>Localização</h3>
+						<h3 class="contact-card-title">Localização</h3>
 						<a href="https://www.google.pt/maps/place/Escola+Secund%C3%A1ria+da+Maia/@41.2326507,-8.6201751,17z/data=!3m1!4b1!4m6!3m5!1s0xd24665606eefb45:0xc5dd8b06cc341a7b!8m2!3d41.2326467!4d-8.6176002!16s%2Fg%2F1vgqfc9z?hl=pt-PT&entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoASAFQAw%3D%3D" target="_blank" class="button primary">Escola Secundária da Maia</a>
 					</div>
 				</div>
@@ -116,7 +117,7 @@ import Layout from '../layouts/Layout.astro';
 			<div class="section-header">
 				<h2>Siga-nos nas Redes Sociais</h2>
 				<div class="section-line"></div>
-				<p class="social-description">Acompanhe nossa jornada e fique por dentro das últimas novidades</p>
+				<p class="social-description">Acompanhe a nossa jornada e fique por dentro das últimas novidades</p>
 			</div>
 			<div class="social-links">
 				<a href="https://www.instagram.com/shrimp2sink/profile/?igsh=MWNkdjBrcmtmZDB6Zw==" target="_blank" class="social-link instagram">
@@ -208,7 +209,7 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.text-content p {
-		font-size: 1.1rem;
+		font-size: 1.2rem;
 		line-height: 1.8;
 		color: rgb(var(--text));
 	}
@@ -362,6 +363,57 @@ import Layout from '../layouts/Layout.astro';
 		margin: 0;
 	}
 
+	.contact-content {
+		text-align: center;
+		max-width: 800px;
+		margin: 0 auto 2rem;
+	}
+
+	.contact-content h2 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--primary));
+	}
+
+	.contact-subtitle {
+		font-size: 1.2rem;
+		color: rgb(var(--text));
+		opacity: 0.9;
+		max-width: 600px;
+		margin: 0 auto 2.5rem;
+		line-height: 1.7;
+	}
+
+	.contact-info {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+		margin-top: 2rem;
+		width: 100%;
+	}
+
+	.contact-card {
+		background: white;
+		padding: 1.75rem;
+		border-radius: 16px;
+		box-shadow: var(--card-shadow);
+		text-align: center;
+		transition: var(--transition);
+	}
+
+	.contact-card-title {
+		font-weight: 600;
+		color: rgb(var(--primary));
+		margin-bottom: 0.5rem;
+		font-size: 1.3rem;
+	}
+
+	.contact-card p {
+		color: rgb(var(--text));
+		font-size: 1.2rem;
+		opacity: 0.9;
+	}
+
 	.contact-card .button {
 		display: inline-block;
 		padding: 0.8rem 1.5rem;
@@ -383,50 +435,6 @@ import Layout from '../layouts/Layout.astro';
 		padding-bottom: 4rem;
 	}
 
-	.contact-content {
-		text-align: center;
-		max-width: 800px;
-		margin: 0 auto;
-	}
-
-	.contact-info {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1.5rem;
-		margin-top: 2rem;
-		width: 100%;
-	}
-
-	.contact-card {
-		background: white;
-		padding: 1.75rem;
-		border-radius: 16px;
-		box-shadow: var(--card-shadow);
-		text-align: center;
-		transition: var(--transition);
-	}
-
-	.contact-card:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 8px 24px rgba(var(--primary), 0.15);
-	}
-
-	.contact-icon {
-		font-size: 2.25rem;
-		margin-bottom: 1rem;
-	}
-
-	.contact-card h3 {
-		font-weight: 600;
-		color: rgb(var(--primary));
-		margin-bottom: 0.5rem;
-		font-size: 1.25rem;
-	}
-
-	.contact-card p {
-		color: rgb(var(--text));
-	}
-
 	.social-media-section {
 		padding: 2rem 2rem;
 		text-align: center;
@@ -436,10 +444,10 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.social-description {
-		font-size: 1.1rem;
+		font-size: 1.2rem;
 		color: rgb(var(--text));
 		opacity: 0.8;
-		margin: 1.5rem auto;
+		margin: 3rem auto;
 		max-width: 600px;
 		line-height: 1.6;
 	}
@@ -610,5 +618,12 @@ import Layout from '../layouts/Layout.astro';
 		.social-media-section {
 			padding: 3rem 1rem;
 		}
+	}
+
+	.contact-icon {
+		font-size: 2.5rem;
+		margin-bottom: 1.25rem;
+		color: rgb(var(--primary));
+		opacity: 0.9;
 	}
 </style>
