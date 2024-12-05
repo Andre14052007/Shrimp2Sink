@@ -151,7 +151,7 @@ const { title } = Astro.props;
 				font-size: 1.05rem;
 				padding: 0.6rem 1.2rem;
 				position: relative;
-				transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+				transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 				border-radius: 16px;
 				letter-spacing: 0.3px;
 				background: transparent;
@@ -177,7 +177,7 @@ const { title } = Astro.props;
 				);
 				border-radius: 16px;
 				opacity: 0;
-				transition: opacity 0.3s ease;
+				transition: opacity 0.5s ease;
 				z-index: -1;
 			}
 
@@ -207,7 +207,7 @@ const { title } = Astro.props;
 					rgba(var(--primary), 0.7), 
 					rgba(var(--shrimp), 0.7)
 				);
-				transition: all 0.3s ease;
+				transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 				transform: translateX(-50%);
 				opacity: 0;
 			}
@@ -244,7 +244,7 @@ const { title } = Astro.props;
 				height: 2px;
 				background: white;
 				margin: 5px auto;
-				transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+				transition: transform 0.5s ease-in-out, opacity 0.4s ease-in-out;
 				border-radius: 2px;
 			}
 
@@ -261,7 +261,7 @@ const { title } = Astro.props;
 					background: rgba(255, 255, 255, 0.1);
 					backdrop-filter: blur(10px);
 					-webkit-backdrop-filter: blur(10px);
-					transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+					transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 					z-index: 1002;
 					cursor: pointer;
 				}
@@ -273,7 +273,7 @@ const { title } = Astro.props;
 					margin: 3px;
 					background: white;
 					border-radius: 4px;
-					transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+					transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 					transform-origin: center;
 				}
 
@@ -310,7 +310,7 @@ const { title } = Astro.props;
 					-webkit-backdrop-filter: blur(4px);
 					opacity: 0;
 					visibility: hidden;
-					transition: all 0.3s ease;
+					transition: all 0.5s ease;
 					z-index: 998;
 				}
 
@@ -330,7 +330,7 @@ const { title } = Astro.props;
 					padding: 2rem;
 					gap: 1rem;
 					margin: 0;
-					transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+					transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 					overflow-y: auto;
 					z-index: 999;
 					opacity: 0;
@@ -355,12 +355,13 @@ const { title } = Astro.props;
 					display: flex;
 					align-items: center;
 					justify-content: center;
+					transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 				}
 
 				.nav-links.active a {
 					opacity: 1;
 					transform: translateY(0);
-					transition-delay: calc(var(--i) * 0.1s);
+					transition-delay: calc(var(--i) * 0.15s);
 				}
 
 				.nav-links a:hover {
