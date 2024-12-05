@@ -17,7 +17,7 @@ import Layout from '../layouts/Layout.astro';
 				<div class="section-line"></div>
 			</div>
 			<div class="text-content">
-				<p>O projeto Shrimp2Sink nasceu da necessidade de encontrar soluções sustentáveis para o tratamento de água, 
+				<p class="mission-description">O projeto Shrimp2Sink nasceu da necessidade de encontrar soluções sustentáveis para o tratamento de água, 
 				aproveitando recursos que normalmente seriam descartados. A nossa missão é desenvolver tecnologias acessíveis 
 				e ecologicamente responsáveis para a purificação de água.</p>
 				
@@ -41,7 +41,7 @@ import Layout from '../layouts/Layout.astro';
 								<span class="highlight">ODS 6</span>
 								<h3>Água Potável e Saneamento</h3>
 							</div>
-							<p>O Shrimp2Sink está alinhado com os Objetivos de Desenvolvimento Sustentável (ODS) 
+							<p class="section-description">O Shrimp2Sink está alinhado com os Objetivos de Desenvolvimento Sustentável (ODS) 
 							das Nações Unidas, especificamente com o ODS 6. Este objetivo visa assegurar 
 							a disponibilidade e gestão sustentável da água potável e saneamento para todos.</p>
 						</div>
@@ -241,7 +241,7 @@ import Layout from '../layouts/Layout.astro';
 
 	.sdg-content:hover {
 		transform: translateY(-5px);
-		box-shadow: 0 8px 24px rgba(var(--primary), 0.15);
+		box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 	}
 
 	.sdg-icon-wrapper {
@@ -288,6 +288,20 @@ import Layout from '../layouts/Layout.astro';
 		margin: 0;
 		font-size: 1.1rem;
 		opacity: 0.8;
+	}
+
+	.section-description {
+		line-height: 1.7;
+		letter-spacing: -0.01em;
+		opacity: 0.9;
+		color: rgb(var(--text-light));
+	}
+
+	.mission-description {
+		line-height: 1.7;
+		letter-spacing: -0.01em;
+		opacity: 0.9;
+		color: rgb(var(--text));
 	}
 
 	@media (max-width: 768px) {

@@ -21,14 +21,14 @@ import Layout from '../layouts/Layout.astro';
 				<div class="resource-card">
 					<div class="resource-icon">📄</div>
 					<h3>Qualidade da água destinada a consumo Humano</h3>
-					<p>Decreto-lei n.º 69/2023 de 21 de Agosto</p>
+					<p class="resource-description">Decreto-lei n.º 69/2023 de 21 de Agosto</p>
 					<a href="https://files.diariodarepublica.pt/1s/2023/08/16100/0001000073.pdf" target="_blank" class="button primary">Descarregar PDF</a>
 				</div>
 
 				<div class="resource-card">
 					<div class="resource-icon">📚</div>
 					<h3>Estudos de Eficiência de Filtração de Água</h3>
-					<p>Spinelli (2001). Quitosana, polieletrólito natural para o tratamento de água potável</p>
+					<p class="resource-description">Spinelli (2001). Quitosana, polieletrólito natural para o tratamento de água potável</p>
 					<a href="https://repositorio.ufsc.br/xmlui/bitstream/handle/123456789/82191/201719.pdf?sequence=1&isAllowed=y" target="_blank" class="button primary">Ler Artigo</a>
 				</div>
 			</div>
@@ -44,14 +44,14 @@ import Layout from '../layouts/Layout.astro';
 				<div class="resource-card">
 					<div class="resource-icon">🧪</div>
 					<h3>Processo de Obtenção de Quitosana</h3>
-					<p>Aprenda sobre o processo passo a passo de extração de quitosana de cascas de camarão</p>
+					<p class="resource-description">Aprenda sobre o processo passo a passo de extração de quitosana de cascas de camarão</p>
 					<a href="https://drive.google.com/file/d/1ZlQAsR_bbAfl1DUFm8R1lcRNnWNE8lCW/view?usp=sharing" target="_blank" class="button primary">Descarregar PDF</a>
 				</div>
 
 				<div class="resource-card">
 					<div class="resource-icon">📖</div>
 					<h3>Guia de Montagem de Filtros "Caseiros"</h3>
-					<p>Instruções detalhadas para montagem de filtros caseiros à base de quitosana</p>
+					<p class="resource-description">Instruções detalhadas para montagem de filtros caseiros à base de quitosana</p>
 					<a href="https://drive.google.com/file/d/12Qf4XtbgozqVq33rQXTQzf2_7MapxGi5/view" 	target="_blank" class="button primary">Descarregar PDF</a>
 				</div>
 			</div>
@@ -60,7 +60,7 @@ import Layout from '../layouts/Layout.astro';
 		<section class="cta-section">
 			<div class="cta-content">
 				<h2>Precisa de Ajuda?</h2>
-				<p>Entre em contacto connosco para obter suporte ou esclarecer dúvidas sobre os recursos.</p>
+				<p class="section-description">Entre em contacto connosco para obter suporte ou esclarecer dúvidas sobre os recursos.</p>
 				<a href="/about#contact" class="button">Contacte-nos</a>
 			</div>
 		</section>
@@ -168,14 +168,18 @@ import Layout from '../layouts/Layout.astro';
 		font-size: 1.25rem;
 	}
 
-	.resource-card p {
+	.resource-description {
+		line-height: 1.7;
+		letter-spacing: -0.01em;
+		opacity: 0.9;
 		color: rgb(var(--text));
-		margin-bottom: 1.5rem;
-		line-height: 1.6;
 	}
 
-	.materials-section {
-		margin-top: 4rem;
+	.section-description {
+		line-height: 1.7;
+		letter-spacing: -0.01em;
+		opacity: 0.9;
+		color: rgb(var(--text-light));
 	}
 
 	.button {
