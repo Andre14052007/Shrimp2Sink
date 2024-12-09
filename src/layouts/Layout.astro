@@ -109,19 +109,18 @@ const { title } = Astro.props;
 			}
 
 			.logo-circle {
-				width: 54px;
-				height: 54px;
-				border-radius: 14px;
+				width: 65px;
+				height: 65px;
+				border-radius: 50%;
 				object-fit: cover;
-				border: 2px solid rgba(255, 255, 255, 0.9);
-				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-				transition: all 0.3s ease;
+				object-position: center;
+				transition: transform 0.3s ease;
+				padding: 0;
+				margin: 0;
 			}
 
-			.logo:hover .logo-circle {
-				border-color: white;
-				transform: rotate(-8deg) scale(1.05);
-				box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+			.logo-circle:hover {
+				transform: scale(1.05);
 			}
 
 			.logo-text {
