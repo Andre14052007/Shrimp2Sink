@@ -6,7 +6,6 @@ import Layout from '../layouts/Layout.astro';
 	<div class="hero">
 		<div class="hero-content">
 			<h1>
-				<span class="hero-title-main">Shrimp2Sink</span>
 				<span class="hero-title-sub">Filtração Sustentável de Água usando Quitosana</span>
 			</h1>
 			<p class="subtitle">Transformando resíduos de camarão em soluções inovadoras de filtração de água</p>
@@ -100,26 +99,12 @@ import Layout from '../layouts/Layout.astro';
 		color: rgb(var(--text-light));
 	}
 
-	.hero-title-main {
-		display: block;
-		font-size: 5.5rem;
-		margin-bottom: 1.5rem;
-		font-weight: 1000;
-		background: linear-gradient(135deg, rgb(var(--primary)), rgb(var(--shrimp)));
-		-webkit-background-clip: text;
-		background-clip: text;
-		color: transparent;
-		-webkit-text-fill-color: transparent;
-		text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5),
-					 -2px -2px 0 rgba(255, 255, 255, 0.3),
-					 0 0 30px rgba(0, 0, 0, 0.4),
-					 0 0 60px rgba(0, 0, 0, 0.2);
-	}
-
 	.hero-title-sub {
 		display: block;
-		font-size: 2.5rem;
-		font-weight: 800;
+		font-size: 3.5rem;
+		margin-bottom: 1.5rem;
+		font-weight: 1400;
+		color: white;
 	}
 
 	.subtitle {
@@ -337,20 +322,15 @@ import Layout from '../layouts/Layout.astro';
 			margin: -1rem -1rem 1rem -1rem;
 		}
 
-		.hero-title-main {
-			font-size: 5rem;
-			margin-bottom: 1rem;
-			line-height: 1.1;
-		}
-
+		
 		.hero-title-sub {
-			font-size: 1.5rem;
-			line-height: 1.3;
+			font-size: 4.5rem;
+			line-height: 1.7;
 			padding: 0 0.5rem;
 		}
 
 		.subtitle {
-			font-size: 1.1rem;
+			font-size: 1.8rem;
 			padding: 0 0.5rem;
 		}
 	}
@@ -361,7 +341,7 @@ import Layout from '../layouts/Layout.astro';
 		}
 
 		.hero-title-sub {
-			font-size: 1.3rem;
+			font-size: 2rem;
 		}
 	}
 
