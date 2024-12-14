@@ -335,42 +335,11 @@ import Layout from '../layouts/Layout.astro';
 
 	@media (max-width: 768px) {
 		.hero {
+			padding: 7rem 1rem 3rem 1rem;
 			text-align: center;
-			padding: 4rem 1rem;
 			background: var(--gradient);
-			margin: -1rem -1rem 1rem -1rem;
-		}
-
-		
-		.hero-title-sub {
-			font-size: 4.5rem;
-			line-height: 1.7;
-			padding: 0 0.5rem;
-		}
-
-		.subtitle {
-			font-size: 1.8rem;
-			padding: 0 0.5rem;
-		}
-	}
-
-	@media (max-width: 480px) {
-		.hero-title-main {
-			font-size: 2.8rem;
-		}
-
-		.hero-title-sub {
-			font-size: 2rem;
-		}
-	}
-
-	@media (max-width: 768px) {
-		.hero {
-			text-align: center;
-			padding: 4rem 2rem;
-			background: var(--gradient);
-			margin: -1rem -1rem 2rem -1rem;
-			border-radius: 0;
+			margin: -2rem -1rem 1rem -1rem;
+			border-radius: 16px 16px 0 0;
 			color: rgb(var(--text-light));
 			position: relative;
 			overflow: hidden;
@@ -479,6 +448,16 @@ import Layout from '../layouts/Layout.astro';
 		.cta-section {
 			margin: 3rem -1rem -1rem -1rem;
 			padding: 3rem 1rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero-title-main {
+			font-size: 2.8rem;
+		}
+
+		.hero-title-sub {
+			font-size: 2rem;
 		}
 	}
 </style>
