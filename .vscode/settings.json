@@ -1,3 +1,4 @@
 {
-    "terminal.integrated.fontFamily": "c:/Code/shrimp2sink"
+    "terminal.integrated.fontFamily": "",
+    "terminal.integrated.cwd": "c:/Code/shrimp2sink"
 }
