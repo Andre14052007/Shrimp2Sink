@@ -170,14 +170,29 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 				</div>
 
-				<div ></div>
+				<div class="graph-card">
+					<div class="result-icon">📈</div>
+					<h3>Visualização dos Dados</h3>
+					<div class="graph-content">
+						<div class="calculator">
+							<label for="turbidityInput">Turbidez Inicial (NTU):</label>
+							<div class="input-group">
+								<input type="number" id="turbidityInput" min="0" step="0.1" value="10">
+								<button id="calculateFiltrationBtn">Calcular</button>
+							</div>
+							<div class="result" id="filtrationCalculationResult">
+								Turbidez Final Estimada: <span>A definir</span> NTU
+							</div>
+						</div>
+						<div class="chart-container">
+							<canvas id="filtrationChart"></canvas>
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<div class="chart-container">
-					<canvas id="filtrationChart"></canvas>
-				</div>
+			<div class="chart-container">
+				<canvas id="filtrationChart"></canvas>
 			</div>
 		</section>
 
@@ -453,24 +468,19 @@ import Layout from '../layouts/Layout.astro';
 
       // Calculator functionality
       const calculateFiltrationBtn = document.getElementById('calculateFiltrationBtn');
-      const initialTurbidityInput = document.getElementById('initialTurbidity');
-      const finalTurbidityInput = document.getElementById('finalTurbidity');
-      const filtrationResultSpan = document.querySelector('#filtrationResult span');
+      const initialTurbidityInput = document.getElementById('turbidityInput');
+      const filtrationResultSpan = document.querySelector('#filtrationCalculationResult span');
 
       function updateFiltrationCalculation() {
         const initialTurbidity = parseFloat(initialTurbidityInput.value) || 0;
-        const finalTurbidity = parseFloat(finalTurbidityInput.value) || 0;
-        const efficiency = initialTurbidity > 0 ? ((initialTurbidity - finalTurbidity) / initialTurbidity) * 100 : 0;
-        filtrationResultSpan.textContent = Math.round(efficiency * 10) / 10;
+        const finalTurbidity = initialTurbidity;
+        filtrationResultSpan.textContent = Math.round(finalTurbidity * 10) / 10;
         filtrationChart.data.datasets[0].data = [{ x: initialTurbidity, y: finalTurbidity }];
         filtrationChart.update();
       }
 
       calculateFiltrationBtn.addEventListener('click', updateFiltrationCalculation);
       initialTurbidityInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') updateFiltrationCalculation();
-      });
-      finalTurbidityInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') updateFiltrationCalculation();
       });
       updateFiltrationCalculation();
