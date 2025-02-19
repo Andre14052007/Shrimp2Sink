@@ -193,223 +193,242 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
-	import Chart from 'chart.js/auto';
+  function initializeCharts() {
+    const ctx = document.getElementById('conversionChart');
+    const conversionRate = 0.0568;
+    
+    const points = [
+      { x: 0, y: 0 },
+      { x: 1000, y: 1000 * conversionRate },
+      { x: 2000, y: 2000 * conversionRate },
+      { x: 3000, y: 3000 * conversionRate },
+      { x: 4000, y: 4000 * conversionRate },
+      { x: 5000, y: 5000 * conversionRate }
+    ];
 
-	document.addEventListener('DOMContentLoaded', () => {
-		const ctx = document.getElementById('conversionChart');
-		const conversionRate = 0.0568;
-		
-		// Calculate points for the line
-		const points = [
-			{ x: 0, y: 0 },
-			{ x: 1000, y: 1000 * conversionRate },
-			{ x: 2000, y: 2000 * conversionRate },
-			{ x: 3000, y: 3000 * conversionRate },
-			{ x: 4000, y: 4000 * conversionRate },
-			{ x: 5000, y: 5000 * conversionRate }
-		];
+    if (window.conversionChart) {
+      window.conversionChart.destroy();
+    }
 
-		const chart = new Chart(ctx, {
-			type: 'scatter',
-			data: {
-				datasets: [
-					{
-						label: 'Linha de Conversão (5.68%)',
-						data: points,
-						showLine: true,
-						fill: false,
-						borderColor: 'rgba(54, 162, 235, 1)',
-						backgroundColor: 'rgba(54, 162, 235, 0.8)',
-						borderWidth: 2,
-						tension: 0
-					},
-					{
-						label: 'Dado Experimental',
-						data: [{ x: 4000, y: 227 }],
-						backgroundColor: 'rgba(255, 99, 132, 1)',
-						pointRadius: 6
-					},
-					{
-						label: 'Cálculo Atual',
-						data: [],
-						backgroundColor: 'rgba(75, 192, 192, 1)',
-						pointRadius: 6
-					}
-				]
-			},
-			options: {
-				responsive: true,
-				maintainAspectRatio: false,
-				plugins: {
-					title: {
-						display: true,
-						text: 'Relação Massa Total vs. Massa de Cascas',
-						font: {
-							size: 14
-						}
-					},
-					legend: {
-						position: 'bottom'
-					}
-				},
-				scales: {
-					x: {
-						type: 'linear',
-						position: 'bottom',
-						title: {
-							display: true,
-							text: 'Massa Total de Camarão (g)'
-						},
-						min: 0,
-						max: 5000
-					},
-					y: {
-						beginAtZero: true,
-						title: {
-							display: true,
-							text: 'Massa de Cascas (g)'
-						},
-						min: 0,
-						max: 300
-					}
-				}
-			}
-		});
+    window.conversionChart = new Chart(ctx, {
+      type: 'scatter',
+      data: {
+        datasets: [
+          {
+            label: 'Linha de Conversão (5.68%)',
+            data: points,
+            showLine: true,
+            fill: false,
+            borderColor: 'rgba(54, 162, 235, 1)',
+            backgroundColor: 'rgba(54, 162, 235, 0.8)',
+            borderWidth: 2,
+            tension: 0
+          },
+          {
+            label: 'Dado Experimental',
+            data: [{ x: 4000, y: 227 }],
+            backgroundColor: 'rgba(255, 99, 132, 1)',
+            pointRadius: 6
+          },
+          {
+            label: 'Cálculo Atual',
+            data: [],
+            backgroundColor: 'rgba(75, 192, 192, 1)',
+            pointRadius: 6
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Relação Massa Total vs. Massa de Cascas',
+            font: {
+              size: 14
+            }
+          },
+          legend: {
+            position: 'bottom'
+          }
+        },
+        scales: {
+          x: {
+            type: 'linear',
+            position: 'bottom',
+            title: {
+              display: true,
+              text: 'Massa Total de Camarão (g)'
+            },
+            min: 0,
+            max: 5000
+          },
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Massa de Cascas (g)'
+            },
+            min: 0,
+            max: 300
+          }
+        }
+      }
+    });
 
-		// Calculator functionality
-		const calculateBtn = document.getElementById('calculateBtn');
-		const shrimpMassInput = document.getElementById('shrimpMass');
-		const resultSpan = document.querySelector('#calculationResult span');
+    const chitosanCtx = document.getElementById('chitosanConversionChart');
+    const chitosanConversionRate = 0.1894;
+    
+    const chitosanPoints = [
+      { x: 0, y: 0 },
+      { x: 100, y: 100 * chitosanConversionRate },
+      { x: 200, y: 200 * chitosanConversionRate },
+      { x: 300, y: 300 * chitosanConversionRate },
+      { x: 400, y: 400 * chitosanConversionRate },
+      { x: 500, y: 500 * chitosanConversionRate }
+    ];
 
-		function updateCalculation() {
-			const massInKg = parseFloat(shrimpMassInput.value) || 0;
-			const massInG = massInKg * 1000;
-			const shellMass = massInG * conversionRate;
-			
-			resultSpan.textContent = Math.round(shellMass);
+    if (window.chitosanChart) {
+      window.chitosanChart.destroy();
+    }
 
-			// Update chart point
-			chart.data.datasets[2].data = [{ x: massInG, y: shellMass }];
-			chart.update();
-		}
+    window.chitosanChart = new Chart(chitosanCtx, {
+      type: 'scatter',
+      data: {
+        datasets: [
+          {
+            label: 'Linha de Conversão (18.94%)',
+            data: chitosanPoints,
+            showLine: true,
+            fill: false,
+            borderColor: 'rgba(54, 162, 235, 1)',
+            backgroundColor: 'rgba(54, 162, 235, 0.8)',
+            borderWidth: 2,
+            tension: 0
+          },
+          {
+            label: 'Dado Experimental',
+            data: [{ x: 227, y: 43 }],
+            backgroundColor: 'rgba(255, 99, 132, 1)',
+            pointRadius: 6
+          },
+          {
+            label: 'Cálculo Atual',
+            data: [],
+            backgroundColor: 'rgba(75, 192, 192, 1)',
+            pointRadius: 6
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Relação Massa de Cascas vs. Massa de Quitosana',
+            font: {
+              size: 14
+            }
+          },
+          legend: {
+            position: 'bottom'
+          }
+        },
+        scales: {
+          x: {
+            type: 'linear',
+            position: 'bottom',
+            title: {
+              display: true,
+              text: 'Massa de Cascas (g)'
+            },
+            min: 0,
+            max: 500
+          },
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Massa de Quitosana (g)'
+            },
+            min: 0,
+            max: 100
+          }
+        }
+      }
+    });
+  }
 
-		calculateBtn.addEventListener('click', updateCalculation);
-		shrimpMassInput.addEventListener('keypress', (e) => {
-			if (e.key === 'Enter') {
-				updateCalculation();
-			}
-		});
+  // Calculator functionality
+  function setupCalculators() {
+    const calculateBtn = document.getElementById('calculateBtn');
+    const shrimpMassInput = document.getElementById('shrimpMass');
+    const resultSpan = document.querySelector('#calculationResult span');
 
-		// Initial calculation
-		updateCalculation();
+    function updateCalculation() {
+      const massInKg = parseFloat(shrimpMassInput.value) || 0;
+      const massInG = massInKg * 1000;
+      const shellMass = massInG * 0.0568;
+      
+      resultSpan.textContent = Math.round(shellMass);
 
-		// Chitosan conversion chart
-		const chitosanCtx = document.getElementById('chitosanConversionChart');
-		const chitosanConversionRate = 0.1894;
-		
-		// Calculate points for the line
-		const chitosanPoints = [
-			{ x: 0, y: 0 },
-			{ x: 100, y: 100 * chitosanConversionRate },
-			{ x: 200, y: 200 * chitosanConversionRate },
-			{ x: 300, y: 300 * chitosanConversionRate },
-			{ x: 400, y: 400 * chitosanConversionRate },
-			{ x: 500, y: 500 * chitosanConversionRate }
-		];
+      window.conversionChart.data.datasets[2].data = [{ x: massInG, y: shellMass }];
+      window.conversionChart.update();
+    }
 
-		const chitosanChart = new Chart(chitosanCtx, {
-			type: 'scatter',
-			data: {
-				datasets: [
-					{
-						label: 'Linha de Conversão (18.94%)',
-						data: chitosanPoints,
-						showLine: true,
-						fill: false,
-						borderColor: 'rgba(54, 162, 235, 1)',
-						backgroundColor: 'rgba(54, 162, 235, 0.8)',
-						borderWidth: 2,
-						tension: 0
-					},
-					{
-						label: 'Dado Experimental',
-						data: [{ x: 227, y: 43 }],
-						backgroundColor: 'rgba(255, 99, 132, 1)',
-						pointRadius: 6
-					},
-					{
-						label: 'Cálculo Atual',
-						data: [],
-						backgroundColor: 'rgba(75, 192, 192, 1)',
-						pointRadius: 6
-					}
-				]
-			},
-			options: {
-				responsive: true,
-				maintainAspectRatio: false,
-				plugins: {
-					title: {
-						display: true,
-						text: 'Relação Massa de Cascas vs. Massa de Quitosana',
-						font: {
-							size: 14
-						}
-					},
-					legend: {
-						position: 'bottom'
-					}
-				},
-				scales: {
-					x: {
-						type: 'linear',
-						position: 'bottom',
-						title: {
-							display: true,
-							text: 'Massa de Cascas (g)'
-						},
-						min: 0,
-						max: 500
-					},
-					y: {
-						beginAtZero: true,
-						title: {
-							display: true,
-							text: 'Massa de Quitosana (g)'
-						},
-						min: 0,
-						max: 100
-					}
-				}
-			}
-		});
+    calculateBtn.addEventListener('click', updateCalculation);
+    shrimpMassInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        updateCalculation();
+      }
+    });
 
-		// Calculator functionality
-		const calculateChitosanBtn = document.getElementById('calculateChitosanBtn');
-		const shellMassInput = document.getElementById('shellMass');
-		const chitosanResultSpan = document.querySelector('#chitosanCalculationResult span');
+    const calculateChitosanBtn = document.getElementById('calculateChitosanBtn');
+    const shellMassInput = document.getElementById('shellMass');
+    const chitosanResultSpan = document.querySelector('#chitosanCalculationResult span');
 
-		function updateChitosanCalculation() {
-			const massInG = parseFloat(shellMassInput.value) || 0;
-			const chitosanMass = massInG * chitosanConversionRate;
-			
-			chitosanResultSpan.textContent = Math.round(chitosanMass);
+    function updateChitosanCalculation() {
+      const massInG = parseFloat(shellMassInput.value) || 0;
+      const chitosanMass = massInG * 0.1894;
+      
+      chitosanResultSpan.textContent = Math.round(chitosanMass);
 
-			// Update chart point
-			chitosanChart.data.datasets[2].data = [{ x: massInG, y: chitosanMass }];
-			chitosanChart.update();
-		}
+      window.chitosanChart.data.datasets[2].data = [{ x: massInG, y: chitosanMass }];
+      window.chitosanChart.update();
+    }
 
-		calculateChitosanBtn.addEventListener('click', updateChitosanCalculation);
-		shellMassInput.addEventListener('keypress', (e) => {
-			if (e.key === 'Enter') {
-				updateChitosanCalculation();
-			}
-		});
+    calculateChitosanBtn.addEventListener('click', updateChitosanCalculation);
+    shellMassInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        updateChitosanCalculation();
+      }
+    });
 
-		// Initial calculation
-		updateChitosanCalculation();
-	});
+    // Initial calculations
+    updateCalculation();
+    updateChitosanCalculation();
+  }
+
+  // Load Chart.js and initialize everything
+  function loadChartJS() {
+    if (typeof Chart === 'undefined') {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+      script.onload = () => {
+        initializeCharts();
+        setupCalculators();
+      };
+      document.head.appendChild(script);
+    } else {
+      initializeCharts();
+      setupCalculators();
+    }
+  }
+
+  // Handle both initial page load and subsequent navigations
+  document.addEventListener('astro:page-load', loadChartJS);
 </script>
 
 <style>
