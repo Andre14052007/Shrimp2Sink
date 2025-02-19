@@ -16,47 +16,62 @@ import Layout from '../layouts/Layout.astro';
 				<h2>Resultados Experimentais</h2>
 				<div class="section-line"></div>
 			</div>
-			<div class="results-grid">
-				<div class="result-card">
-					<div class="result-icon">⚖️</div>
-					<h3>Massa Total</h3>
-					<p>4 kg de camarão processado</p>
-				</div>
 
-				<div class="result-card">
-					<div class="result-icon">🦐</div>
-					<h3>Cascas Obtidas</h3>
-					<p>227 gramas de cascas de camarão</p>
-				</div>
-
-				<div class="result-card">
-					<div class="result-icon">📊</div>
-					<h3>Taxa de Conversão</h3>
-					<p>5,68% de conversão em massa</p>
-				</div>
-			</div>
-
-			<div class="result-card full-width">
-				<div class="result-icon">📝</div>
-				<h3>Conclusão</h3>
-				<p>Esta experiência inicial forneceu-nos dados importantes sobre a proporção de cascas de camarão disponíveis, por quilograma de camarão, para o processo de filtração.</p>
-			</div>
-
-			<div class="result-card full-width">
-				<div class="result-icon">📈</div>
-				<h3>Visualização dos Dados</h3>
-				<div class="calculator">
-					<label for="shrimpMass">Massa de Camarão (kg):</label>
-					<div class="input-group">
-						<input type="number" id="shrimpMass" min="0" step="0.1" value="4">
-						<button id="calculateBtn">Calcular</button>
-					</div>
-					<div class="result" id="calculationResult">
-						Massa de Cascas Estimada: <span>227</span> gramas
+			<div class="experiment-section">
+				<h3 class="experiment-title">Experiência da Conversão de Massa de Camarão em Massa de Cascas de Camarão</h3>
+				
+				<div class="methodology-card">
+					<div class="result-icon">📋</div>
+					<h3>Metodologia</h3>
+					<div class="methodology-steps">
+						<ol>
+							<li>Pesagem inicial do camarão 20/30 inteiro</li>
+							<li>Descascamento manual do camarão</li>
+							<li>Separação das cascas</li>
+							<li>Pesagem das cascas obtidas</li>
+							<li>Cálculo da taxa de conversão</li>
+						</ol>
 					</div>
 				</div>
-				<div class="chart-container">
-					<canvas id="conversionChart"></canvas>
+
+				<div class="results-grid">
+					<div class="result-card">
+						<div class="result-icon">⚖️</div>
+						<h3>Massa Total</h3>
+						<p>4 kg de camarão 20/30</p>
+					</div>
+
+					<div class="result-card">
+						<div class="result-icon">🦐</div>
+						<h3>Massa de Cascas Obtidas</h3>
+						<p>227 gramas de cascas de camarão</p>
+					</div>
+
+					<div class="result-card">
+						<div class="result-icon">📊</div>
+						<h3>Taxa de Conversão</h3>
+						<p>5,68% de conversão em massa</p>
+					</div>
+				</div>
+
+				<div class="graph-card">
+					<div class="result-icon">📈</div>
+					<h3>Visualização dos Dados</h3>
+					<div class="graph-content">
+						<div class="calculator">
+							<label for="shrimpMass">Massa de Camarão (kg):</label>
+							<div class="input-group">
+								<input type="number" id="shrimpMass" min="0" step="0.1" value="4">
+								<button id="calculateBtn">Calcular</button>
+							</div>
+							<div class="result" id="calculationResult">
+								Massa de Cascas Estimada: <span>227</span> gramas
+							</div>
+						</div>
+						<div class="chart-container">
+							<canvas id="conversionChart"></canvas>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -96,6 +111,7 @@ import Layout from '../layouts/Layout.astro';
 
 			<div class="methodology-content">
 				<div class="methodology-card">
+					<div class="result-icon">📋</div>
 					<h3>Processo de Pesquisa</h3>
 					<ol class="process-list">
 						<li>Colheita de cascas de camarão</li>
@@ -298,51 +314,133 @@ import Layout from '../layouts/Layout.astro';
 
 	.results-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 2rem;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
 		margin-top: 2rem;
 	}
 
 	.result-card {
 		background: white;
-		padding: 2.5rem;
+		padding: 1.5rem;
 		border-radius: 16px;
 		box-shadow: var(--card-shadow);
 		transition: var(--transition);
 		text-align: center;
 	}
 
-	.result-card:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 8px 24px rgba(var(--primary), 0.15);
-	}
-
-	.result-card.full-width {
-		grid-column: 1 / -1;
+	.graph-card {
+		background: white;
+		padding: 2rem;
+		border-radius: 16px;
+		box-shadow: var(--card-shadow);
+		transition: var(--transition);
 		margin-top: 2rem;
+		text-align: center;
+	}
+
+	.graph-content {
 		display: flex;
-		flex-direction: column;
+		gap: 2rem;
 		align-items: center;
-		max-width: 600px;
-		margin-left: auto;
-		margin-right: auto;
+		margin-top: 1rem;
 	}
 
-	.result-icon {
-		font-size: 2.5rem;
-		margin-bottom: 1.5rem;
+	.calculator {
+		flex: 1;
+		max-width: 300px;
 	}
 
-	.result-card h3 {
+	.chart-container {
+		flex: 2;
+		height: 300px;
+	}
+
+	.experiment-section {
+		background: rgba(var(--primary), 0.03);
+		border-radius: 16px;
+		padding: 2rem;
+		margin-top: 2rem;
+	}
+
+	.experiment-title {
 		color: rgb(var(--primary));
-		margin-bottom: 1rem;
+		font-size: 1.75rem;
+		font-weight: 600;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	.methodology-card {
+		background: white;
+		padding: 2rem;
+		border-radius: 16px;
+		box-shadow: var(--card-shadow);
+		margin-bottom: 2rem;
+		text-align: left;
+		position: relative;
+	}
+
+	.methodology-card .result-icon {
+		position: absolute;
+		top: -1rem;
+		left: 50%;
+		transform: translateX(-50%);
+		background: rgb(var(--primary));
+		color: white;
+		width: 3rem;
+		height: 3rem;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		font-size: 1.5rem;
 	}
 
-	.result-card p {
-		color: rgb(var(--text));
+	.methodology-card h3 {
+		color: rgb(var(--primary));
+		margin-top: 1.5rem;
 		margin-bottom: 1.5rem;
-		line-height: 1.6;
+		font-size: 1.5rem;
+		text-align: center;
+	}
+
+	.methodology-steps ol {
+		padding-left: 1.5rem;
+		margin: 0;
+	}
+
+	.methodology-steps li {
+		margin-bottom: 0.75rem;
+		line-height: 1.5;
+		color: rgb(var(--text));
+	}
+
+	.methodology-steps li:last-child {
+		margin-bottom: 0;
+	}
+
+	@media (max-width: 1200px) {
+		.results-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.results-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.graph-content {
+			flex-direction: column;
+		}
+
+		.calculator {
+			max-width: 100%;
+		}
+
+		.chart-container {
+			width: 100%;
+		}
 	}
 
 	.metrics-list {
@@ -449,62 +547,21 @@ import Layout from '../layouts/Layout.astro';
 		box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 	}
 
-	.chart-container {
-		width: 100%;
-		height: 300px;
-		margin: 1rem auto;
+	.result-icon {
+		font-size: 2.5rem;
+		margin-bottom: 1.5rem;
 	}
 
-	.calculator {
-		width: 100%;
-		margin: 1rem 0;
-		padding: 1rem;
-		background: rgba(var(--primary), 0.05);
-		border-radius: 8px;
-	}
-
-	.calculator label {
-		display: block;
-		margin-bottom: 0.5rem;
-		font-weight: 500;
-	}
-
-	.input-group {
-		display: flex;
-		gap: 0.5rem;
-		margin-bottom: 1rem;
-	}
-
-	.input-group input {
-		flex: 1;
-		padding: 0.5rem;
-		border: 1px solid rgba(var(--primary), 0.2);
-		border-radius: 4px;
-		font-size: 1rem;
-	}
-
-	.input-group button {
-		padding: 0.5rem 1rem;
-		background: rgb(var(--primary));
-		color: white;
-		border: none;
-		border-radius: 4px;
-		cursor: pointer;
-		transition: var(--transition);
-	}
-
-	.input-group button:hover {
-		background: rgba(var(--primary), 0.9);
-	}
-
-	.result {
-		text-align: center;
-		font-weight: 500;
-	}
-
-	.result span {
+	.result-card h3 {
 		color: rgb(var(--primary));
-		font-size: 1.1em;
+		margin-bottom: 1rem;
+		font-size: 1.5rem;
+	}
+
+	.result-card p {
+		color: rgb(var(--text));
+		margin-bottom: 1.5rem;
+		line-height: 1.6;
 	}
 
 	@media (max-width: 768px) {
@@ -526,20 +583,6 @@ import Layout from '../layouts/Layout.astro';
 			padding: 1rem;
 			margin: 1rem auto 3rem;
 			border-radius: 12px;
-		}
-
-		.results-grid {
-			grid-template-columns: 1fr;
-			gap: 1.5rem;
-			padding: 0 1rem;
-		}
-
-		.result-card {
-			padding: 1.5rem;
-		}
-
-		.result-card h3 {
-			font-size: 1.25rem;
 		}
 
 		.button {
