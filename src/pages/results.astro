@@ -50,7 +50,7 @@ import Layout from '../layouts/Layout.astro';
 					<div class="result-card">
 						<div class="result-icon">📊</div>
 						<h3>Taxa de Conversão</h3>
-						<p>20% de conversão em massa</p>
+						<p>5,68% de conversão em massa</p>
 					</div>
 				</div>
 
@@ -141,9 +141,9 @@ import Layout from '../layouts/Layout.astro';
 					<h3>Metodologia</h3>
 					<div class="methodology-steps">
 						<ol>
-							<li>Preparação da solução de quitosana</li>
+							<li>Preparação da solução de uma solução ideal</li>
 							<li>Medição da turbidez inicial</li>
-							<li>Processo de filtração</li>
+							<li>Adição de quitosana como processo de filtração</li>
 							<li>Medição da turbidez final</li>
 							<li>Cálculo da eficiência</li>
 						</ol>
@@ -269,7 +269,7 @@ import Layout from '../layouts/Layout.astro';
     destroyChart('conversionChart');
     const ctx = document.getElementById('conversionChart');
     if (ctx) {
-      const conversionRate = 0.20;
+      const conversionRate = 0.0568;
       const points = [
         { x: 0, y: 0 },
         { x: 1000, y: 1000 * conversionRate },
@@ -284,7 +284,7 @@ import Layout from '../layouts/Layout.astro';
         data: {
           datasets: [
             {
-              label: 'Linha de Conversão (20%)',
+              label: 'Linha de Conversão (5,68%)',
               data: points,
               showLine: true,
               fill: false,
@@ -295,7 +295,7 @@ import Layout from '../layouts/Layout.astro';
             },
             {
               label: 'Dado Experimental',
-              data: [{ x: 4000, y: 227 * 5 / 2.27 }],
+              data: [{ x: 4000, y: 227 }],
               backgroundColor: 'rgba(255, 99, 132, 1)',
               pointRadius: 6
             },
