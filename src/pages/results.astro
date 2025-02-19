@@ -74,6 +74,64 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 				</div>
 			</div>
+
+			<div class="experiment-section">
+				<h3 class="experiment-title">Experiência da Conversão de Cascas de Camarão em Quitosana</h3>
+				
+				<div class="methodology-card">
+					<div class="result-icon">📋</div>
+					<h3>Metodologia</h3>
+					<div class="methodology-steps">
+						<ol>
+							<li>Preparação das cascas de camarão (limpeza, secagem e trituração)</li>
+							<li>Desmineralização com ácido cítrico (C₆H₈O₇)</li>
+							<li>Desproteinização com hidróxido de sódio (NaOH)</li>
+							<li>Desacetilação da quitina para obter quitosana</li>
+							<li>Pesagem e análise do produto final</li>
+						</ol>
+					</div>
+				</div>
+
+				<div class="results-grid">
+					<div class="result-card">
+						<div class="result-icon">⚖️</div>
+						<h3>Massa Inicial</h3>
+						<p>15 gramas de cascas de camarão</p>
+					</div>
+
+					<div class="result-card">
+						<div class="result-icon">🧪</div>
+						<h3>Massa de Quitosana</h3>
+						<p>3 gramas de quitosana</p>
+					</div>
+
+					<div class="result-card">
+						<div class="result-icon">📊</div>
+						<h3>Taxa de Conversão</h3>
+						<p>18,94% de conversão em massa</p>
+					</div>
+				</div>
+
+				<div class="graph-card">
+					<div class="result-icon">📈</div>
+					<h3>Visualização dos Dados</h3>
+					<div class="graph-content">
+						<div class="calculator">
+							<label for="shellMass">Massa de Cascas (g):</label>
+							<div class="input-group">
+								<input type="number" id="shellMass" min="0" step="1" value="227">
+								<button id="calculateChitosanBtn">Calcular</button>
+							</div>
+							<div class="result" id="chitosanCalculationResult">
+								Massa de Quitosana Estimada: <span>43</span> gramas
+							</div>
+						</div>
+						<div class="chart-container">
+							<canvas id="chitosanConversionChart"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
 
 		<section class="results-section">
@@ -244,6 +302,113 @@ import Layout from '../layouts/Layout.astro';
 
 		// Initial calculation
 		updateCalculation();
+
+		// Chitosan conversion chart
+		const chitosanCtx = document.getElementById('chitosanConversionChart');
+		const chitosanConversionRate = 0.1894;
+		
+		// Calculate points for the line
+		const chitosanPoints = [
+			{ x: 0, y: 0 },
+			{ x: 100, y: 100 * chitosanConversionRate },
+			{ x: 200, y: 200 * chitosanConversionRate },
+			{ x: 300, y: 300 * chitosanConversionRate },
+			{ x: 400, y: 400 * chitosanConversionRate },
+			{ x: 500, y: 500 * chitosanConversionRate }
+		];
+
+		const chitosanChart = new Chart(chitosanCtx, {
+			type: 'scatter',
+			data: {
+				datasets: [
+					{
+						label: 'Linha de Conversão (18.94%)',
+						data: chitosanPoints,
+						showLine: true,
+						fill: false,
+						borderColor: 'rgba(54, 162, 235, 1)',
+						backgroundColor: 'rgba(54, 162, 235, 0.8)',
+						borderWidth: 2,
+						tension: 0
+					},
+					{
+						label: 'Dado Experimental',
+						data: [{ x: 227, y: 43 }],
+						backgroundColor: 'rgba(255, 99, 132, 1)',
+						pointRadius: 6
+					},
+					{
+						label: 'Cálculo Atual',
+						data: [],
+						backgroundColor: 'rgba(75, 192, 192, 1)',
+						pointRadius: 6
+					}
+				]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				plugins: {
+					title: {
+						display: true,
+						text: 'Relação Massa de Cascas vs. Massa de Quitosana',
+						font: {
+							size: 14
+						}
+					},
+					legend: {
+						position: 'bottom'
+					}
+				},
+				scales: {
+					x: {
+						type: 'linear',
+						position: 'bottom',
+						title: {
+							display: true,
+							text: 'Massa de Cascas (g)'
+						},
+						min: 0,
+						max: 500
+					},
+					y: {
+						beginAtZero: true,
+						title: {
+							display: true,
+							text: 'Massa de Quitosana (g)'
+						},
+						min: 0,
+						max: 100
+					}
+				}
+			}
+		});
+
+		// Calculator functionality
+		const calculateChitosanBtn = document.getElementById('calculateChitosanBtn');
+		const shellMassInput = document.getElementById('shellMass');
+		const chitosanResultSpan = document.querySelector('#chitosanCalculationResult span');
+
+		function updateChitosanCalculation() {
+			const massInG = parseFloat(shellMassInput.value) || 0;
+			const chitosanMass = massInG * chitosanConversionRate;
+			
+			chitosanResultSpan.textContent = Math.round(chitosanMass);
+
+			// Update chart point
+			chitosanChart.data.datasets[2].data = [{ x: massInG, y: chitosanMass }];
+			chitosanChart.update();
+		}
+
+		calculateChitosanBtn.addEventListener('click', updateChitosanCalculation);
+		shellMassInput.addEventListener('keypress', (e) => {
+			if (e.key === 'Enter') {
+				updateChitosanCalculation();
+			}
+		});
+
+		// Initial calculation
+		updateChitosanCalculation();
 	});
 </script>
 
