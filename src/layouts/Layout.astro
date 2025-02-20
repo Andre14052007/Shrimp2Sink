@@ -116,14 +116,24 @@ const alternateLanguagePath = isEnglish
 
 			.nav-content {
 				display: flex;
-				justify-content: space-between;
 				align-items: center;
-				width: 100%;
+				justify-content: space-between;
 				max-width: 1200px;
-				padding: 0 2rem;
 				margin: 0 auto;
-				gap: 0rem;
-				transform: translateX(-80px);
+				padding: 0 2rem;
+				position: relative;
+				left: -7rem;
+			}
+
+			.logo-container {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+			}
+
+			.nav-links {
+				display: flex;
+				gap: 1.5rem;
 			}
 
 			.nav-content > a:first-child {
@@ -606,27 +616,44 @@ const alternateLanguagePath = isEnglish
 				gap: 0.5rem;
 				background: rgba(255,255,255,0.1);
 				border-radius: 20px;
-				padding: 0.3rem 0.7rem;
+				padding: 0.2rem 0.5rem;
 				transition: var(--transition);
+				border: 1px solid rgba(255,255,255,0.2);
 			}
 
 			.language-switcher a {
-				color: rgba(255,255,255,0.8);
+				color: white;
 				text-decoration: none;
 				font-weight: 500;
-				font-size: 0.9rem;
+				font-size: 0.8rem;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				padding: 0.3rem 0.6rem;
+				border-radius: 16px;
 				transition: var(--transition);
+				position: relative;
+				z-index: 1;
+				opacity: 0.7;
 			}
 
 			.language-switcher a:hover {
-				color: white;
+				opacity: 1;
 			}
 
-			.language-switcher .active {
+			.language-switcher a.active {
 				color: white;
+				opacity: 1;
 				background: rgba(255,255,255,0.2);
-				border-radius: 16px;
-				padding: 0.2rem 0.6rem;
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			}
+
+			@media (max-width: 768px) {
+				.language-switcher {
+					position: absolute;
+					top: 15px;
+					right: 80px;
+					background: rgba(0,0,0,0.1);
+				}
 			}
 
 			/* Page Transition Animations */
@@ -827,8 +854,8 @@ const alternateLanguagePath = isEnglish
 						<a href="/about" style="--i: 5;">Sobre</a>
 					</div>
 					<div class="language-switcher">
-						<a href={alternateLanguagePath} class={!isEnglish ? 'active' : ''}>{isEnglish ? 'PT' : 'EN'}</a>
-						<a href={alternateLanguagePath} class={isEnglish ? 'active' : ''}>{isEnglish ? 'EN' : 'PT'}</a>
+						<a href={alternateLanguagePath} class={isEnglish ? '' : 'active'} id="language-switch-pt">PT</a>
+						<a href={alternateLanguagePath} class={isEnglish ? 'active' : ''} id="language-switch-en">EN</a>
 					</div>
 				</div>
 			</nav>
