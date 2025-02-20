@@ -1,0 +1,393 @@
+---
+import Layout from '../../layouts/Layout.en.astro';
+---
+
+<Layout title="Partnerships">
+	<div class="hero">
+		<div class="hero-content">
+			<h1>Partnerships</h1>
+			<p class="subtitle">Join us in our mission to transform water filtration</p>
+		</div>
+	</div>
+
+	<div class="main-content">
+		<section class="partners-section">
+			<div class="section-header">
+				<h2 style="color: rgb(var(--primary))">Our Partners</h2>
+				<div class="section-line"></div>
+			</div>
+			<div class="text-content">
+				<p>Shrimp2Sink believes in the power of collaboration to achieve our goals. 
+				We work together with universities and companies that share 
+				our vision of a more sustainable and accessible future for all.</p>
+			</div>
+
+			<div class="partners-grid">
+				<div class="partner-card">
+					<div class="partner-icon">🎓</div>
+					<h3>Professor Andreia Peixoto</h3>
+					<p class="partner-affiliation">Faculty of Sciences, University of Porto (FCUP)</p>
+					<p class="partner-description">Fundamental academic collaboration in the chitosan extraction procedure from shrimp, an essential substance for our project. Student Inês Sequeira Ribeirinha Marques guided and helped us during this procedure.</p>
+					<a href="https://sigarra.up.pt/fcup/pt/func_geral.formview?p_codigo=500924" target="_blank" class="button primary">FCUP Profile</a>
+				</div>
+				<div class="partner-card">
+					<div class="partner-icon">🦐</div>
+					<h3>A Marisqueira de Matosinhas</h3>
+					<p class="partner-affiliation">Seafood Market</p>
+					<p class="partner-description">Essential partner in supplying shrimp shells, the key raw material for the development of our project</p>
+					<a href="https://amarisqueiradematosinhos.com/" target="_blank" class="button primary">Website</a>
+				</div>
+				<div class="partner-card">
+					<div class="partner-icon">🎓</div>
+					<h3>Professor Carlos Granadeiro</h3>
+					<p class="partner-affiliation">Faculty of Sciences, University of Porto (FCUP)</p>
+					<p class="partner-description">Essential academic collaboration in Water Treatment Management and verification of filter effectiveness</p>
+					<a href="https://sigarra.up.pt/fcup/pt/func_geral.formview?p_codigo=504986" target="_blank" class="button primary">FCUP Profile</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="collaboration-section">	
+			<div class="section-header">
+				<h2 style="color: rgb(var(--primary))">How to Collaborate</h2>
+				<div class="section-line"></div>
+			</div>
+			<div class="text-content">
+				<p class="section-description">We are always open to new partnerships that can contribute to the advancement 
+				of the project and expand our social and environmental impact.</p>
+			</div>
+
+			<div class="collaboration-grid">
+				<div class="collab-card">
+					<div class="collab-icon">🔬</div>
+					<h3>Research and Development</h3>
+					<p class="section-description">Participate in the development of new technologies and applications for our solution.</p>
+				</div>
+
+				<div class="collab-card">
+					<div class="collab-icon">📊</div>
+					<h3>Implementation</h3>
+					<p class="section-description">Collaborate on implementing and testing our solutions in different contexts and scales.</p>
+				</div>
+
+				<div class="collab-card">
+					<div class="collab-icon">🌍</div>
+					<h3>Social Impact</h3>
+					<p class="section-description">Join us in bringing clean water and sanitation to communities in need.</p>
+				</div>
+
+				<div class="collab-card">
+					<div class="collab-icon">💡</div>
+					<h3>Innovation</h3>
+					<p class="section-description">Contribute ideas and solutions to expand the reach and efficiency of the project.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="cta-section">
+			<div class="cta-content">
+				<h2>Join Us</h2>
+				<p>Interested in collaborating? Contact us to discuss partnership opportunities.</p>
+				<a href="/en/about#contact" class="button primary">Talk to Us</a>
+			</div>
+		</section>
+	</div>
+</Layout>
+
+<style>
+	.hero {
+		text-align: center;
+		padding: 6rem 2rem;
+		background: var(--gradient);
+		margin: -2rem -2rem 2rem -2rem;
+		border-radius: 16px 16px 0 0;
+		color: rgb(var(--text-light));
+		position: relative;
+		overflow: hidden;
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			margin: -2rem -1rem 2rem -1rem;
+			padding: 7rem 1rem 3rem 1rem;
+			width: calc(100% + 2rem);
+		}
+
+		.hero-content {
+			padding: 0 1rem;
+		}
+	}
+
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
+	}
+
+	.hero h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin-bottom: 1.5rem;
+		line-height: 1.2;
+		color: rgb(var(--text-light));
+	}
+
+	.subtitle {
+		font-size: 1.25rem;
+		color: rgba(255,255,255,0.9);
+		margin-bottom: 2rem;
+		line-height: 1.6;
+	}
+
+	.main-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	.section-header h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.section-line {
+		width: 80px;
+		height: 4px;
+		background: var(--gradient);
+		margin: 1rem auto;
+		border-radius: 2px;
+	}
+
+	.section-description {
+		font-size: 1.2rem;
+		color: rgb(var(--text));
+		line-height: 1.7;
+		opacity: 0.9;
+		max-width: 800px;
+		margin: 1rem auto;
+	}
+
+	.text-content {
+		max-width: 800px;
+		margin: 0 auto 3rem;
+		text-align: center;
+		font-size: 1.2rem;
+		line-height: 1.6;
+		color: rgb(var(--text));
+	}
+
+	.partner-description {
+		line-height: 1.7;
+		letter-spacing: -0.01em;
+		opacity: 0.9;
+		color: rgb(var(--text));
+	}
+
+	.partners-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin: 3rem auto;
+		max-width: 1200px;
+		padding: 0 1rem;
+	}
+
+	.partner-card {
+		background: white;
+		border-radius: 1rem;
+		padding: 2rem;
+		text-align: center;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		transition: transform 0.2s ease-in-out;
+	}
+
+	.partner-card:hover {
+		transform: translateY(-5px);
+	}
+
+	.partner-icon {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.partner-card h3 {
+		color: rgb(var(--primary));
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+		font-weight: 1300;
+	}
+
+	.partner-affiliation {
+		color: rgb(var(--text));
+		font-style: italic;
+		margin-bottom: 1rem;
+		opacity: 0.8;
+	}
+
+	.partner-card p {
+		color: rgb(var(--text));
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+
+	.partner-card .button {
+		display: inline-block;
+		margin-top: 1rem;
+		padding: 0.75rem 1.5rem;
+		background: var(--gradient);
+		color: rgb(var(--text-light));
+		text-decoration: none;
+		border-radius: 0.5rem;
+		transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	}
+
+	.partner-card .button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(var(--primary), 0.2);
+	}
+
+	.partner-card .button.primary {
+		background: var(--gradient);
+		color: rgb(var(--text-light));
+	}
+
+	.collaboration-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 2rem;
+		margin-top: 2rem;
+		max-width: 1200px;
+		padding: 0 1rem;
+		
+	}
+
+	.collab-card {
+		background: white;
+		padding: 2rem;
+		border-radius: 16px;
+		box-shadow: var(--card-shadow);
+		text-align: center;
+		transition: var(--transition);
+		
+	}
+
+	.collab-card:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 8px 24px rgba(var(--primary), 0.15);
+		
+	}
+
+	.collab-icon {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--primary));
+	}
+
+	.collab-card h3 {
+		color: rgb(var(--primary));
+		font-size: 1.25rem;
+		margin-bottom: 0.5rem;
+		font-weight: 1300;
+		
+	}
+
+	.collab-card p {
+		color: rgb(var(--text));
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+
+	.cta-section {
+		background: var(--gradient);
+		padding: 4rem 2rem;
+		text-align: center;
+		color: rgb(var(--text-light));
+		margin: 4rem -2rem -2rem -2rem;
+		border-radius: 0 0 16px 16px;
+	}
+
+	.cta-content {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.cta-content h2 {
+		color: rgb(var(--text-light));
+		margin-bottom: 1rem;
+		font-size: 2rem;
+	}
+
+	.cta-content p {
+		margin-bottom: 2rem;
+		font-size: 1.1rem;
+		opacity: 0.9;
+	}
+
+	.cta-section .button.primary {
+		background: white;
+		color: rgb(var(--primary));
+	}
+
+	.button.primary {
+		background: var(--gradient);
+		color: rgb(var(--text-light));
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			margin: -2rem -1rem 2rem -1rem;
+			padding: 7rem 1rem 3rem 1rem;
+			width: calc(100% + 2rem);
+		}
+
+		h1 {
+			font-size: 2.5rem;
+		}
+
+		.subtitle {
+			font-size: 1.2rem;
+		}
+
+		.section-header h2 {
+			font-size: 2rem;
+		}
+
+		.partners-grid, .collaboration-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+
+		.partner-card, .collab-card {
+			padding: 1.5rem;
+		}
+
+		.partner-icon, .collab-icon {
+			font-size: 2rem;
+		}
+
+		.text-content {
+			font-size: 1.1rem;
+			margin-bottom: 2rem;
+		}
+		.cta-section {
+			margin: 2rem -2rem -2rem -2rem;
+			padding: 3rem 1rem;
+		}
+	}
+</style>

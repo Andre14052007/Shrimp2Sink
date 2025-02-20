@@ -1,0 +1,462 @@
+---
+import Layout from '../../layouts/Layout.en.astro';
+---
+
+<Layout title="Home">
+	<div class="hero">
+		<div class="hero-content">
+			<h1>
+				<span class="hero-title-sub">Sustainable Water Filtration using Chitosan</span>
+			</h1>
+			<p class="subtitle">Transforming Shrimp Waste into Innovative Water Filtration Solutions</p>
+			<div class="button-group">
+				<a href="/en/about" class="button">Learn More</a>
+				<a href="/en/results" class="button primary">View Results</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="main-content">
+		<section class="about-section">
+			<div class="section-header">
+				<h2>The Shrimp2Sink Project</h2>
+				<div class="section-line"></div>
+			</div>
+			<div class="about-text">
+				<p>The Shrimp2Sink project is an innovative initiative aimed at transforming shrimp waste into sustainable water filtration solutions. By extracting chitosan from shrimp shells, we have developed an effective and eco-friendly method for water purification.</p>
+			</div>
+		</section>
+
+		<section class="video-section">
+			<div class="section-header">
+				<h2>Watch Our Project</h2>
+				<div class="section-line"></div>
+			</div>
+			<div class="video-description">
+				<p>Watch our video to learn more about how we transform shrimp waste into a sustainable water filtration solution.</p>
+			</div>
+			<div class="video-container">
+				<iframe 
+					src="https://www.youtube.com/embed/xwQijxMtlmg?si=bqITIaoIdaUEhmf7"
+					title="Shrimp2Sink Project Video"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen
+					loading="lazy">
+				</iframe>
+			</div>
+		</section>
+
+		<section class="features">
+			<div class="section-header">
+				<h2>What Sets Us Apart</h2>
+				<div class="section-line"></div>
+			</div>
+			<div class="features-grid">
+				<div class="feature-card">
+					<div class="feature-icon">🌱</div>
+					<h3 style="color: rgb(var(--primary))">Sustainable</h3>
+					<p>Utilizing waste materials from the seafood industry to create ecological solutions</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">⚡</div>
+					<h3 style="color: rgb(var(--primary))">Effective</h3>
+					<p>Proven filtration capabilities for various water contaminants</p>
+				</div>
+				<div class="feature-card">
+					<div class="feature-icon">🔬</div>
+					<h3 style="color: rgb(var(--primary))">Innovative</h3>
+					<p>Combining biotechnology with environmental conservation</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="cta-section">
+			<div class="cta-content">
+				<h2>Interested in Our Project?</h2>
+				<p>Contact us to learn more about our research and potential collaborations.</p>
+				<a href="/en/about#contact" class="button primary">Contact Us</a>
+			</div>
+		</section>
+	</div>
+</Layout>
+
+<style>
+	.hero {
+		text-align: center;
+		padding: 4rem 2rem;
+		background: var(--gradient);
+		color: rgb(var(--text-light));
+		margin: -2rem -2rem 2rem -2rem;
+		border-radius: 16px 16px 0 0;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
+	}
+
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		max-width: 800px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+
+	.hero h1 {
+		font-size: 2.5rem;
+		font-weight: 800;
+		margin-bottom: 1rem;
+		line-height: 1.2;
+		color: rgb(var(--text-light));
+	}
+
+	.hero-title-sub {
+		display: block;
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		font-weight: 800;
+		color: white;
+	}
+
+	.subtitle {
+		font-size: 1.1rem;
+		color: rgba(255,255,255,0.9);
+		max-width: 600px;
+		margin: 0 auto 2rem auto;
+		line-height: 1.6;
+	}
+
+	.button-group {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.button {
+		display: inline-block;
+		padding: 0.8rem 1.6rem;
+		border-radius: 8px;
+		background: white;
+		color: rgb(var(--primary));
+		font-weight: 500;
+		text-decoration: none;
+		transition: var(--transition);
+	}
+
+	.button.primary {
+		background: var(--gradient);
+		color: rgb(var(--text-light));
+	}
+
+	.button:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+	}
+
+	.main-content {
+		max-width: var(--container-width);
+		margin: 0 auto;
+		padding: 2rem;
+		background: white;
+		border-radius: 16px;
+	}
+
+	.section-header {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.section-header h2 {
+		font-size: 2rem;
+		color: rgb(var(--primary));
+		margin-bottom: 1rem;
+		font-weight: 700;
+	}
+
+	.section-line {
+		width: 60px;
+		height: 4px;
+		background: var(--gradient);
+		margin: 1rem auto;
+		border-radius: 2px;
+	}
+
+	.features {
+		padding: 4rem 0;
+		background: white;
+		margin: 0 -2rem;
+	}
+
+	.video-section {
+		padding: 4rem 2rem;
+		background: white;
+	}
+
+	.video-description {
+		max-width: 800px;
+		margin: 0 auto 2rem auto;
+		text-align: center;
+		font-size: 1.2rem;
+		line-height: 1.7;
+		opacity: 0.9;
+		color: rgb(var(--text));
+		padding: 0 1rem;
+		letter-spacing: -0.01em;
+	}
+
+	.video-container {
+		max-width: 800px;
+		margin: 0 auto;
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+		height: 0;
+		overflow: hidden;
+		border-radius: 12px;
+		box-shadow: var(--card-shadow);
+	}
+
+	.video-container iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: 12px;
+	}
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		max-width: var(--container-width);
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	.feature-card {
+		background: white;
+		padding: 2rem;
+		border-radius: 12px;
+		text-align: center;
+		transition: var(--transition);
+		box-shadow: var(--card-shadow);
+	}
+
+	.feature-card:hover {
+		transform: translateY(-4px);
+		box-shadow: var(--card-shadow-hover);
+	}
+
+	.feature-icon {
+		font-size: 2.5rem;
+		color: rgb(var(--primary));
+		margin-bottom: 1rem;
+	}
+
+	.feature-card h3 {
+		color: rgb(var(--primary));
+		margin-bottom: 1rem;
+		font-size: 1.25rem;
+		font-weight: 600;
+	}
+
+	.feature-card p {
+		color: rgb(var(--text));
+		line-height: 1.7;
+		opacity: 0.9;
+		letter-spacing: -0.01em;
+	}
+
+	.about-section {
+		padding: 4rem 2rem;
+		text-align: center;
+	}
+
+	.about-text {
+		max-width: 800px;
+		margin: 0 auto;
+		font-size: 1.2rem;
+		line-height: 1.9;
+		opacity: 0.9;
+		color: rgb(var(--text));
+		letter-spacing: -0.01em;
+	}
+
+	.cta-section {
+		background: var(--gradient);
+		padding: 4rem 2rem;
+		text-align: center;
+		color: rgb(var(--text-light));
+		margin: 4rem -2rem -2rem -2rem;
+		border-radius: 0 0 16px 16px;
+	}
+
+	.cta-content {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.cta-content h2 {
+		color: rgb(var(--text-light));
+		margin-bottom: 1rem;
+		font-size: 2rem;
+		font-weight: 700;
+	}
+
+	.cta-content p {
+		margin-bottom: 2rem;
+		font-size: 1.1rem;
+		opacity: 0.9;
+		color: rgb(var(--text-light));
+		line-height: 1.7;
+		letter-spacing: -0.01em;
+	}
+
+	.cta-section .button.primary {
+		background: var(--gradient);
+		color: white;
+	}
+
+	.cta-section .button.primary:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			padding: 7rem 1rem 3rem 1rem;
+			text-align: center;
+			background: var(--gradient);
+			margin: -2rem -1rem 1rem -1rem;
+			border-radius: 16px 16px 0 0;
+			color: rgb(var(--text-light));
+			position: relative;
+			overflow: hidden;
+		}
+
+		.hero::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(45deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
+		}
+
+		.hero-content {
+			position: relative;
+			z-index: 1;
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 0 1rem;
+		}
+
+		.hero h1 {
+			font-size: 2.25rem;
+			font-weight: 800;
+			margin-bottom: 1.5rem;
+			line-height: 1.2;
+			color: rgb(var(--text-light));
+		}
+
+		.subtitle {
+			font-size: 1.1rem;
+			color: rgba(255,255,255,0.9);
+			margin-bottom: 2rem;
+			line-height: 1.6;
+		}
+
+		.main-content {
+			max-width: var(--container-width);
+			margin: 0 auto;
+			padding: 1rem;
+			background: white;
+			border-radius: 16px;
+		}
+
+		section {
+			margin-bottom: 3rem;
+		}
+
+		.section-header {
+			text-align: center;
+			margin-bottom: 3rem;
+		}
+
+		.section-line {
+			width: 60px;
+			height: 4px;
+			background: var(--gradient);
+			margin: 1rem auto;
+			border-radius: 2px;
+		}
+
+		.about-text {
+			max-width: 100%;
+			padding: 0 1rem;
+			font-size: 1rem;
+			line-height: 1.6;
+			margin: 0 auto;
+		}
+
+		.video-section {
+			padding: 0;
+			background: white;
+		}
+
+		.video-description {
+			max-width: 100%;
+			padding: 0 1rem;
+			font-size: 1rem;
+			margin-bottom: 1rem;
+			text-align: center;
+		}
+
+		.video-container {
+			margin: 0 -1rem;
+			border-radius: 0;
+		}
+
+		.video-container iframe {
+			border-radius: 0;
+		}
+
+		.features {
+			padding: 3rem 0;
+			margin: 0 -1rem;
+			background: white;
+		}
+
+		.features-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+			padding: 0 1rem;
+		}
+
+		.cta-section {
+			margin: 3rem -1rem -1rem -1rem;
+			padding: 3rem 1rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero-title-main {
+			font-size: 2.8rem;
+		}
+
+		.hero-title-sub {
+			font-size: 2rem;
+		}
+	}
+</style>
