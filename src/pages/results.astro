@@ -102,13 +102,13 @@ import Layout from '../layouts/Layout.astro';
 					<div class="result-card">
 						<div class="result-icon">🧪</div>
 						<h3>Massa de Quitosana</h3>
-						<p>3 gramas de quitosana</p>
+						<p>3,57 gramas de quitosana</p>
 					</div>
 
 					<div class="result-card">
 						<div class="result-icon">📊</div>
 						<h3>Taxa de Conversão</h3>
-						<p>20,0% de conversão em massa</p>
+						<p>23,8% de conversão em massa</p>
 					</div>
 				</div>
 
@@ -123,7 +123,7 @@ import Layout from '../layouts/Layout.astro';
 								<button id="calculateChitosanBtn">Calcular</button>
 							</div>
 							<div class="result" id="chitosanCalculationResult">
-								Massa de Quitosana Estimada: <span>3</span> gramas
+								Massa de Quitosana Estimada: <span>3,57</span> gramas
 							</div>
 						</div>
 						<div class="chart-container">
@@ -320,7 +320,7 @@ import Layout from '../layouts/Layout.astro';
     destroyChart('chitosanConversionChart');
     const chitosanCtx = document.getElementById('chitosanConversionChart');
     if (chitosanCtx) {
-      const chitosanConversionRate = 0.20;
+      const chitosanConversionRate = 0.238;
       const chitosanPoints = [
         { x: 0, y: 0 },
         { x: 100, y: 100 * chitosanConversionRate },
@@ -335,7 +335,7 @@ import Layout from '../layouts/Layout.astro';
         data: {
           datasets: [
             {
-              label: 'Linha de Conversão (20%)',
+              label: 'Linha de Conversão (23,8%)',
               data: chitosanPoints,
               showLine: true,
               fill: false,
@@ -401,7 +401,7 @@ import Layout from '../layouts/Layout.astro';
       function updateChitosanCalculation() {
         const massInG = parseFloat(shellMassInput.value) || 0;
         const chitosanMass = massInG * chitosanConversionRate;
-        chitosanResultSpan.textContent = Math.round(chitosanMass);
+        chitosanResultSpan.textContent = (chitosanMass);
         chitosanChart.data.datasets[2].data = [{ x: massInG, y: chitosanMass }];
         chitosanChart.update();
       }
