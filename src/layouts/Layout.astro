@@ -802,35 +802,160 @@ const alternateLanguagePath = isEnglish
 			}
 		</style>
 
-		<script>
-			document.addEventListener('astro:page-load', () => {
-				// Re-initialize mobile menu functionality after each navigation
+		<script is:inline>
+			// Custom type extension without module declaration
+			if (typeof window !== 'undefined') {
+				// Define mobileMenuListeners type structure if not exists
+				if (!window.mobileMenuListeners) {
+					window.mobileMenuListeners = {
+						mobileMenu: null,
+						navOverlay: null,
+						navLinks: [],
+						languageSwitcher: []
+					};
+				}
+			}
+
+			function cleanupExistingListeners() {
+				// Only proceed if window and mobileMenuListeners are defined
+				if (typeof window === 'undefined' || !window.mobileMenuListeners) return;
+
+				console.log('🧹 Cleaning up existing listeners');
+
+				const mobileMenu = document.querySelector('.mobile-menu');
+				if (mobileMenu && window.mobileMenuListeners.mobileMenu) {
+					mobileMenu.removeEventListener('click', window.mobileMenuListeners.mobileMenu);
+				}
+
+				const navOverlay = document.querySelector('.nav-overlay');
+				if (navOverlay && window.mobileMenuListeners.navOverlay) {
+					navOverlay.removeEventListener('click', window.mobileMenuListeners.navOverlay);
+				}
+
+				const navLinks = document.querySelector('.nav-links');
+				if (navLinks) {
+					navLinks.querySelectorAll('a').forEach((link, index) => {
+						if (window.mobileMenuListeners.navLinks && window.mobileMenuListeners.navLinks[index]) {
+							link.removeEventListener('click', window.mobileMenuListeners.navLinks[index]);
+						}
+					});
+				}
+
+				const languageSwitcher = document.querySelector('.language-switcher');
+				if (languageSwitcher) {
+					languageSwitcher.querySelectorAll('a').forEach((link, index) => {
+						if (window.mobileMenuListeners.languageSwitcher && window.mobileMenuListeners.languageSwitcher[index]) {
+							link.removeEventListener('click', window.mobileMenuListeners.languageSwitcher[index]);
+						}
+					});
+				}
+
+				// Reinitialize mobileMenuListeners
+				window.mobileMenuListeners = {
+					mobileMenu: null,
+					navOverlay: null,
+					navLinks: [],
+					languageSwitcher: []
+				};
+			}
+
+			function setupMobileMenu() {
+				// Check if window is defined and in a browser environment
+				if (typeof window === 'undefined' || typeof document === 'undefined') return;
+
+				console.log('🔍 Attempting to setup mobile menu...');
+
+				cleanupExistingListeners();
+
 				const mobileMenu = document.querySelector('.mobile-menu');
 				const navLinks = document.querySelector('.nav-links');
 				const navOverlay = document.querySelector('.nav-overlay');
 
+				console.log('Mobile Menu Element:', mobileMenu);
+				console.log('Nav Links Element:', navLinks);
+				console.log('Nav Overlay Element:', navOverlay);
+
+				if (!mobileMenu || !navLinks || !navOverlay) {
+					console.error('❌ One or more mobile menu elements not found!');
+					return;
+				}
+
 				const toggleMenu = () => {
-					navLinks?.classList.toggle('active');
-					mobileMenu?.classList.toggle('active');
-					navOverlay?.classList.toggle('active');
+					console.log('🔄 Toggling menu...');
+					navLinks.classList.toggle('active');
+					mobileMenu.classList.toggle('active');
+					navOverlay.classList.toggle('active');
 				};
 
 				const closeMenu = () => {
-					navLinks?.classList.remove('active');
-					mobileMenu?.classList.remove('active');
-					navOverlay?.classList.remove('active');
+					console.log('❌ Closing menu...');
+					navLinks.classList.remove('active');
+					mobileMenu.classList.remove('active');
+					navOverlay.classList.remove('active');
 				};
 
-				mobileMenu?.addEventListener('click', toggleMenu);
-				navOverlay?.addEventListener('click', closeMenu);
+				try {
+					window.mobileMenuListeners.mobileMenu = toggleMenu;
+					mobileMenu.addEventListener('click', toggleMenu);
 
-				// Close menu when clicking a navigation link
-				navLinks?.querySelectorAll('a').forEach(link => {
-					link.addEventListener('click', closeMenu);
-				});
+					window.mobileMenuListeners.navOverlay = closeMenu;
+					navOverlay.addEventListener('click', closeMenu);
 
-				// Handle menu close after navigation
-				document.addEventListener('astro:after-swap', closeMenu);
+					navLinks.querySelectorAll('a').forEach((link, index) => {
+						const closeLinkHandler = () => {
+							console.log(`🔗 Closing menu from link ${index}`);
+							closeMenu();
+						};
+						window.mobileMenuListeners.navLinks[index] = closeLinkHandler;
+						link.addEventListener('click', closeLinkHandler);
+					});
+
+					console.log('✅ Mobile menu event listeners successfully attached');
+				} catch (error) {
+					console.error('❌ Error attaching event listeners:', error);
+				}
+
+				const languageSwitcher = document.querySelector('.language-switcher');
+				if (languageSwitcher) {
+					languageSwitcher.querySelectorAll('a').forEach((link, index) => {
+						const switchLangHandler = () => {
+							console.log('🌐 Language switch clicked');
+							closeMenu();
+							
+							setTimeout(() => {
+								console.log('🔄 Scheduling menu reset after language switch');
+								setupMobileMenu();
+							}, 300);
+						};
+
+						window.mobileMenuListeners.languageSwitcher[index] = switchLangHandler;
+						link.addEventListener('click', switchLangHandler);
+					});
+				}
+			}
+
+			// Initial setup
+			try {
+				setupMobileMenu();
+				console.log('✅ Initial mobile menu setup complete');
+			} catch (error) {
+				console.error('❌ Initial setup failed:', error);
+			}
+
+			// Event listeners for Astro navigation
+			document.addEventListener('astro:page-load', () => {
+				console.log('🔄 Astro page load triggered');
+				setupMobileMenu();
+			});
+
+			document.addEventListener('astro:after-swap', () => {
+				console.log('🔄 Astro after swap triggered');
+				setupMobileMenu();
+			});
+
+			// Global error tracking
+			window.addEventListener('error', (event) => {
+				console.error('🚨 Unhandled error:', event.error);
 			});
 		</script>
 	</head>
