@@ -141,10 +141,10 @@ import Layout from '../layouts/Layout.astro';
 					<h3>Metodologia</h3>
 					<div class="methodology-steps">
 						<ol>
-							<li>Preparação de uma solução ideal</li>
-							<li>Medição da turbidez inicial</li>
+							<li>Criação de uma curva de referência da concentração de LVX</li>
+							<li>Preparação de uma solução ideal de LVX (5 ppm)</li>
 							<li>Adição de quitosana como processo de filtração</li>
-							<li>Medição da turbidez final</li>
+							<li>Observação e comparação da curva resultante após 5 minutos</li>
 							<li>Cálculo da eficiência</li>
 						</ol>
 					</div>
@@ -153,20 +153,20 @@ import Layout from '../layouts/Layout.astro';
 				<div class="results-grid">
 					<div class="result-card">
 						<div class="result-icon">💧</div>
-						<h3>Turbidez Inicial</h3>
-						<p>A definir</p>
+						<h3>Concentração Inicial</h3>
+						<p>5 partes por milhão (ppm)</p>
 					</div>
 
 					<div class="result-card">
 						<div class="result-icon">✨</div>
-						<h3>Turbidez Final</h3>
-						<p>A definir</p>
+						<h3>Concentração Final</h3>
+						<p>1,6 partes por milhão</p>
 					</div>
 
 					<div class="result-card">
 						<div class="result-icon">📊</div>
 						<h3>Eficiência</h3>
-						<p>A definir</p>
+						<p>68% de filtração em 5 minutos</p>
 					</div>
 				</div>
 
@@ -175,13 +175,13 @@ import Layout from '../layouts/Layout.astro';
 					<h3>Visualização dos Dados</h3>
 					<div class="graph-content">
 						<div class="calculator">
-							<label for="turbidityInput">Turbidez Inicial (NTU):</label>
+							<label for="turbidityInput">Concentração Inicial (PPM):</label>
 							<div class="input-group">
 								<input type="number" id="turbidityInput" min="0" step="0.1" value="10">
 								<button id="calculateFiltrationBtn">Calcular</button>
 							</div>
 							<div class="result" id="filtrationCalculationResult">
-								Turbidez Final Estimada: <span>A definir</span> NTU
+								Concentração Final Estimada: <span>3,4</span> PPM
 							</div>
 						</div>
 						<div class="chart-container">
@@ -220,7 +220,7 @@ import Layout from '../layouts/Layout.astro';
   // Initialize all charts
   function initializeAllCharts() {
     // First chart
-    destroyChart('conversionChart');
+    
     const ctx = document.getElementById('conversionChart');
     if (ctx) {
       const conversionRate = 0.0568;
@@ -317,7 +317,7 @@ import Layout from '../layouts/Layout.astro';
     }
 
     // Second chart
-    destroyChart('chitosanConversionChart');
+    
     const chitosanCtx = document.getElementById('chitosanConversionChart');
     if (chitosanCtx) {
       const chitosanConversionRate = 0.238;
@@ -414,9 +414,18 @@ import Layout from '../layouts/Layout.astro';
     }
 
     // Third chart
-    destroyChart('filtrationChart');
+
     const filtrationCtx = document.getElementById('filtrationChart');
-    if (filtrationCtx) {
+	if (filtrationCtx) {
+      const filtrationConversionRate = 0.32;
+      const filtrationPoints = [
+        { x: 0, y: 0 },
+        { x: 100, y: 100 * filtrationConversionRate },
+        { x: 200, y: 200 * filtrationConversionRate },
+        { x: 300, y: 300 * filtrationConversionRate },
+        { x: 400, y: 400 * filtrationConversionRate },
+        { x: 500, y: 500 * filtrationConversionRate }
+      ];
       const filtrationChart = new Chart(filtrationCtx, {
         type: 'line',
         data: {
@@ -428,6 +437,16 @@ import Layout from '../layouts/Layout.astro';
               borderColor: 'rgba(75, 192, 192, 1)',
               pointRadius: 6,
               showLine: true
+            },
+            {
+              label: 'Linha de Filtração após 5 minutos (68%)',
+              data: filtrationPoints,
+              showLine: true,
+              fill: false,
+              borderColor: 'rgba(54, 162, 235, 1)',
+              backgroundColor: 'rgba(54, 162, 235, 0.8)',
+              borderWidth: 2,
+              tension: 0
             }
           ]
         },
@@ -448,7 +467,7 @@ import Layout from '../layouts/Layout.astro';
               position: 'bottom',
               title: {
                 display: true,
-                text: 'Turbidez Inicial (NTU)'
+                text: 'Concentração Inicial (ppm)'
               },
               min: 0,
               suggestedMax: 100
@@ -457,7 +476,7 @@ import Layout from '../layouts/Layout.astro';
               beginAtZero: true,
               title: {
                 display: true,
-                text: 'Turbidez Final (NTU)'
+                text: 'Concentração Final (ppm)'
               },
               min: 0,
               suggestedMax: 100
@@ -473,8 +492,8 @@ import Layout from '../layouts/Layout.astro';
 
       function updateFiltrationCalculation() {
         const initialTurbidity = parseFloat(initialTurbidityInput.value) || 0;
-        const finalTurbidity = initialTurbidity;
-        filtrationResultSpan.textContent = Math.round(finalTurbidity * 10) / 10;
+        const finalTurbidity =  initialTurbidity * filtrationConversionRate;
+        filtrationResultSpan.textContent = (finalTurbidity ) ;
         filtrationChart.data.datasets[0].data = [{ x: initialTurbidity, y: finalTurbidity }];
         filtrationChart.update();
       }
