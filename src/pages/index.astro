@@ -204,6 +204,9 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script is:inline>
+	document.addEventListener('DOMContentLoaded', (event) => {
+    initializeSlideshow();
+  });
   // Utility function to handle the slideshow
   let currentSlide = 0;
   const slides = document.querySelectorAll('.slide');

@@ -209,13 +209,10 @@ import Layout from '../../layouts/Layout.en.astro';
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script is:inline>
-  // Utility function to destroy existing chart
-  function destroyChart(canvasId) {
-	const existingChart = Chart.getChart(canvasId);
-	if (existingChart) {
-	  existingChart.destroy();
-	}
-  }
+  // Initialize all charts
+  document.addEventListener('DOMContentLoaded', (event) => {
+    initializeAllCharts();
+  });
 
   // Initialize all charts
   function initializeAllCharts() {
@@ -513,14 +510,20 @@ import Layout from '../../layouts/Layout.en.astro';
 
   // Initialize on page load
   if (document.readyState === 'loading') {
-	document.addEventListener('DOMContentLoaded', initializeAllCharts);
+	document.addEventListener('DOMContentLoaded', (event) => {
+		initializeAllCharts();
+	});
   } else {
 	initializeAllCharts();
   }
 
   // Re-initialize on Astro page transitions
-  document.addEventListener('astro:page-load', initializeAllCharts);
-  document.addEventListener('astro:after-swap', initializeAllCharts);
+  document.addEventListener('astro:page-load', (event) => {
+	initializeAllCharts();
+  });
+  document.addEventListener('astro:after-swap', (event) => {
+	initializeAllCharts();
+  });
 </script>
 
 <style>

@@ -209,18 +209,15 @@ import Layout from '../layouts/Layout.astro';
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script is:inline>
-  // Utility function to destroy existing chart
-  function destroyChart(canvasId) {
-    const existingChart = Chart.getChart(canvasId);
-    if (existingChart) {
-      existingChart.destroy();
-    }
-  }
+  // Initialize all charts
+  document.addEventListener('DOMContentLoaded', (event) => {
+    initializeAllCharts();
+  });
 
   // Initialize all charts
   function initializeAllCharts() {
+	console.log("Initializing charts..."); // Debug log
     // First chart
-    
     const ctx = document.getElementById('conversionChart');
     if (ctx) {
       const conversionRate = 0.0568;
