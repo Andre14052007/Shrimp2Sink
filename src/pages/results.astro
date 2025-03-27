@@ -134,7 +134,7 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 
 			<div class="experiment-section">
-				<h3 class="experiment-title">Experiência 3: Eficiência de Filtração da Quitosana</h3>
+				<h3 class="experiment-title">Experiência 3: Eficiência de Filtração da Quitosana (LVX)</h3>
 				
 				<div class="methodology-card">
 					<div class="result-icon">📋</div>
@@ -420,25 +420,16 @@ import Layout from '../layouts/Layout.astro';
       const filtrationConversionRate = 0.32;
       const filtrationPoints = [
         { x: 0, y: 0 },
+        { x: 50, y: 50 * filtrationConversionRate },
         { x: 100, y: 100 * filtrationConversionRate },
         { x: 200, y: 200 * filtrationConversionRate },
-        { x: 300, y: 300 * filtrationConversionRate },
-        { x: 400, y: 400 * filtrationConversionRate },
-        { x: 500, y: 500 * filtrationConversionRate }
+        { x: 300, y: 300 * filtrationConversionRate }
       ];
       const filtrationChart = new Chart(filtrationCtx, {
         type: 'line',
         data: {
           datasets: [
-            {
-              label: 'Medição Atual',
-              data: [],
-              backgroundColor: 'rgba(75, 192, 192, 1)',
-              borderColor: 'rgba(75, 192, 192, 1)',
-              pointRadius: 6,
-              showLine: true
-            },
-            {
+		  {
               label: 'Linha de Filtração após 5 minutos (68%)',
               data: filtrationPoints,
               showLine: true,
@@ -447,6 +438,20 @@ import Layout from '../layouts/Layout.astro';
               backgroundColor: 'rgba(54, 162, 235, 0.8)',
               borderWidth: 2,
               tension: 0
+            },
+			{
+				label: 'Dado Experimental',
+				data: [{ x: 5, y: 1.6 }],
+				backgroundColor: 'rgba(255, 99, 132, 1)',
+				pointRadius: 6
+			},
+			{
+              label: 'Medição Atual',
+              data: [],
+              backgroundColor: 'rgba(75, 192, 192, 1)',
+              borderColor: 'rgba(75, 192, 192, 1)',
+              pointRadius: 6,
+              showLine: true
             }
           ]
         },
