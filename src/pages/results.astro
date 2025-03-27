@@ -326,8 +326,8 @@ import Layout from '../layouts/Layout.astro';
         { x: 100, y: 100 * chitosanConversionRate },
         { x: 200, y: 200 * chitosanConversionRate },
         { x: 300, y: 300 * chitosanConversionRate },
-        { x: 400, y: 400 * chitosanConversionRate },
-        { x: 500, y: 500 * chitosanConversionRate }
+        { x: 400, y: 400 * chitosanConversionRate }
+       
       ];
 
       const chitosanChart = new Chart(chitosanCtx, {
@@ -414,7 +414,6 @@ import Layout from '../layouts/Layout.astro';
     }
 
     // Third chart
-
     const filtrationCtx = document.getElementById('filtrationChart');
 	if (filtrationCtx) {
       const filtrationConversionRate = 0.32;
@@ -424,20 +423,18 @@ import Layout from '../layouts/Layout.astro';
         { x: 100, y: 100 * filtrationConversionRate },
         { x: 200, y: 200 * filtrationConversionRate },
         { x: 300, y: 300 * filtrationConversionRate }
+       
       ];
+
       const filtrationChart = new Chart(filtrationCtx, {
-        type: 'line',
+        type: 'scatter',
         data: {
           datasets: [
-		  {
-              label: 'Linha de Filtração após 5 minutos (68%)',
-              data: filtrationPoints,
-              showLine: true,
-              fill: false,
-              borderColor: 'rgba(54, 162, 235, 1)',
-              backgroundColor: 'rgba(54, 162, 235, 0.8)',
-              borderWidth: 2,
-              tension: 0
+            {
+				label: 'Medição Atual',
+              data: [],
+              backgroundColor: 'rgba(75, 192, 192, 1)',
+              pointRadius: 6
             },
 			{
 				label: 'Dado Experimental',
@@ -446,22 +443,25 @@ import Layout from '../layouts/Layout.astro';
 				pointRadius: 6
 			},
 			{
-              label: 'Medição Atual',
-              data: [],
-              backgroundColor: 'rgba(75, 192, 192, 1)',
-              borderColor: 'rgba(75, 192, 192, 1)',
-              pointRadius: 6,
-              showLine: true
+              label: 'Linha de Filtração (68%)',
+              data: filtrationPoints,
+              showLine: true,
+              fill: false,
+              borderColor: 'rgba(54, 162, 235, 1)',
+              backgroundColor: 'rgba(54, 162, 235, 0.8)',
+              borderWidth: 2,
+              tension: 0
             }
           ]
         },
+
         options: {
           responsive: true,
           maintainAspectRatio: false,
           plugins: {
             title: {
               display: true,
-              text: 'Eficiência de Filtração',
+              text: 'Relação Concentração Inicial vs. Concentração Final',
               font: { size: 14 }
             },
             legend: { position: 'bottom' }
@@ -475,7 +475,7 @@ import Layout from '../layouts/Layout.astro';
                 text: 'Concentração Inicial (ppm)'
               },
               min: 0,
-              suggestedMax: 100
+              max: 300
             },
             y: {
               beginAtZero: true,
@@ -484,7 +484,7 @@ import Layout from '../layouts/Layout.astro';
                 text: 'Concentração Final (ppm)'
               },
               min: 0,
-              suggestedMax: 100
+              suggestedMax: 300
             }
           }
         }
