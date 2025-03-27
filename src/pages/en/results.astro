@@ -1,11 +1,12 @@
 ---
-import Layout from '../../layouts/Layout.en.astro';---
+import Layout from '../../layouts/Layout.en.astro';
+---
 
 <Layout title="Results">
 	<div class="hero">
 		<div class="hero-content">
 			<h1>Research Results</h1>
-			<p class="subtitle">Discoveries and advances in our sustainable filtration project</p>
+			<p class="subtitle">Discoveries and advancements of our sustainable filtration project</p>
 		</div>
 	</div>
 
@@ -17,18 +18,18 @@ import Layout from '../../layouts/Layout.en.astro';---
 			</div>
 
 			<div class="experiment-section">
-				<h3 class="experiment-title">Experiment: Conversion of Shrimp Mass to Shrimp Shell Mass</h3>
+				<h3 class="experiment-title">Shrimp Mass to Shell Mass Conversion Experiment</h3>
 				
 				<div class="methodology-card">
 					<div class="result-icon">📋</div>
 					<h3>Methodology</h3>
 					<div class="methodology-steps">
 						<ol>
-							<li>Initial weighing of whole 20/30 shrimp</li>
-							<li>Manual shrimp peeling</li>
+							<li>Initial weighing of whole shrimp 20/30</li>
+							<li>Manual peeling of shrimp</li>
 							<li>Separation of shells</li>
 							<li>Weighing of obtained shells</li>
-							<li>Conversion rate calculation</li>
+							<li>Calculation of conversion rate</li>
 						</ol>
 					</div>
 				</div>
@@ -37,12 +38,12 @@ import Layout from '../../layouts/Layout.en.astro';---
 					<div class="result-card">
 						<div class="result-icon">⚖️</div>
 						<h3>Total Mass</h3>
-						<p>4 kg of 20/30 shrimp</p>
+						<p>4 kg of shrimp 20/30</p>
 					</div>
 
 					<div class="result-card">
 						<div class="result-icon">🦐</div>
-						<h3>Shell Mass Obtained</h3>
+						<h3>Mass of Obtained Shells</h3>
 						<p>227 grams of shrimp shells</p>
 					</div>
 
@@ -75,14 +76,14 @@ import Layout from '../../layouts/Layout.en.astro';---
 			</div>
 
 			<div class="experiment-section">
-				<h3 class="experiment-title">Experiment: Conversion of Shrimp Shells to Chitosan</h3>
+				<h3 class="experiment-title">Shrimp Shell to Chitosan Conversion Experiment</h3>
 				
 				<div class="methodology-card">
 					<div class="result-icon">📋</div>
 					<h3>Methodology</h3>
 					<div class="methodology-steps">
 						<ol>
-							<li>Shrimp shell preparation (cleaning, drying, and grinding)</li>
+							<li>Preparation of shrimp shells (cleaning, drying, and grinding)</li>
 							<li>Demineralization with citric acid (C₆H₈O₇)</li>
 							<li>Deproteinization with sodium hydroxide (NaOH)</li>
 							<li>Deacetylation of chitin to obtain chitosan</li>
@@ -100,8 +101,8 @@ import Layout from '../../layouts/Layout.en.astro';---
 
 					<div class="result-card">
 						<div class="result-icon">🧪</div>
-						<h3>Chitosan Mass</h3>
-						<p>3,57 grams of chitosan</p>
+						<h3>Mass of Chitosan</h3>
+						<p>3.57 grams of chitosan</p>
 					</div>
 
 					<div class="result-card">
@@ -122,7 +123,7 @@ import Layout from '../../layouts/Layout.en.astro';---
 								<button id="calculateChitosanBtn">Calculate</button>
 							</div>
 							<div class="result" id="chitosanCalculationResult">
-								Estimated Chitosan Mass: <span>3,57</span> grams
+								Estimated Chitosan Mass: <span>3.57</span> grams
 							</div>
 						</div>
 						<div class="chart-container">
@@ -133,18 +134,18 @@ import Layout from '../../layouts/Layout.en.astro';---
 			</div>
 
 			<div class="experiment-section">
-				<h3 class="experiment-title">Experiment 3: Filtration Efficiency of Chitosan</h3>
+				<h3 class="experiment-title">Experiment 3: Filtration Efficiency of Chitosan (LVX)</h3>
 				
 				<div class="methodology-card">
 					<div class="result-icon">📋</div>
 					<h3>Methodology</h3>
 					<div class="methodology-steps">
 						<ol>
-							<li>Preparation of an ideal solution</li>
-							<li>Measurement of initial turbidity</li>
+							<li>Creation of a reference curve for LVX concentration</li>
+							<li>Preparation of an ideal LVX solution (5 ppm)</li>
 							<li>Addition of chitosan as a filtration process</li>
-							<li>Measurement of final turbidity</li>
-							<li>Efficiency calculation</li>
+							<li>Observation and comparison of the resulting curve after 5 minutes</li>
+							<li>Calculation of efficiency</li>
 						</ol>
 					</div>
 				</div>
@@ -152,20 +153,20 @@ import Layout from '../../layouts/Layout.en.astro';---
 				<div class="results-grid">
 					<div class="result-card">
 						<div class="result-icon">💧</div>
-						<h3>Initial Turbidity</h3>
-						<p>To be defined</p>
+						<h3>Initial Concentration</h3>
+						<p>5 parts per million (ppm)</p>
 					</div>
 
 					<div class="result-card">
 						<div class="result-icon">✨</div>
-						<h3>Final Turbidity</h3>
-						<p>To be defined</p>
+						<h3>Final Concentration</h3>
+						<p>1.6 parts per million</p>
 					</div>
 
 					<div class="result-card">
 						<div class="result-icon">📊</div>
 						<h3>Efficiency</h3>
-						<p>To be defined</p>
+						<p>68% filtration in 5 minutes</p>
 					</div>
 				</div>
 
@@ -174,13 +175,13 @@ import Layout from '../../layouts/Layout.en.astro';---
 					<h3>Data Visualization</h3>
 					<div class="graph-content">
 						<div class="calculator">
-							<label for="turbidityInput">Initial Turbidity (NTU):</label>
+							<label for="turbidityInput">Initial Concentration (PPM):</label>
 							<div class="input-group">
 								<input type="number" id="turbidityInput" min="0" step="0.1" value="10">
 								<button id="calculateFiltrationBtn">Calculate</button>
 							</div>
 							<div class="result" id="filtrationCalculationResult">
-								Estimated Final Turbidity: <span>To be defined</span> NTU
+								Estimated Final Concentration: <span>3.4</span> PPM
 							</div>
 						</div>
 						<div class="chart-container">
@@ -198,8 +199,8 @@ import Layout from '../../layouts/Layout.en.astro';---
 		<section class="cta-section">
 			<div class="cta-content">
 				<h2>Want to Know More?</h2>
-				<p>Dive deeper into our research and discover the potential of sustainable filtration using chitosan.</p>
-				<a href="/en/resources" class="button primary">View Resources</a>
+				<p>Access our resources and complete project documentation.</p>
+				<a href="/resources" class="button primary">View Resources</a>
 			</div>
 		</section>
 	</div>
@@ -210,287 +211,311 @@ import Layout from '../../layouts/Layout.en.astro';---
 <script is:inline>
   // Utility function to destroy existing chart
   function destroyChart(canvasId) {
-    const existingChart = Chart.getChart(canvasId);
-    if (existingChart) {
-      existingChart.destroy();
-    }
+	const existingChart = Chart.getChart(canvasId);
+	if (existingChart) {
+	  existingChart.destroy();
+	}
   }
 
   // Initialize all charts
   function initializeAllCharts() {
-    // First chart
-    destroyChart('conversionChart');
-    const ctx = document.getElementById('conversionChart');
-    if (ctx) {
-      const conversionRate = 0.0568;
-      const points = [
-        { x: 0, y: 0 },
-        { x: 1000, y: 1000 * conversionRate },
-        { x: 2000, y: 2000 * conversionRate },
-        { x: 3000, y: 3000 * conversionRate },
-        { x: 4000, y: 4000 * conversionRate },
-        { x: 5000, y: 5000 * conversionRate }
-      ];
+	// First chart
+	
+	const ctx = document.getElementById('conversionChart');
+	if (ctx) {
+	  const conversionRate = 0.0568;
+	  const points = [
+		{ x: 0, y: 0 },
+		{ x: 1000, y: 1000 * conversionRate },
+		{ x: 2000, y: 2000 * conversionRate },
+		{ x: 3000, y: 3000 * conversionRate },
+		{ x: 4000, y: 4000 * conversionRate },
+		{ x: 5000, y: 5000 * conversionRate }
+	  ];
 
-      const chart = new Chart(ctx, {
-        type: 'scatter',
-        data: {
-          datasets: [
-            {
-              label: 'Conversion Rate (5,68%)',
-              data: points,
-              showLine: true,
-              fill: false,
-              borderColor: 'rgba(54, 162, 235, 1)',
-              backgroundColor: 'rgba(54, 162, 235, 0.8)',
-              borderWidth: 2,
-              tension: 0
-            },
-            {
-              label: 'Experimental Data',
-              data: [{ x: 4000, y: 227 }],
-              backgroundColor: 'rgba(255, 99, 132, 1)',
-              pointRadius: 6
-            },
-            {
-              label: 'Current Calculation',
-              data: [],
-              backgroundColor: 'rgba(75, 192, 192, 1)',
-              pointRadius: 6
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            title: {
-              display: true,
-              text: 'Relation between Shrimp Mass VS. Shrimp Shell Mass',
-              font: { size: 14 }
-            },
-            legend: { position: 'bottom' }
-          },
-          scales: {
-            x: {
-              type: 'linear',
-              position: 'bottom',
-              title: {
-                display: true,
-                text: 'Shrimp Mass (g)'
-              },
-              min: 0,
-              max: 5000
-            },
-            y: {
-              beginAtZero: true,
-              title: {
-                display: true,
-                text: 'Shrimp Shell Mass (g)'
-              },
-              min: 0,
-              max: 1000
-            }
-          }
-        }
-      });
+	  const chart = new Chart(ctx, {
+		type: 'scatter',
+		data: {
+		  datasets: [
+			{
+			  label: 'Conversion Line (5.68%)',
+			  data: points,
+			  showLine: true,
+			  fill: false,
+			  borderColor: 'rgba(54, 162, 235, 1)',
+			  backgroundColor: 'rgba(54, 162, 235, 0.8)',
+			  borderWidth: 2,
+			  tension: 0
+			},
+			{
+			  label: 'Experimental Data',
+			  data: [{ x: 4000, y: 227 }],
+			  backgroundColor: 'rgba(255, 99, 132, 1)',
+			  pointRadius: 6
+			},
+			{
+			  label: 'Current Calculation',
+			  data: [],
+			  backgroundColor: 'rgba(75, 192, 192, 1)',
+			  pointRadius: 6
+			}
+		  ]
+		},
+		options: {
+		  responsive: true,
+		  maintainAspectRatio: false,
+		  plugins: {
+			title: {
+			  display: true,
+			  text: 'Relation of Shrimp Mass vs. Shell Mass',
+			  font: { size: 14 }
+			},
+			legend: { position: 'bottom' }
+		  },
+		  scales: {
+			x: {
+			  type: 'linear',
+			  position: 'bottom',
+			  title: {
+				display: true,
+				text: 'Shrimp Mass (g)'
+			  },
+			  min: 0,
+			  max: 5000
+			},
+			y: {
+			  beginAtZero: true,
+			  title: {
+				display: true,
+				text: 'Shell Mass (g)'
+			  },
+			  min: 0,
+			  max: 1000
+			}
+		  }
+		}
+	  });
 
-      // Calculator functionality
-      const calculateBtn = document.getElementById('calculateBtn');
-      const shrimpMassInput = document.getElementById('shrimpMass');
-      const resultSpan = document.querySelector('#calculationResult span');
+	  // Calculator functionality
+	  const calculateBtn = document.getElementById('calculateBtn');
+	  const shrimpMassInput = document.getElementById('shrimpMass');
+	  const resultSpan = document.querySelector('#calculationResult span');
 
-      function updateCalculation() {
-        const massInKg = parseFloat(shrimpMassInput.value) || 0;
-        const shellMass = massInKg * 1000 * conversionRate;
-        resultSpan.textContent = Math.round(shellMass);
-        chart.data.datasets[2].data = [{ x: massInKg * 1000, y: shellMass }];
-        chart.update();
-      }
+	  function updateCalculation() {
+		const massInKg = parseFloat(shrimpMassInput.value) || 0;
+		const shellMass = massInKg * 1000 * conversionRate;
+		resultSpan.textContent = Math.round(shellMass);
+		chart.data.datasets[2].data = [{ x: massInKg * 1000, y: shellMass }];
+		chart.update();
+	  }
 
-      calculateBtn.addEventListener('click', updateCalculation);
-      shrimpMassInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') updateCalculation();
-      });
-      updateCalculation();
-    }
+	  calculateBtn.addEventListener('click', updateCalculation);
+	  shrimpMassInput.addEventListener('keypress', (e) => {
+		if (e.key === 'Enter') updateCalculation();
+	  });
+	  updateCalculation();
+	}
 
-    // Second chart
-    destroyChart('chitosanConversionChart');
-    const chitosanCtx = document.getElementById('chitosanConversionChart');
-    if (chitosanCtx) {
-      const chitosanConversionRate = 0.238;
-      const chitosanPoints = [
-        { x: 0, y: 0 },
-        { x: 100, y: 100 * chitosanConversionRate },
-        { x: 200, y: 200 * chitosanConversionRate },
-        { x: 300, y: 300 * chitosanConversionRate },
-        { x: 400, y: 400 * chitosanConversionRate },
-        { x: 500, y: 500 * chitosanConversionRate }
-      ];
+	// Second chart
+	
+	const chitosanCtx = document.getElementById('chitosanConversionChart');
+	if (chitosanCtx) {
+	  const chitosanConversionRate = 0.238;
+	  const chitosanPoints = [
+		{ x: 0, y: 0 },
+		{ x: 100, y: 100 * chitosanConversionRate },
+		{ x: 200, y: 200 * chitosanConversionRate },
+		{ x: 300, y: 300 * chitosanConversionRate },
+		{ x: 400, y: 400 * chitosanConversionRate }
+	   
+	  ];
 
-      const chitosanChart = new Chart(chitosanCtx, {
-        type: 'scatter',
-        data: {
-          datasets: [
-            {
-              label: 'Conversion Rate (23,8%)',
-              data: chitosanPoints,
-              showLine: true,
-              fill: false,
-              borderColor: 'rgba(54, 162, 235, 1)',
-              backgroundColor: 'rgba(54, 162, 235, 0.8)',
-              borderWidth: 2,
-              tension: 0
-            },
-            {
-              label: 'Experimental Data',
-              data: [{ x: 15, y: 3 }],
-              backgroundColor: 'rgba(255, 99, 132, 1)',
-              pointRadius: 6
-            },
-            {
-              label: 'Current Calculation',
-              data: [],
-              backgroundColor: 'rgba(75, 192, 192, 1)',
-              pointRadius: 6
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            title: {
-              display: true,
-              text: 'Relation between Shrimp Shell Mass vs. Chitosan Mass',
-              font: { size: 14 }
-            },
-            legend: { position: 'bottom' }
-          },
-          scales: {
-            x: {
-              type: 'linear',
-              position: 'bottom',
-              title: {
-                display: true,
-                text: 'Shrimp Shell Mass (g)'
-              },
-              min: 0,
-              max: 500
-            },
-            y: {
-              beginAtZero: true,
-              title: {
-                display: true,
-                text: 'Chitosan Mass (g)'
-              },
-              min: 0,
-              max: 100
-            }
-          }
-        }
-      });
+	  const chitosanChart = new Chart(chitosanCtx, {
+		type: 'scatter',
+		data: {
+		  datasets: [
+			{
+			  label: 'Conversion Line (23.8%)',
+			  data: chitosanPoints,
+			  showLine: true,
+			  fill: false,
+			  borderColor: 'rgba(54, 162, 235, 1)',
+			  backgroundColor: 'rgba(54, 162, 235, 0.8)',
+			  borderWidth: 2,
+			  tension: 0
+			},
+			{
+			  label: 'Experimental Data',
+			  data: [{ x: 15, y: 3 }],
+			  backgroundColor: 'rgba(255, 99, 132, 1)',
+			  pointRadius: 6
+			},
+			{
+			  label: 'Current Calculation',
+			  data: [],
+			  backgroundColor: 'rgba(75, 192, 192, 1)',
+			  pointRadius: 6
+			}
+		  ]
+		},
+		options: {
+		  responsive: true,
+		  maintainAspectRatio: false,
+		  plugins: {
+			title: {
+			  display: true,
+			  text: 'Relation of Shell Mass vs. Chitosan Mass',
+			  font: { size: 14 }
+			},
+			legend: { position: 'bottom' }
+		  },
+		  scales: {
+			x: {
+			  type: 'linear',
+			  position: 'bottom',
+			  title: {
+				display: true,
+				text: 'Shell Mass (g)'
+			  },
+			  min: 0,
+			  max: 500
+			},
+			y: {
+			  beginAtZero: true,
+			  title: {
+				display: true,
+				text: 'Chitosan Mass (g)'
+			  },
+			  min: 0,
+			  max: 100
+			}
+		  }
+		}
+	  });
 
-      // Calculator functionality
-      const calculateChitosanBtn = document.getElementById('calculateChitosanBtn');
-      const shellMassInput = document.getElementById('shellMass');
-      const chitosanResultSpan = document.querySelector('#chitosanCalculationResult span');
+	  // Calculator functionality
+	  const calculateChitosanBtn = document.getElementById('calculateChitosanBtn');
+	  const shellMassInput = document.getElementById('shellMass');
+	  const chitosanResultSpan = document.querySelector('#chitosanCalculationResult span');
 
-      function updateChitosanCalculation() {
-        const massInG = parseFloat(shellMassInput.value) || 0;
-        const chitosanMass = massInG * chitosanConversionRate;
-        chitosanResultSpan.textContent = (chitosanMass);
-        chitosanChart.data.datasets[2].data = [{ x: massInG, y: chitosanMass }];
-        chitosanChart.update();
-      }
+	  function updateChitosanCalculation() {
+		const massInG = parseFloat(shellMassInput.value) || 0;
+		const chitosanMass = massInG * chitosanConversionRate;
+		chitosanResultSpan.textContent = (chitosanMass);
+		chitosanChart.data.datasets[2].data = [{ x: massInG, y: chitosanMass }];
+		chitosanChart.update();
+	  }
 
-      calculateChitosanBtn.addEventListener('click', updateChitosanCalculation);
-      shellMassInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') updateChitosanCalculation();
-      });
-      updateChitosanCalculation();
-    }
+	  calculateChitosanBtn.addEventListener('click', updateChitosanCalculation);
+	  shellMassInput.addEventListener('keypress', (e) => {
+		if (e.key === 'Enter') updateChitosanCalculation();
+	  });
+	  updateChitosanCalculation();
+	}
 
-    // Third chart
-    destroyChart('filtrationChart');
-    const filtrationCtx = document.getElementById('filtrationChart');
-    if (filtrationCtx) {
-      const filtrationChart = new Chart(filtrationCtx, {
-        type: 'line',
-        data: {
-          datasets: [
-            {
-              label: 'Current Measurement',
-              data: [],
-              backgroundColor: 'rgba(75, 192, 192, 1)',
-              borderColor: 'rgba(75, 192, 192, 1)',
-              pointRadius: 6,
-              showLine: true
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            title: {
-              display: true,
-              text: 'Filtration Efficiency',
-              font: { size: 14 }
-            },
-            legend: { position: 'bottom' }
-          },
-          scales: {
-            x: {
-              type: 'linear',
-              position: 'bottom',
-              title: {
-                display: true,
-                text: 'Initial Turbidity (NTU)'
-              },
-              min: 0,
-              suggestedMax: 100
-            },
-            y: {
-              beginAtZero: true,
-              title: {
-                display: true,
-                text: 'Final Turbidity (NTU)'
-              },
-              min: 0,
-              suggestedMax: 100
-            }
-          }
-        }
-      });
+	// Third chart
+	const filtrationCtx = document.getElementById('filtrationChart');
+	if (filtrationCtx) {
+	  const filtrationConversionRate = 0.32;
+	  const filtrationPoints = [
+		{ x: 0, y: 0 },
+		{ x: 50, y: 50 * filtrationConversionRate },
+		{ x: 100, y: 100 * filtrationConversionRate },
+		{ x: 200, y: 200 * filtrationConversionRate },
+		{ x: 300, y: 300 * filtrationConversionRate }
+	   
+	  ];
 
-      // Calculator functionality
-      const calculateFiltrationBtn = document.getElementById('calculateFiltrationBtn');
-      const initialTurbidityInput = document.getElementById('turbidityInput');
-      const filtrationResultSpan = document.querySelector('#filtrationCalculationResult span');
+	  const filtrationChart = new Chart(filtrationCtx, {
+		type: 'scatter',
+		data: {
+		  datasets: [
+			{
+				label: 'Current Measurement',
+			  data: [],
+			  backgroundColor: 'rgba(75, 192, 192, 1)',
+			  pointRadius: 6
+			},
+			{
+				label: 'Experimental Data',
+				data: [{ x: 5, y: 1.6 }],
+				backgroundColor: 'rgba(255, 99, 132, 1)',
+				pointRadius: 6
+			},
+			{
+			  label: 'Filtration Line (68%)',
+			  data: filtrationPoints,
+			  showLine: true,
+			  fill: false,
+			  borderColor: 'rgba(54, 162, 235, 1)',
+			  backgroundColor: 'rgba(54, 162, 235, 0.8)',
+			  borderWidth: 2,
+			  tension: 0
+			}
+		  ]
+		},
 
-      function updateFiltrationCalculation() {
-        const initialTurbidity = parseFloat(initialTurbidityInput.value) || 0;
-        const finalTurbidity = initialTurbidity;
-        filtrationResultSpan.textContent = Math.round(finalTurbidity * 10) / 10;
-        filtrationChart.data.datasets[0].data = [{ x: initialTurbidity, y: finalTurbidity }];
-        filtrationChart.update();
-      }
+		options: {
+		  responsive: true,
+		  maintainAspectRatio: false,
+		  plugins: {
+			title: {
+			  display: true,
+			  text: 'Relation of Initial Concentration vs. Final Concentration',
+			  font: { size: 14 }
+			},
+			legend: { position: 'bottom' }
+		  },
+		  scales: {
+			x: {
+			  type: 'linear',
+			  position: 'bottom',
+			  title: {
+				display: true,
+				text: 'Initial Concentration (ppm)'
+			  },
+			  min: 0,
+			  max: 300
+			},
+			y: {
+			  beginAtZero: true,
+			  title: {
+				display: true,
+				text: 'Final Concentration (ppm)'
+			  },
+			  min: 0,
+			  suggestedMax: 300
+			}
+		  }
+		}
+	  });
 
-      calculateFiltrationBtn.addEventListener('click', updateFiltrationCalculation);
-      initialTurbidityInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') updateFiltrationCalculation();
-      });
-      updateFiltrationCalculation();
-    }
+	  // Calculator functionality
+	  const calculateFiltrationBtn = document.getElementById('calculateFiltrationBtn');
+	  const initialTurbidityInput = document.getElementById('turbidityInput');
+	  const filtrationResultSpan = document.querySelector('#filtrationCalculationResult span');
+
+	  function updateFiltrationCalculation() {
+		const initialTurbidity = parseFloat(initialTurbidityInput.value) || 0;
+		const finalTurbidity =  initialTurbidity * filtrationConversionRate;
+		filtrationResultSpan.textContent = (finalTurbidity ) ;
+		filtrationChart.data.datasets[0].data = [{ x: initialTurbidity, y: finalTurbidity }];
+		filtrationChart.update();
+	  }
+
+	  calculateFiltrationBtn.addEventListener('click', updateFiltrationCalculation);
+	  initialTurbidityInput.addEventListener('keypress', (e) => {
+		if (e.key === 'Enter') updateFiltrationCalculation();
+	  });
+	  updateFiltrationCalculation();
+	}
   }
 
   // Initialize on page load
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeAllCharts);
+	document.addEventListener('DOMContentLoaded', initializeAllCharts);
   } else {
-    initializeAllCharts();
+	initializeAllCharts();
   }
 
   // Re-initialize on Astro page transitions
@@ -718,8 +743,6 @@ import Layout from '../../layouts/Layout.en.astro';---
 		left: 0;
 		color: rgb(var(--primary));
 	}
-
-	
 
 	.experimental-results {
 		margin-bottom: -9rem;
